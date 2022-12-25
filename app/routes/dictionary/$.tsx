@@ -131,7 +131,10 @@ export default function Dictionary() {
       <table className="border border-black p-2 mt-12 ">
         <thead>
           <tr>
-            <th className="border border-black p-2 text-left">Sul</th>
+            <th className="border border-black p-2 text-left">SUL</th>
+            <th className="border border-black p-2 text-left">
+              SUL (romanized)
+            </th>
 
             <th className="border border-black p-2 text-left ">Edit</th>
             <th className="border border-black p-2 text-left">Move</th>
@@ -148,7 +151,10 @@ export default function Dictionary() {
         <tbody>
           {data?.dictionary?.map((word: any) => (
             <tr key={word.id}>
-              <td className="border border-black p-2 font-bold">
+              <td className="border border-black p-2 font-bold sul-condensed text-3xl	">
+                {word.word_sul}
+              </td>
+              <td className="border border-black p-2 font-bold  ">
                 {word.word_sul}
               </td>
 
