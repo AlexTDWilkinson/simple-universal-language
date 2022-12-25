@@ -5,6 +5,8 @@ import { Form, useLoaderData, useTransition } from "@remix-run/react";
 import {
   getDictionaryRows,
   getSulWord,
+  moveWordDown,
+  moveWordUp,
   updateSulDictionaryRow,
 } from "~/utils/db.server";
 
@@ -28,11 +30,19 @@ export const action: ActionFunction = async ({ request, params }) => {
 
   const bodyObject = Object.fromEntries(body.entries());
 
-  if (Object.values(bodyObject).every((value) => !value)) {
-    return json({}, { status: 200 });
+  console.log("body object", bodyObject);
+
+  if (bodyObject.action === "update") {
+    await updateSulDictionaryRow(bodyObject);
   }
 
-  await updateSulDictionaryRow(bodyObject);
+  if (bodyObject.action === "move_word_up") {
+    await moveWordUp(bodyObject);
+  }
+
+  if (bodyObject.action === "move_word_down") {
+    await moveWordDown(bodyObject);
+  }
 
   return json({}, { status: 200 });
 };
@@ -109,6 +119,8 @@ export default function Dictionary() {
           <button
             disabled={loading}
             type="submit"
+            name="action"
+            value="update"
             className="mt-4 inline-flex justify-center rounded-md py-2 px-4 text-base font-semibold tracking-tight shadow-sm focus:outline-none bg-blue-600 text-white hover:bg-blue-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 active:bg-blue-700 active:text-white/80 disabled:opacity-30 disabled:hover:bg-blue-600"
           >
             Save
@@ -120,7 +132,9 @@ export default function Dictionary() {
         <thead>
           <tr>
             <th className="border border-black p-2 text-left">Sul</th>
+
             <th className="border border-black p-2 text-left ">Edit</th>
+            <th className="border border-black p-2 text-left">Move</th>
             <th className="border border-black p-2 text-left">English</th>
             <th className="border border-black p-2 text-left">
               English definition
@@ -137,11 +151,51 @@ export default function Dictionary() {
               <td className="border border-black p-2 font-bold">
                 {word.word_sul}
               </td>
+
               <td className="border border-black p-2">
                 <a href={`/dictionary/${word.word_sul}`} className="underline ">
                   Edit
                 </a>
               </td>
+              <td className="border border-black p-2 font-bold ">
+                <div className="flex gap-6">
+                  <Form method="post">
+                    <input
+                      type="hidden"
+                      name="word_sul"
+                      id="word_sul"
+                      value={word.word_sul}
+                    />
+                    <button
+                      disabled={loading}
+                      type="submit"
+                      name="action"
+                      value="move_word_up"
+                      className=" hover:text-green-500 "
+                    >
+                      ↑
+                    </button>
+                  </Form>
+                  <Form method="post">
+                    <input
+                      type="hidden"
+                      name="word_sul"
+                      id="word_sul"
+                      value={word.word_sul}
+                    />
+                    <button
+                      disabled={loading}
+                      type="submit"
+                      name="action"
+                      value="move_word_down"
+                      className="hover:text-red-500"
+                    >
+                      ↓
+                    </button>
+                  </Form>
+                </div>
+              </td>
+
               <td className="border border-black p-2">{word.word_english}</td>
               <td className="border border-black p-2">
                 {word.definition_english}
