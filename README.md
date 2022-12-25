@@ -1,5 +1,7 @@
 # Simple Universal Language
 
+**Visit the website at https://simple-universal-language.vercel.app**
+
 Simple Universal Language (SUL) is a verbal and written auxiliary language with the primary goal of being the easiest written and verbal language to learn.
 
 ## Goals of SUL
