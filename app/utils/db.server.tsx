@@ -54,15 +54,25 @@ const createSqlInsertString = ({ inserts }: { inserts: any }) => {
 };
 
 const getDictionaryRows = async () => {
-  const result = await db.query(`SELECT * FROM "SUL" ORDER BY ID LIMIT 200;`);
+  const result = await db.query(`SELECT * FROM "SUL" ORDER BY ID LIMIT 500;`);
 
-  let resultConjoined = await db.query(
-    `SELECT * FROM "SUL_CONJOINED" ORDER BY LENGTH(WORD_SUL) ASC, WORD_SUL ASC LIMIT 200;`
-  );
+  let resultConjoined = await db.query(`SELECT * FROM "SUL_CONJOINED";`);
 
-  let results = [...result?.rows, ...resultConjoined?.rows];
+  const finalResult: any = [];
 
-  return results;
+  // insert conjoined rows into result by adding it wherever the word is found
+  result?.rows.forEach((word: any, i: number) => {
+    finalResult.push(word);
+
+    resultConjoined.rows.forEach((conjoinedWord: any) => {
+      const conjoinedWordStart = conjoinedWord?.word_sul?.split("+")[0];
+      if (word.word_sul === conjoinedWordStart) {
+        finalResult.push(conjoinedWord);
+      }
+    });
+  });
+
+  return finalResult;
 };
 
 const updateSulDictionaryRow = async ({
