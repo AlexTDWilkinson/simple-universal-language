@@ -11,7 +11,7 @@ const createSqlUpdateString = ({ updates }: { updates: any }) => {
         return `${key} = NULL`;
       }
       if (value && typeof value === "string") {
-        value = value?.toLowerCase().replace(/[^a-zA-Z0-9\s一-龯]/gim, "");
+        value = value?.toLowerCase().replace(/[^\p{L}\p{N}\s]/gimu, "");
         return `${key} = '${value}'`;
       }
 
