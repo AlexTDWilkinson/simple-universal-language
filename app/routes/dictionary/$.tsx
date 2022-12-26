@@ -207,7 +207,7 @@ export default function Dictionary() {
                 {word.word_sul}
               </td>
               <td className="border border-black p-2 font-bold  ">
-                {word.word_sul.replace("+", "b")}
+                {word.word_sul.replace(/\+/gim, "b")}
               </td>
 
               <td className="border border-black p-2">
