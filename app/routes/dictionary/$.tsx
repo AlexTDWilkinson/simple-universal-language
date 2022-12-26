@@ -11,6 +11,7 @@ import {
   updateSulConjoinedRow,
   updateSulDictionaryRow,
 } from "~/utils/db.server";
+import { speakInSul } from "~/utils/utils";
 
 export const loader: LoaderFunction = async ({ request, params }) => {
   const url = request.url;
@@ -184,6 +185,7 @@ export default function Dictionary() {
         <thead>
           <tr>
             <th className="border border-black p-2 text-left">SUL</th>
+            <th className="border border-black p-2 text-left">Hear it</th>
             <th className="border border-black p-2 text-left">
               SUL (romanized)
             </th>
@@ -205,6 +207,24 @@ export default function Dictionary() {
             <tr key={word.id}>
               <td className="border border-black p-2 font-bold sul-condensed text-3xl	">
                 {word.word_sul}
+              </td>
+              <td className="border border-black p-2 ">
+                <button
+                  type="button"
+                  disabled={loading}
+                  className="inline-flex justify-center rounded-md py-2 px-4 text-base font-semibold tracking-tight shadow-sm focus:outline-none bg-blue-600 text-white hover:bg-blue-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 active:bg-blue-700 active:text-white/80 disabled:opacity-30 disabled:hover:bg-blue-600"
+                  onClick={() => {
+                    console.log(
+                      "speaking",
+                      word.word_sul.replace(/\+/gim, "b")
+                    );
+                    speakInSul({
+                      sentence: word.word_sul.replace(/\+/gim, "b"),
+                    });
+                  }}
+                >
+                  play
+                </button>
               </td>
               <td className="border border-black p-2 font-bold  ">
                 {word.word_sul.replace(/\+/gim, "b")}

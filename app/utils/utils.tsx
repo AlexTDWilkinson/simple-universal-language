@@ -399,6 +399,18 @@ const speakInSul = ({
     sound.play("bo");
   } else if (syllable === "bu") {
     sound.play("bu");
+  } else if (syllable === "bk") {
+    sound.play("b");
+    remainingSentence = sentence?.slice(1) || "";
+  } else if (syllable === "bt") {
+    sound.play("b");
+    remainingSentence = sentence?.slice(1) || "";
+  } else if (syllable === "bs") {
+    sound.play("b");
+    remainingSentence = sentence?.slice(1) || "";
+  } else if (syllable === "bm") {
+    sound.play("b");
+    remainingSentence = sentence?.slice(1) || "";
   } else if (syllable === "-a") {
     sound.play("ra");
   } else if (syllable === "-e") {

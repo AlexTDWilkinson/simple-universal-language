@@ -15,8 +15,9 @@ const createSqlUpdateString = ({ updates }: { updates: any }) => {
         value = value?.toLowerCase().replace(/[^\p{L}\p{N}\s+]/gimu, "");
         return `${key} = '${value}'`;
       }
-
-      return `${key} = ${value}`;
+      if (value && typeof value === "number") {
+        return `${key} = ${value}`;
+      }
     })
     .join(", ");
 
@@ -42,8 +43,9 @@ const createSqlInsertString = ({ inserts }: { inserts: any }) => {
               value = value?.toLowerCase().replace(/[^\p{L}\p{N}\s+]/gimu, "");
               return `'${value}'`;
             }
-
-            return value;
+            if (value && typeof value === "number") {
+              return value;
+            }
           })
           .join(", ")})`
       : "";
@@ -52,25 +54,13 @@ const createSqlInsertString = ({ inserts }: { inserts: any }) => {
 };
 
 const getDictionaryRows = async () => {
-  const result = await db.query(
-    `SELECT * FROM "SUL" ORDER BY LENGTH(WORD_SUL) ASC, WORD_SUL ASC LIMIT 200;`
-  );
+  const result = await db.query(`SELECT * FROM "SUL" ORDER BY ID LIMIT 200;`);
 
-  const resultConjoined = await db.query(
+  let resultConjoined = await db.query(
     `SELECT * FROM "SUL_CONJOINED" ORDER BY LENGTH(WORD_SUL) ASC, WORD_SUL ASC LIMIT 200;`
   );
 
-  const results = [...result?.rows, ...resultConjoined?.rows];
-
-  results.sort((a, b) => {
-    if (a.word_sul < b.word_sul) {
-      return -1;
-    }
-    if (a.word_sul > b.word_sul) {
-      return 1;
-    }
-    return 0;
-  });
+  let results = [...result?.rows, ...resultConjoined?.rows];
 
   return results;
 };
