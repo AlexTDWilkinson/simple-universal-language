@@ -1,5 +1,6 @@
 import { ActionFunction, json, LoaderFunction } from "@remix-run/node";
 import { Form, Link, useLoaderData, useTransition } from "@remix-run/react";
+import { useEffect, useRef } from "react";
 
 import { addChatRow, getChatRows } from "~/utils/db.server";
 
@@ -25,6 +26,7 @@ export const loader: LoaderFunction = async ({ request, params }) => {
   data.author = urlParams.get("author");
 
   data.chat = await getChatRows();
+  data.chat = data.chat.reverse();
 
   return json(data, { status: 200 });
 };
@@ -45,10 +47,18 @@ export const action: ActionFunction = async ({ request, params }) => {
 };
 
 export default function SulChat() {
+  let formRef = useRef<HTMLFormElement>(null);
   const transition = useTransition();
   const loading = transition?.state !== "idle";
-
   const data = useLoaderData();
+
+  useEffect(() => {
+    if (!loading) {
+      formRef.current?.reset();
+      formRef.current?.focus();
+    }
+  }, [data?.chat, loading]);
+
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
       <div className="mx-8 ">
@@ -231,7 +241,7 @@ export default function SulChat() {
             <div className="text-lg font-bold">Add a new message</div>
 
             <div className="mt-4">
-              <Form method="post">
+              <Form method="post" ref={formRef} reloadDocument>
                 <input type="hidden" name="author" value={data.author} />
 
                 <textarea
@@ -248,7 +258,7 @@ export default function SulChat() {
                   onChange={(e) => {
                     e.target.value = e.target.value
                       .toLowerCase()
-                      .replace(/[^aeioumtfskrjv\s]/gim, "");
+                      .replace(/[^aeioumtfskrjv\s.]/gim, "");
                   }}
                   name="message"
                   placeholder=""

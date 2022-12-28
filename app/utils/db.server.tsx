@@ -86,11 +86,13 @@ const getDictionaryRows = async () => {
 };
 
 const getChatRows = async () => {
-  const result = await db.query(
-    `SELECT * FROM "SUL_CHAT" ORDER BY CREATED_AT LIMIT 10;`
+  let result = await db.query(
+    `SELECT * FROM "SUL_CHAT" ORDER BY CREATED_AT DESC LIMIT 10;`
   );
 
-  return result?.rows;
+  if (result.rows) {
+    return result?.rows;
+  }
 };
 
 const addChatRow = async ({
@@ -104,7 +106,7 @@ const addChatRow = async ({
   message =
     message
       .replace(/[^\p{L}\p{N}\s+]/gimu, "")
-      .replace(/[^aeioumtfskrjv\s]/gim, "")
+      .replace(/[^aeioumtfskrjv\s.]/gim, "")
       .trim() || "";
 
   if (author && message) {
