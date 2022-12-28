@@ -1,6 +1,7 @@
 import type { ActionFunction, LoaderFunction } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import { Form, useLoaderData, useTransition } from "@remix-run/react";
+import { useState } from "react";
 
 import {
   getDictionaryRows,
@@ -11,7 +12,7 @@ import {
   updateSulConjoinedRow,
   updateSulDictionaryRow,
 } from "~/utils/db.server";
-import { speakInSul } from "~/utils/utils";
+import { getChainLetter, speakInSul } from "~/utils/utils";
 
 export const loader: LoaderFunction = async ({ request, params }) => {
   const url = request.url;
@@ -35,7 +36,7 @@ export const loader: LoaderFunction = async ({ request, params }) => {
   const wordToEdit = params?.["*"];
 
   if (wordToEdit) {
-    if (wordToEdit.indexOf("r") > -1 || wordToEdit.indexOf("m") > -1) {
+    if (getChainLetter({ word: wordToEdit })) {
       data.editValues = await getSulConjoinedWord({ word: wordToEdit });
     } else {
       data.editValues = await getSulWord({ word: wordToEdit });
@@ -53,10 +54,7 @@ export const action: ActionFunction = async ({ request, params }) => {
   const bodyObject = Object.fromEntries(body.entries());
 
   if (bodyObject?.action === "update") {
-    if (
-      bodyObject?.word_sul?.indexOf("r") > -1 ||
-      bodyObject?.word_sul?.indexOf("m") > -1
-    ) {
+    if (getChainLetter({ word: bodyObject?.word_sul })) {
       await updateSulConjoinedRow(bodyObject);
     } else {
       await updateSulDictionaryRow(bodyObject);
@@ -90,11 +88,10 @@ export default function Dictionary() {
   const transition = useTransition();
   const loading = transition?.state !== "idle";
 
+  const [sulPreview, setSulPreview] = useState("");
+
   return (
     <div className="p-4 ">
-      {data.add_sul_conjoined_word ? "add_sul true" : "add_sul false"}
-      {data.showAddConjoinedButton ? "show button true" : "show button false"}
-      {data.editValues?.word_sul}
       {data.editValues?.word_sul && (
         <Form method="post" className=" " action="">
           <div className="flex flex-col gap-4 max-w-[1200px]">
@@ -115,12 +112,15 @@ export default function Dictionary() {
                   SUL conjoined words
                 </label>
                 <input
-                  defaultValue={"Test"}
+                  defaultValue={"You can chain words with m r or v."}
                   type="text"
                   name="word_sul"
+                  onChange={(e) => setSulPreview(e.target.value)}
                   id="word_sul"
                   className="border border-black p-2"
                 />
+
+                <div className="text-3xl sul-condensed">{sulPreview}</div>
               </div>
             )}
 
@@ -228,7 +228,7 @@ export default function Dictionary() {
               <td className="border border-black p-2 font-bold 	">
                 {getWordUsabilityRating(word?.id)}
               </td>
-              <td className="border border-black p-2 font-bold sul-condensed text-3xl	">
+              <td className="border border-black p-2 sul-condensed text-3xl	">
                 {word.word_sul}
               </td>
               <td className="border border-black p-2 ">
@@ -250,7 +250,7 @@ export default function Dictionary() {
                 </button>
               </td>
               <td className="border border-black p-2 font-bold  ">
-                {word.word_sul.replace(/\+/gim, "b")}
+                {word.word_sul.replace(/j/gim, "y")}
               </td>
 
               <td className="border border-black p-2">
@@ -259,45 +259,44 @@ export default function Dictionary() {
                 </a>
               </td>
               <td className="border border-black p-2 font-bold ">
-                {word?.word_sul.indexOf("r") === -1 &&
-                  word?.word_sul.indexOf("m") === -1 && (
-                    <div className="flex gap-6">
-                      <Form method="post">
-                        <input
-                          type="hidden"
-                          name="word_sul"
-                          id="word_sul"
-                          value={word.word_sul}
-                        />
-                        <button
-                          disabled={loading}
-                          type="submit"
-                          name="action"
-                          value="move_word_up"
-                          className=" hover:text-green-500 "
-                        >
-                          ↑
-                        </button>
-                      </Form>
-                      <Form method="post">
-                        <input
-                          type="hidden"
-                          name="word_sul"
-                          id="word_sul"
-                          value={word.word_sul}
-                        />
-                        <button
-                          disabled={loading}
-                          type="submit"
-                          name="action"
-                          value="move_word_down"
-                          className="hover:text-red-500"
-                        >
-                          ↓
-                        </button>
-                      </Form>
-                    </div>
-                  )}
+                {!getChainLetter({ word: word?.word_sul }) && (
+                  <div className="flex gap-6">
+                    <Form method="post">
+                      <input
+                        type="hidden"
+                        name="word_sul"
+                        id="word_sul"
+                        value={word.word_sul}
+                      />
+                      <button
+                        disabled={loading}
+                        type="submit"
+                        name="action"
+                        value="move_word_up"
+                        className=" hover:text-green-500 "
+                      >
+                        ↑
+                      </button>
+                    </Form>
+                    <Form method="post">
+                      <input
+                        type="hidden"
+                        name="word_sul"
+                        id="word_sul"
+                        value={word.word_sul}
+                      />
+                      <button
+                        disabled={loading}
+                        type="submit"
+                        name="action"
+                        value="move_word_down"
+                        className="hover:text-red-500"
+                      >
+                        ↓
+                      </button>
+                    </Form>
+                  </div>
+                )}
               </td>
 
               <td className="border border-black p-2">{word.word_english}</td>

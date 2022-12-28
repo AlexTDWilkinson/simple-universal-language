@@ -56,9 +56,9 @@ export function Hero() {
               <Button href="/learn" color="blue">
                 Start learning now
               </Button>
-              {/* <Button href="#pricing" variant="outline" color="blue">
-                Buy book
-              </Button> */}
+              <Button href="/chat" variant="outline" color="blue">
+                Live SUL chat
+              </Button>
             </div>
           </div>
         </div>

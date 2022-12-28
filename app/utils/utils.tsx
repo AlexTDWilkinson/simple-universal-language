@@ -427,7 +427,19 @@ const speakInSul = ({
   console.log("remainingSentence", remainingSentence);
 };
 
-export { speakInSul };
+const getChainLetter = ({ word }: { word: string }) => {
+  if (word.indexOf("r") > -1) {
+    return "r";
+  }
+  if (word.indexOf("m") > -1) {
+    return "m";
+  }
+  if (word.indexOf("v") > -1) {
+    return "v";
+  }
+};
+
+export { speakInSul, getChainLetter };
 
 // all phonetics
 

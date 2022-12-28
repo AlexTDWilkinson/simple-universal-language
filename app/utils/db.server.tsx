@@ -1,3 +1,5 @@
+import { getChainLetter } from "./utils";
+
 const { Pool } = require("pg");
 
 const db = new Pool({
@@ -67,15 +69,14 @@ const getDictionaryRows = async () => {
     resultConjoined.rows.forEach((conjoinedWord: any) => {
       let conjoinedWordStart = "";
 
-      if (conjoinedWord.word_sul.indexOf("r") > -1) {
-        conjoinedWordStart = conjoinedWord.word_sul.split("r")[0];
-      }
+      const chainingLetter = getChainLetter({ word: conjoinedWord?.word_sul });
 
-      if (conjoinedWord.word_sul.indexOf("m") > -1) {
-        conjoinedWordStart = conjoinedWord.word_sul.split("m")[0];
+      if (chainingLetter) {
+        conjoinedWordStart = conjoinedWord.word_sul.split(chainingLetter)[0];
       }
 
       if (conjoinedWordStart && word.word_sul === conjoinedWordStart) {
+        console.log("conjoined word start: ", conjoinedWordStart);
         conjoinedWord.id = null;
         finalResult.push(conjoinedWord);
       }
@@ -83,6 +84,30 @@ const getDictionaryRows = async () => {
   });
 
   return finalResult;
+};
+
+const getChatRows = async () => {
+  const result = await db.query(
+    `SELECT * FROM "SUL_CHAT" ORDER BY CREATED_AT LIMIT 10;`
+  );
+
+  return result?.rows;
+};
+
+const addChatRow = async ({
+  author,
+  message,
+}: {
+  author: string;
+  message: string;
+}) => {
+  author = author.replace(/[^\p{L}\p{N}\s+]/gimu, "");
+  message = message.replace(/[^\p{L}\p{N}\s+]/gimu, "");
+
+  await db.query(`INSERT INTO "SUL_CHAT" (AUTHOR, MESSAGE) VALUES ($1, $2);`, [
+    author,
+    message,
+  ]);
 };
 
 const updateSulDictionaryRow = async ({
@@ -136,12 +161,11 @@ const updateSulConjoinedRow = async ({
   word_sul = word_sul?.toLowerCase().replace(/[^a-z+]/gim, "");
 
   let wordSulArray: any = [];
-  if (word_sul.indexOf("r") > -1) {
-    wordSulArray = word_sul?.split("r") || [];
-  }
 
-  if (word_sul.indexOf("m") > -1) {
-    wordSulArray = word_sul?.split("m") || [];
+  const chainingLetter = getChainLetter({ word: word_sul });
+
+  if (chainingLetter) {
+    wordSulArray = word_sul?.split(chainingLetter) || [];
   }
 
   if (wordSulArray?.length < 2) {
@@ -345,6 +369,8 @@ const getSulConjoinedWord = async ({ word }: { word: string }) => {
 };
 
 export {
+  addChatRow,
+  getChatRows,
   getSulConjoinedWord,
   updateSulConjoinedRow,
   moveWordDown,
