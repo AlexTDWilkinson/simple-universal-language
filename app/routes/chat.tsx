@@ -248,7 +248,7 @@ export default function SulChat() {
                   onChange={(e) => {
                     e.target.value = e.target.value
                       .toLowerCase()
-                      .replace(/[^aeioumtfskrjv]/gim, "");
+                      .replace(/[^aeioumtfskrjv\s]/gim, "");
                   }}
                   name="message"
                   placeholder=""
