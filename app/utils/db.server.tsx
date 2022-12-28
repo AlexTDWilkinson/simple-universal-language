@@ -76,7 +76,6 @@ const getDictionaryRows = async () => {
       }
 
       if (conjoinedWordStart && word.word_sul === conjoinedWordStart) {
-        console.log("conjoined word start: ", conjoinedWordStart);
         conjoinedWord.id = null;
         finalResult.push(conjoinedWord);
       }
@@ -102,7 +101,9 @@ const addChatRow = async ({
   message: string;
 }) => {
   author = author.replace(/[^\p{L}\p{N}\s+]/gimu, "");
-  message = message.replace(/[^\p{L}\p{N}\s+]/gimu, "");
+  message = message
+    .replace(/[^\p{L}\p{N}\s+]/gimu, "")
+    .replace(/[^aeioumtfskrjv]/gim, "");
 
   await db.query(`INSERT INTO "SUL_CHAT" (AUTHOR, MESSAGE) VALUES ($1, $2);`, [
     author,
