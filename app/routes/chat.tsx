@@ -54,6 +54,133 @@ export default function SulChat() {
       <div className="mx-8 ">
         <h1 className="text-[2em] mt-6 ">SUL Chat</h1>
 
+        <table>
+          <thead>
+            <tr>
+              <td className="text-2xl p-2 border border-black">SUL letter</td>
+              <td className="text-2xl p-2 border border-black">IPA letter</td>
+              <td className="text-2xl p-2 border border-black">Type</td>
+              <td className="text-2xl p-2 border border-black">Key</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td className="text-2xl p-2 border border-black sul-condensed">
+                a
+              </td>
+              <td className="text-2xl p-2 border border-black">a</td>
+              <td className="text-2xl p-2 border border-black">vowel</td>
+              <td className="text-2xl p-2 border border-black">a</td>
+            </tr>
+            <tr>
+              <td className="text-2xl p-2 border border-black sul-condensed">
+                e
+              </td>
+
+              <td className="text-2xl p-2 border border-black">e</td>
+              <td className="text-2xl p-2 border border-black">vowel</td>
+              <td className="text-2xl p-2 border border-black">e</td>
+            </tr>
+            <tr>
+              <td className="text-2xl p-2 border border-black sul-condensed">
+                i
+              </td>
+              <td className="text-2xl p-2 border border-black">i</td>
+              <td className="text-2xl p-2 border border-black">vowel</td>
+
+              <td className="text-2xl p-2 border border-black">i</td>
+            </tr>
+            <tr>
+              <td className="text-2xl p-2 border border-black sul-condensed">
+                o
+              </td>
+              <td className="text-2xl p-2 border border-black">o</td>
+              <td className="text-2xl p-2 border border-black">vowel</td>
+              <td className="text-2xl p-2 border border-black">o</td>
+            </tr>
+            <tr>
+              <td className="text-2xl p-2 border border-black sul-condensed">
+                u
+              </td>
+              <td className="text-2xl p-2 border border-black">u</td>
+              <td className="text-2xl p-2 border border-black">vowel</td>
+              <td className="text-2xl p-2 border border-black">u</td>
+            </tr>
+
+            <tr>
+              <td className="text-2xl p-2 border border-black sul-condensed">
+                t
+              </td>
+              <td className="text-2xl p-2 border border-black">t</td>
+              <td className="text-2xl p-2 border border-black">consonant</td>
+              <td className="text-2xl p-2 border border-black">t</td>
+            </tr>
+            <tr>
+              <td className="text-2xl p-2 border border-black sul-condensed">
+                f
+              </td>
+              <td className="text-2xl p-2 border border-black">f</td>
+              <td className="text-2xl p-2 border border-black">consonant</td>
+              <td className="text-2xl p-2 border border-black">f</td>
+            </tr>
+            <tr>
+              <td className="text-2xl p-2 border border-black sul-condensed">
+                s
+              </td>
+              <td className="text-2xl p-2 border border-black">s</td>
+              <td className="text-2xl p-2 border border-black">consonant</td>
+              <td className="text-2xl p-2 border border-black">s</td>
+            </tr>
+            <tr>
+              <td className="text-2xl p-2 border border-black sul-condensed">
+                k
+              </td>
+              <td className="text-2xl p-2 border border-black">k</td>
+              <td className="text-2xl p-2 border border-black">consonant</td>
+              <td className="text-2xl p-2 border border-black">k</td>
+            </tr>
+            <tr>
+              <td className="text-2xl p-2 border border-black sul-condensed">
+                j
+              </td>
+              <td className="text-2xl p-2 border border-black">j</td>
+              <td className="text-2xl p-2 border border-black">consonant</td>
+              <td className="text-2xl p-2 border border-black">j</td>
+            </tr>
+            <tr>
+              <td className="text-2xl p-2 border border-black sul-condensed">
+                r
+              </td>
+              <td className="text-2xl p-2 border border-black">r</td>
+              <td className="text-2xl p-2 border border-black">
+                consonant (chain)
+              </td>
+              <td className="text-2xl p-2 border border-black">r</td>
+            </tr>
+            <tr>
+              <td className="text-2xl p-2 border border-black sul-condensed">
+                m
+              </td>
+              <td className="text-2xl p-2 border border-black">m</td>
+              <td className="text-2xl p-2 border border-black">
+                consonant (chain)
+              </td>
+              <td className="text-2xl p-2 border border-black">m</td>
+            </tr>
+
+            <tr>
+              <td className="text-2xl p-2 border border-black sul-condensed">
+                v
+              </td>
+              <td className="text-2xl p-2 border border-black">v</td>
+              <td className="text-2xl p-2 border border-black">
+                consonant (chain)
+              </td>
+              <td className="text-2xl p-2 border border-black">v</td>
+            </tr>
+          </tbody>
+        </table>
+
         <div className="mt-4">
           <div>Author name:</div>
           <Form action="/chat/">
