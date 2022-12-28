@@ -434,8 +434,8 @@ const getChainLetter = ({ word }: { word: string }) => {
   if (word.indexOf("m") > -1) {
     return "m";
   }
-  if (word.indexOf("v") > -1) {
-    return "v";
+  if (word.indexOf("b") > -1) {
+    return "b";
   }
 };
 

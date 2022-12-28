@@ -68,8 +68,11 @@ export default function SulChat() {
           <thead>
             <tr>
               <td className="text-2xl p-2 border border-black">SUL letter</td>
-              <td className="text-2xl p-2 border border-black">IPA letter</td>
+              <td className="text-2xl p-2 border border-black">
+                IPA pronounciation
+              </td>
               <td className="text-2xl p-2 border border-black">Type</td>
+              <td className="text-2xl p-2 border border-black">Function</td>
               <td className="text-2xl p-2 border border-black">Key</td>
             </tr>
           </thead>
@@ -80,6 +83,7 @@ export default function SulChat() {
               </td>
               <td className="text-2xl p-2 border border-black">a</td>
               <td className="text-2xl p-2 border border-black">vowel</td>
+              <td className="text-2xl p-2 border border-black">letter</td>
               <td className="text-2xl p-2 border border-black">a</td>
             </tr>
             <tr>
@@ -89,6 +93,7 @@ export default function SulChat() {
 
               <td className="text-2xl p-2 border border-black">e</td>
               <td className="text-2xl p-2 border border-black">vowel</td>
+              <td className="text-2xl p-2 border border-black">letter</td>
               <td className="text-2xl p-2 border border-black">e</td>
             </tr>
             <tr>
@@ -97,6 +102,7 @@ export default function SulChat() {
               </td>
               <td className="text-2xl p-2 border border-black">i</td>
               <td className="text-2xl p-2 border border-black">vowel</td>
+              <td className="text-2xl p-2 border border-black">letter</td>
 
               <td className="text-2xl p-2 border border-black">i</td>
             </tr>
@@ -106,6 +112,7 @@ export default function SulChat() {
               </td>
               <td className="text-2xl p-2 border border-black">o</td>
               <td className="text-2xl p-2 border border-black">vowel</td>
+              <td className="text-2xl p-2 border border-black">letter</td>
               <td className="text-2xl p-2 border border-black">o</td>
             </tr>
             <tr>
@@ -114,6 +121,7 @@ export default function SulChat() {
               </td>
               <td className="text-2xl p-2 border border-black">u</td>
               <td className="text-2xl p-2 border border-black">vowel</td>
+              <td className="text-2xl p-2 border border-black">letter</td>
               <td className="text-2xl p-2 border border-black">u</td>
             </tr>
 
@@ -123,6 +131,7 @@ export default function SulChat() {
               </td>
               <td className="text-2xl p-2 border border-black">t</td>
               <td className="text-2xl p-2 border border-black">consonant</td>
+              <td className="text-2xl p-2 border border-black">letter</td>
               <td className="text-2xl p-2 border border-black">t</td>
             </tr>
             <tr>
@@ -131,6 +140,7 @@ export default function SulChat() {
               </td>
               <td className="text-2xl p-2 border border-black">f</td>
               <td className="text-2xl p-2 border border-black">consonant</td>
+              <td className="text-2xl p-2 border border-black">letter</td>
               <td className="text-2xl p-2 border border-black">f</td>
             </tr>
             <tr>
@@ -139,6 +149,7 @@ export default function SulChat() {
               </td>
               <td className="text-2xl p-2 border border-black">s</td>
               <td className="text-2xl p-2 border border-black">consonant</td>
+              <td className="text-2xl p-2 border border-black">letter</td>
               <td className="text-2xl p-2 border border-black">s</td>
             </tr>
             <tr>
@@ -147,6 +158,7 @@ export default function SulChat() {
               </td>
               <td className="text-2xl p-2 border border-black">k</td>
               <td className="text-2xl p-2 border border-black">consonant</td>
+              <td className="text-2xl p-2 border border-black">letter</td>
               <td className="text-2xl p-2 border border-black">k</td>
             </tr>
             <tr>
@@ -155,15 +167,30 @@ export default function SulChat() {
               </td>
               <td className="text-2xl p-2 border border-black">j</td>
               <td className="text-2xl p-2 border border-black">consonant</td>
+              <td className="text-2xl p-2 border border-black">letter</td>
               <td className="text-2xl p-2 border border-black">j</td>
+            </tr>
+            <tr>
+              <td className="text-2xl p-2 border border-black sul-condensed">
+                b
+              </td>
+              <td className="text-2xl p-2 border border-black">b</td>
+              <td className="text-2xl p-2 border border-black">consonant</td>
+              <td className="text-2xl p-2 border border-black">
+                combines words into new words
+              </td>
+              <td className="text-2xl p-2 border border-black">b</td>
             </tr>
             <tr>
               <td className="text-2xl p-2 border border-black sul-condensed">
                 r
               </td>
-              <td className="text-2xl p-2 border border-black">r</td>
               <td className="text-2xl p-2 border border-black">
-                consonant (chain)
+                l-ɾ-ɹ (whatever rhotic)
+              </td>
+              <td className="text-2xl p-2 border border-black">consonant</td>
+              <td className="text-2xl p-2 border border-black">
+                adjective/adverb chaining
               </td>
               <td className="text-2xl p-2 border border-black">r</td>
             </tr>
@@ -171,22 +198,89 @@ export default function SulChat() {
               <td className="text-2xl p-2 border border-black sul-condensed">
                 m
               </td>
-              <td className="text-2xl p-2 border border-black">m</td>
               <td className="text-2xl p-2 border border-black">
-                consonant (chain)
+                m-ŋ (whatever nasal)
               </td>
+              <td className="text-2xl p-2 border border-black">consonant</td>
+              <td className="text-2xl p-2 border border-black">
+                adjective/adverb chaining (nested)
+              </td>
+
               <td className="text-2xl p-2 border border-black">m</td>
             </tr>
 
             <tr>
               <td className="text-2xl p-2 border border-black sul-condensed">
-                v
+                {"("}
               </td>
-              <td className="text-2xl p-2 border border-black">v</td>
               <td className="text-2xl p-2 border border-black">
-                consonant (chain)
+                ʘ-ǁ (whatever click)
               </td>
-              <td className="text-2xl p-2 border border-black">v</td>
+              <td className="text-2xl p-2 border border-black">syntax</td>
+              <td className="text-2xl p-2 border border-black">
+                open focus marker
+              </td>
+              <td className="text-2xl p-2 border border-black">{"("}</td>
+            </tr>
+
+            <tr>
+              <td className="text-2xl p-2 border border-black sul-condensed">
+                {")"}
+              </td>
+              <td className="text-2xl p-2 border border-black">
+                ʘ-ǁ (whatever click)
+              </td>
+              <td className="text-2xl p-2 border border-black">syntax</td>
+              <td className="text-2xl p-2 border border-black">
+                close focus marker
+              </td>
+
+              <td className="text-2xl p-2 border border-black">{")"}</td>
+            </tr>
+
+            <tr>
+              <td className="text-2xl p-2 border border-black sul-condensed">
+                {"<"}
+              </td>
+              <td className="text-2xl p-2 border border-black">
+                ʘ-ǁ (whatever click)
+              </td>
+              <td className="text-2xl p-2 border border-black">syntax</td>
+              <td className="text-2xl p-2 border border-black">
+                open langauge escape
+              </td>
+
+              <td className="text-2xl p-2 border border-black">{"<"}</td>
+            </tr>
+            <tr>
+              <td className="text-2xl p-2 border border-black sul-condensed">
+                {">"}
+              </td>
+              <td className="text-2xl p-2 border border-black">
+                ʘ-ǁ (whatever click)
+              </td>
+              <td className="text-2xl p-2 border border-black">syntax</td>
+              <td className="text-2xl p-2 border border-black">
+                close langauge escape
+              </td>
+              <td className="text-2xl p-2 border border-black">{">"}</td>
+            </tr>
+            <tr>
+              <td className="text-2xl p-2 border border-black sul-condensed">
+                &nbsp;
+              </td>
+              <td className="text-2xl p-2 border border-black">no sound</td>
+              <td className="text-2xl p-2 border border-black">syntax</td>
+              <td className="text-2xl p-2 border border-black">space</td>
+              <td className="text-2xl p-2 border border-black"> &nbsp; </td>
+            </tr>
+
+            <tr>
+              <td className="text-2xl p-2 border border-black">(blank)</td>
+              <td className="text-2xl p-2 border border-black">no sound</td>
+              <td className="text-2xl p-2 border border-black">syntax</td>
+              <td className="text-2xl p-2 border border-black">period</td>
+              <td className="text-2xl p-2 border border-black">.</td>
             </tr>
           </tbody>
         </table>
@@ -228,7 +322,13 @@ export default function SulChat() {
                 <div className="flex gap-4 items-center">
                   <div className="text-lg font-bold">{chatRow.author}</div>
                   <div className="font-sm opacity-50">
-                    {new Date(chatRow.created_at).toLocaleString()}
+                    {new Date(chatRow.created_at).toLocaleString("en-us", {
+                      year: "numeric",
+                      month: "long",
+                      day: "numeric",
+                      hour: "numeric",
+                      minute: "numeric",
+                    })}
                   </div>
                 </div>
                 <div className="sul-condensed text-4xl">{chatRow.message}</div>
@@ -258,7 +358,7 @@ export default function SulChat() {
                   onChange={(e) => {
                     e.target.value = e.target.value
                       .toLowerCase()
-                      .replace(/[^aeioumtfskrjv\s.]/gim, "");
+                      .replace(/[^aeioumtfskrjv\s.()<>]/gim, "");
                   }}
                   name="message"
                   placeholder=""

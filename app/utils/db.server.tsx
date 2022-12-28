@@ -105,8 +105,8 @@ const addChatRow = async ({
   author = author.replace(/[^\p{L}\p{N}\s+]/gimu, "");
   message =
     message
-      .replace(/[^\p{L}\p{N}\s+]/gimu, "")
-      .replace(/[^aeioumtfskrjv\s.]/gim, "")
+      .replace(/[^\p{L}\p{N}\s+.()<>]/gimu, "")
+      .replace(/[^aeioumtfskrjv\s.()<>]/gim, "")
       .trim() || "";
 
   if (author && message) {
