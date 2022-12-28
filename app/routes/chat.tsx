@@ -247,7 +247,7 @@ export default function SulChat() {
               </td>
               <td className="text-2xl p-2 border border-black">syntax</td>
               <td className="text-2xl p-2 border border-black">
-                open langauge escape
+                open language escape
               </td>
 
               <td className="text-2xl p-2 border border-black">{"<"}</td>
@@ -261,7 +261,7 @@ export default function SulChat() {
               </td>
               <td className="text-2xl p-2 border border-black">syntax</td>
               <td className="text-2xl p-2 border border-black">
-                close langauge escape
+                close language escape
               </td>
               <td className="text-2xl p-2 border border-black">{">"}</td>
             </tr>
