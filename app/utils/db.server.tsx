@@ -65,8 +65,18 @@ const getDictionaryRows = async () => {
     finalResult.push(word);
 
     resultConjoined.rows.forEach((conjoinedWord: any) => {
-      const conjoinedWordStart = conjoinedWord?.word_sul?.split("+")[0];
-      if (word.word_sul === conjoinedWordStart) {
+      let conjoinedWordStart = "";
+
+      if (conjoinedWord.word_sul.indexOf("r") > -1) {
+        conjoinedWordStart = conjoinedWord.word_sul.split("r")[0];
+      }
+
+      if (conjoinedWord.word_sul.indexOf("m") > -1) {
+        conjoinedWordStart = conjoinedWord.word_sul.split("m")[0];
+      }
+
+      if (conjoinedWordStart && word.word_sul === conjoinedWordStart) {
+        conjoinedWord.id = null;
         finalResult.push(conjoinedWord);
       }
     });
@@ -125,14 +135,21 @@ const updateSulConjoinedRow = async ({
 
   word_sul = word_sul?.toLowerCase().replace(/[^a-z+]/gim, "");
 
-  const wordSulArray = word_sul?.split("+") || [];
+  let wordSulArray: any = [];
+  if (word_sul.indexOf("r") > -1) {
+    wordSulArray = word_sul?.split("r") || [];
+  }
+
+  if (word_sul.indexOf("m") > -1) {
+    wordSulArray = word_sul?.split("m") || [];
+  }
 
   if (wordSulArray?.length < 2) {
     return;
   }
 
   const wordSulArrayString = wordSulArray
-    .map((word) => `'${word.trim()}'`)
+    .map((word: any) => `'${word.trim()}'`)
     .join(", ");
 
   let result = await db.query(
@@ -320,7 +337,7 @@ const getSulWord = async ({ word }: { word: string }) => {
 };
 
 const getSulConjoinedWord = async ({ word }: { word: string }) => {
-  const result = await db.query(
+  let result = await db.query(
     `SELECT * FROM "SUL_CONJOINED" WHERE WORD_SUL = '${word}' LIMIT 1;`
   );
 

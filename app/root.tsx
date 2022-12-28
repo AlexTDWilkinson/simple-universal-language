@@ -17,11 +17,13 @@ export function links() {
   return [{ rel: "stylesheet", href: styles }];
 }
 
-export const meta: MetaFunction = () => ({
-  charset: "utf-8",
-  title: "New Remix App",
-  viewport: "width=device-width,initial-scale=1",
-});
+export const meta: MetaFunction = () => {
+  return {
+    charset: "utf-8",
+    title: "Simple Universal Language",
+    description: "Talk to anyone in the world",
+  };
+};
 
 export default function App() {
   return (

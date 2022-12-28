@@ -19,24 +19,27 @@ export const loader: LoaderFunction = async ({ request, params }) => {
 
   const data: any = {};
 
-  data.showAddConjoinedButton = !(
-    urlParams.get("add_sul_conjoined_word") === "true"
-  );
-
   data.editValues = {};
+
+  if (urlParams.get("add_sul_conjoined_word") === "true") {
+    data.showAddConjoinedButton = false;
+    data.add_sul_conjoined_word = true;
+    data.editValues = {
+      word_sul: "New conjoined word",
+    };
+  } else {
+    data.showAddConjoinedButton = true;
+    data.add_sul_conjoined_word = false;
+  }
 
   const wordToEdit = params?.["*"];
 
   if (wordToEdit) {
-    if (wordToEdit.indexOf("+") > -1) {
+    if (wordToEdit.indexOf("r") > -1 || wordToEdit.indexOf("m") > -1) {
       data.editValues = await getSulConjoinedWord({ word: wordToEdit });
     } else {
       data.editValues = await getSulWord({ word: wordToEdit });
     }
-  }
-
-  if (urlParams.get("add_sul_conjoined_word") === "true") {
-    data.editValues.word_sul = "For example, ko+sa, ko+sa+na, etc";
   }
 
   data.dictionary = await getDictionaryRows();
@@ -50,7 +53,10 @@ export const action: ActionFunction = async ({ request, params }) => {
   const bodyObject = Object.fromEntries(body.entries());
 
   if (bodyObject?.action === "update") {
-    if (bodyObject?.word_sul?.indexOf("+") > -1) {
+    if (
+      bodyObject?.word_sul?.indexOf("r") > -1 ||
+      bodyObject?.word_sul?.indexOf("m") > -1
+    ) {
       await updateSulConjoinedRow(bodyObject);
     } else {
       await updateSulDictionaryRow(bodyObject);
@@ -68,6 +74,16 @@ export const action: ActionFunction = async ({ request, params }) => {
   return json({}, { status: 200 });
 };
 
+const getWordUsabilityRating = (wordNumber: number) => {
+  if (!wordNumber) return null;
+
+  let wordRating = Math.round((1 - wordNumber / 1000000) * 100);
+
+  wordRating = Math.max(Math.round((wordRating * (500 - wordNumber)) / 500), 0);
+
+  return `${wordRating}%`;
+};
+
 export default function Dictionary() {
   const data = useLoaderData();
 
@@ -76,12 +92,15 @@ export default function Dictionary() {
 
   return (
     <div className="p-4 ">
-      {Object.keys(data?.editValues)?.length > 0 && (
+      {data.add_sul_conjoined_word ? "add_sul true" : "add_sul false"}
+      {data.showAddConjoinedButton ? "show button true" : "show button false"}
+      {data.editValues?.word_sul}
+      {data.editValues?.word_sul && (
         <Form method="post" className=" " action="">
           <div className="flex flex-col gap-4 max-w-[1200px]">
             <h1 className="text-xl font-bold">Edit</h1>
 
-            {data?.editValues?.word_sul?.indexOf("+") === -1 && (
+            {!data?.add_sul_conjoined_word && (
               <input
                 defaultValue={data?.editValues?.word_sul}
                 type="hidden"
@@ -90,13 +109,13 @@ export default function Dictionary() {
                 className="border border-black p-2"
               />
             )}
-            {data?.editValues?.word_sul?.indexOf("+") > -1 && (
+            {data?.add_sul_conjoined_word && (
               <div className="flex flex-col">
                 <label htmlFor="word_sul" className="font-bold">
                   SUL conjoined words
                 </label>
                 <input
-                  defaultValue={data?.editValues?.word_sul}
+                  defaultValue={"Test"}
                   type="text"
                   name="word_sul"
                   id="word_sul"
@@ -184,6 +203,7 @@ export default function Dictionary() {
       <table className="border border-black p-2 mt-12 ">
         <thead>
           <tr>
+            <th className="border border-black p-2 text-left">Simplicity</th>
             <th className="border border-black p-2 text-left">SUL</th>
             <th className="border border-black p-2 text-left">Hear it</th>
             <th className="border border-black p-2 text-left">
@@ -205,6 +225,9 @@ export default function Dictionary() {
         <tbody>
           {data?.dictionary?.map((word: any) => (
             <tr key={word.id}>
+              <td className="border border-black p-2 font-bold 	">
+                {getWordUsabilityRating(word?.id)}
+              </td>
               <td className="border border-black p-2 font-bold sul-condensed text-3xl	">
                 {word.word_sul}
               </td>
@@ -214,10 +237,10 @@ export default function Dictionary() {
                   disabled={loading}
                   className="inline-flex justify-center rounded-md py-2 px-4 text-base font-semibold tracking-tight shadow-sm focus:outline-none bg-blue-600 text-white hover:bg-blue-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 active:bg-blue-700 active:text-white/80 disabled:opacity-30 disabled:hover:bg-blue-600"
                   onClick={() => {
-                    console.log(
-                      "speaking",
-                      word.word_sul.replace(/\+/gim, "b")
-                    );
+                    // console.log(
+                    //   "speaking",
+                    //   word.word_sul.replace(/\+/gim, "b")
+                    // );
                     speakInSul({
                       sentence: word.word_sul.replace(/\+/gim, "b"),
                     });
@@ -236,44 +259,45 @@ export default function Dictionary() {
                 </a>
               </td>
               <td className="border border-black p-2 font-bold ">
-                {word.word_sul.indexOf("+") === -1 && (
-                  <div className="flex gap-6">
-                    <Form method="post">
-                      <input
-                        type="hidden"
-                        name="word_sul"
-                        id="word_sul"
-                        value={word.word_sul}
-                      />
-                      <button
-                        disabled={loading}
-                        type="submit"
-                        name="action"
-                        value="move_word_up"
-                        className=" hover:text-green-500 "
-                      >
-                        ↑
-                      </button>
-                    </Form>
-                    <Form method="post">
-                      <input
-                        type="hidden"
-                        name="word_sul"
-                        id="word_sul"
-                        value={word.word_sul}
-                      />
-                      <button
-                        disabled={loading}
-                        type="submit"
-                        name="action"
-                        value="move_word_down"
-                        className="hover:text-red-500"
-                      >
-                        ↓
-                      </button>
-                    </Form>
-                  </div>
-                )}
+                {word?.word_sul.indexOf("r") === -1 &&
+                  word?.word_sul.indexOf("m") === -1 && (
+                    <div className="flex gap-6">
+                      <Form method="post">
+                        <input
+                          type="hidden"
+                          name="word_sul"
+                          id="word_sul"
+                          value={word.word_sul}
+                        />
+                        <button
+                          disabled={loading}
+                          type="submit"
+                          name="action"
+                          value="move_word_up"
+                          className=" hover:text-green-500 "
+                        >
+                          ↑
+                        </button>
+                      </Form>
+                      <Form method="post">
+                        <input
+                          type="hidden"
+                          name="word_sul"
+                          id="word_sul"
+                          value={word.word_sul}
+                        />
+                        <button
+                          disabled={loading}
+                          type="submit"
+                          name="action"
+                          value="move_word_down"
+                          className="hover:text-red-500"
+                        >
+                          ↓
+                        </button>
+                      </Form>
+                    </div>
+                  )}
               </td>
 
               <td className="border border-black p-2">{word.word_english}</td>
