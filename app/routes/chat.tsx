@@ -141,7 +141,7 @@ export default function SulChat() {
 
               <Link
                 to="/dictionary"
-                className="underline block mt-12"
+                className="underline block mt-12 max-w-fit"
                 target="_blank"
               >
                 Open dictionary
