@@ -203,10 +203,22 @@ export default function Dictionary() {
       <table className="border border-black p-2 mt-12 ">
         <thead>
           <tr>
-            <th className="border border-black p-2 text-left">Simplicity</th>
-            <th className="border border-black p-2 text-left">SUL</th>
-            <th className="border border-black p-2 text-left">Hear it</th>
-            <th className="border border-black p-2 text-left">
+            <th className="border border-black p-2 text-left whitespace-nowrap">
+              Simplicity
+            </th>
+            <th className="border border-black p-2 text-left whitespace-nowrap">
+              SUL
+            </th>
+            <th className="border border-black p-2 text-left whitespace-nowrap">
+              Hear
+            </th>
+            <th className="border border-black p-2 text-left whitespace-nowrap">
+              Feel
+            </th>
+            <th className="border border-black p-2 text-left whitespace-nowrap">
+              See
+            </th>
+            <th className="border border-black p-2 text-left whitespace-nowrap">
               SUL (romanized)
             </th>
 
@@ -248,6 +260,13 @@ export default function Dictionary() {
                 >
                   play
                 </button>
+              </td>
+
+              <td className="border border-black p-2 font-bold sul-braille text-3xl ">
+                {word.word_sul}
+              </td>
+              <td className="border border-black p-2 underline  ">
+                <a href={`/resource/sign?word=${word.word_sul}`}>sign</a>
               </td>
               <td className="border border-black p-2 font-bold  ">
                 {word.word_sul.replace(/j/gim, "y")}

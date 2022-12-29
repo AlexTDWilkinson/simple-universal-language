@@ -40,8 +40,10 @@
 	<line_gap>10</line_gap>
 </horizontal>
 
-<grid width="1"/>
+<grid width="1.0001"/>
 <grid width="2"/>
+<grid width="3"/>
+<grid width="1"/>
 <grid width="4"/>
 
 <background scale="1" />
@@ -64,7 +66,7 @@
 <ligature_tag>clig</ligature_tag>
 
 <collection unicode="U+20" svg="false" colr="false" auto_generate="false" meta_name="">
-	<selected id="1"/>
+	<selected id="3"/>
 	<glyph id="0" left="-71" right="13">
 		<layer name="Layer" visible="true">
 			<path data="S -27,36 L -27,28 Q -27.001,28 -35,28 Q -35,28 -35,36 L -27,36" />
@@ -77,19 +79,34 @@
 			<path data="S -28,2 L -28,8 L 20,8 L 20,0 L -28,0 D -28,0 -28,1.5 -28,2" />
 		</layer>
 	</glyph>
+	<glyph id="2" left="-28" right="39.2">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" data="S -24,4 L 24,4 L -24,4 O" />
+		</layer>
+	</glyph>
+	<glyph id="3" left="-28" right="40">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" join="round" data="S -24,4 L 24,4 L -24,4 O" />
+		</layer>
+	</glyph>
 </collection>
 
 <collection unicode="U+28" svg="false" colr="false" auto_generate="false" meta_name="">
-	<selected id="0"/>
+	<selected id="1"/>
 	<glyph id="0" left="-28" right="28">
 		<layer name="Layer" visible="true">
 			<path data="S -22,0 L -28,6 L 12,56 L 18,50 L -22,0" />
 		</layer>
 	</glyph>
+	<glyph id="1" left="-28" right="40">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" data="S 24,52 D 18,46 -18,10 -24,4 L 24,52 O" />
+		</layer>
+	</glyph>
 </collection>
 
 <collection unicode="U+29" svg="false" colr="false" auto_generate="false" meta_name="">
-	<selected id="2"/>
+	<selected id="4"/>
 	<glyph id="1" left="-28" right="28">
 		<layer name="Layer" visible="true">
 			<path data="S -28,48 L -20,56 L 20,8 L 12,0 L -28,48" />
@@ -98,6 +115,16 @@
 	<glyph id="2" left="-28" right="28">
 		<layer name="Layer" visible="true">
 			<path data="S -28,50 L -22,56 L 18,6 L 12,0 L -28,50" />
+		</layer>
+	</glyph>
+	<glyph id="3" left="-28" right="28">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" join="round" data="S -24,52 D -18,46 18,10 24,4 L -24,52 O" />
+		</layer>
+	</glyph>
+	<glyph id="4" left="-28" right="40">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" data="S -24,52 D -18,46 18,10 24,4 L -24,52 O" />
 		</layer>
 	</glyph>
 </collection>
@@ -122,7 +149,7 @@
 </collection>
 
 <collection unicode="U+3c" svg="false" colr="false" auto_generate="false" meta_name="">
-	<selected id="2"/>
+	<selected id="3"/>
 	<glyph id="1" left="-28" right="28">
 		<layer name="Layer" visible="true">
 			<path data="S -20,0 L -28,8 L 12,56 L 20,48 L -20,0" />
@@ -135,10 +162,16 @@
 			<path data="S 0,0 Q -2,0 -8,0 Q -8,0 -8,56 L 0,56 L 0,0" />
 		</layer>
 	</glyph>
+	<glyph id="3" left="-28" right="40">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" join="round" data="S 0,52 D 0,44 0,12 0,4 L 0,52 O" />
+			<path stroke="8" cap="round" data="S 24,52 D 18,46 -18,10 -24,4 L 24,52 O" />
+		</layer>
+	</glyph>
 </collection>
 
 <collection unicode="U+3e" svg="false" colr="false" auto_generate="false" meta_name="">
-	<selected id="2"/>
+	<selected id="4"/>
 	<glyph id="1" left="-28" right="28">
 		<layer name="Layer" visible="true">
 			<path data="S -28,48 L -20,56 L 20,8 L 12,0 L -28,48" />
@@ -151,25 +184,46 @@
 			<path data="S 0,0 Q -2,0 -8,0 Q -8,0 -8,56 L 0,56 L 0,0" />
 		</layer>
 	</glyph>
+	<glyph id="3" left="-28" right="28">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" join="round" data="S 0,52 D 0,44 0,12 0,4 L 0,52 O" />
+			<path stroke="8" cap="round" data="S -24,52 D -18,46 18,10 24,4 L -24,52 O" />
+		</layer>
+	</glyph>
+	<glyph id="4" left="-28" right="40">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" join="round" data="S 0,52 D 0,44 0,12 0,4 L 0,52 O" />
+			<path stroke="8" cap="round" data="S -24,52 D -18,46 18,10 24,4 L -24,52 O" />
+		</layer>
+	</glyph>
 </collection>
 
 <collection unicode="U+61" svg="false" colr="false" auto_generate="false" meta_name="">
-	<selected id="2"/>
+	<selected id="4"/>
 	<glyph id="1" left="-76.95012" right="8.05785">
 		<layer name="Layer" visible="true">
 			<path data="S -68.95012,56 Q -68.95112,56 -68.95012,8 L -48.95012,8 L -48.95012,0 L -76.95012,0 L -76.95012,56 L -68.95012,56" />
 		</layer>
 	</glyph>
-	<glyph id="2" left="-28" right="28">
+	<glyph id="2" left="-27" right="29">
 		<layer name="Layer" visible="true">
-			<path data="S -20,56 Q -20.001,56 -20,8 L 20,8 L 20,0 L -28,0 L -28,56 L -20,56" />
-			<path data="S 20,0 D 20,4 20,8 20,8 Q 20,2 20,0" />
+			<path stroke="8" cap="round" join="round" data="S -24,52 L -24,4 L 24,4 D 10.39079,30.08432 -12,40 -24,52 O" />
+		</layer>
+	</glyph>
+	<glyph id="3" left="-28" right="39.2">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" join="round" data="S -24,52 L -24,4 L 24,4 L -24,52 O" />
+		</layer>
+	</glyph>
+	<glyph id="4" left="-28" right="40">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" join="round" data="S -24,52 L -24,4 L 24,4 D 24,24.2 -12,40 -24,52 O" />
 		</layer>
 	</glyph>
 </collection>
 
 <collection name="af.ligature" svg="false" colr="false" auto_generate="false" meta_name="">
-	<selected id="1"/>
+	<selected id="2"/>
 	<glyph id="0" left="-28" right="28">
 		<layer name="Layer" visible="true">
 		</layer>
@@ -186,10 +240,17 @@
 			<path data="S -18,56 L -4,22 L 10,56 L 20,56 L -4,0 L -28,56 L -18,56" />
 		</layer>
 	</glyph>
+	<glyph id="2" left="-28" right="40">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" join="round" data="S -24,52 L -24,4 L 24,4 L -24,52 O" />
+			<path stroke="8" cap="round" join="round" data="S 24,52 D 4,12 0,4 0,4 D 0,4 -4,12 -24,52 L 24,52 O" />
+			<path stroke="8" cap="round" data="S -24,68 L 24,68 L -24,68 O" />
+		</layer>
+	</glyph>
 </collection>
 
 <collection name="aj.ligature" svg="false" colr="false" auto_generate="false" meta_name="">
-	<selected id="2"/>
+	<selected id="5"/>
 	<glyph id="0" left="-28" right="28">
 		<layer name="Layer" visible="true">
 		</layer>
@@ -211,10 +272,30 @@
 			<path data="S -28,26 L -28,34 L 20,34 Q 20,26 20,26 L -28,26" />
 		</layer>
 	</glyph>
+	<glyph id="3" left="-28" right="28">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" data="S -24,68 L 24,68 L -24,68 O" />
+			<path stroke="8" cap="round" join="round" data="S -24,52 L -24,4 L 24,4 D 16,8 -16,28 -16,28 D -16,28 16,28 24,28 L -24,52 O" />
+		</layer>
+	</glyph>
+	<glyph id="4" left="-28" right="28">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" data="S -24,68 L 24,68 L -24,68 O" />
+			<path stroke="8" cap="round" join="round" data="S -24,52 L -24,4 L 24,4 D -21.83427,26.91714 -12,40 -24,52 O" />
+			<path stroke="8" cap="round" data="S -24,28 L 24,28 L -24,28 O" />
+		</layer>
+	</glyph>
+	<glyph id="5" left="-28" right="40">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" join="round" data="S 24,4 L -24,4 L -24,50 L 24,4 O" />
+			<path stroke="8" cap="round" data="S -24,68 L 24,68 L -24,68 O" />
+			<path stroke="8" cap="round" data="S -24,30 L 24,30 L -24,30 O" />
+		</layer>
+	</glyph>
 </collection>
 
 <collection name="ak.ligature" svg="false" colr="false" auto_generate="false" meta_name="">
-	<selected id="3"/>
+	<selected id="4"/>
 	<glyph id="0" left="-28" right="28">
 		<layer name="Layer" visible="true">
 		</layer>
@@ -241,10 +322,16 @@
 			<path data="S -28,30 L 20,56 L 20,46 L -10,30 L 20,10 L 20,0 L -28,30" />
 		</layer>
 	</glyph>
+	<glyph id="4" left="-28" right="40">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" data="S -24,68 L 24,68 L -24,68 O" />
+			<path stroke="8" cap="round" join="round" data="S -24,52 D -24,48 -24,8 -24,4 L 24,4 D 16,8 -24,28 -24,28 D -24,28 16,48 24,52 L -24,52 O" />
+		</layer>
+	</glyph>
 </collection>
 
 <collection name="as.ligature" svg="false" colr="false" auto_generate="false" meta_name="">
-	<selected id="3"/>
+	<selected id="4"/>
 	<glyph id="0" left="-28" right="28">
 		<layer name="Layer" visible="true">
 		</layer>
@@ -276,10 +363,16 @@
 			<path data="S -28,56 L 20,30 L -28,0 L -28,10 L 2,30 L -28,46 L -28,56" />
 		</layer>
 	</glyph>
+	<glyph id="4" left="-28" right="40">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" data="S -24,68 L 24,68 L -24,68 O" />
+			<path stroke="8" cap="round" join="round" data="S 24,4 L -24,4 L -24,52 D 16,32 24,28 24,28 D 24,28 16,24 -24,4 L 24,4 O" />
+		</layer>
+	</glyph>
 </collection>
 
 <collection name="at.ligature" svg="false" colr="false" auto_generate="false" meta_name="">
-	<selected id="3"/>
+	<selected id="5"/>
 	<glyph id="0" left="-28" right="28">
 		<layer name="Layer" visible="true">
 		</layer>
@@ -310,29 +403,74 @@
 			<path data="S -28,0 L -4,56 L 20,0 L 10,0 D 6.5,8.5 8.20525,4.35867 -4,34 L -18,0 L -28,0" />
 		</layer>
 	</glyph>
+	<glyph id="4" left="-28" right="27.2">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" join="round" data="S -24,52 L -24,4 L 24,4 L -24,52 O" />
+			<path stroke="8" cap="round" join="round" data="S -24,4 D -4,44 0,52 0,52 D 0,52 4,44 24,4 L -24,4 O" />
+			<path stroke="8" cap="round" data="S -24,68 L 24,68 L -24,68 O" />
+		</layer>
+	</glyph>
+	<glyph id="5" left="-28" right="40">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" data="S -24,68 L 24,68 L -24,68 O" />
+			<path stroke="8" cap="round" join="round" data="S -24,4 L 0,52 L 24,4 L -24,4 D -24,8 -24,48 -24,52 D 0.9,52 -24,16 -24,4 O" />
+		</layer>
+	</glyph>
 </collection>
 
 <collection unicode="U+62" svg="false" colr="false" auto_generate="false" meta_name="">
-	<selected id="1"/>
+	<selected id="3"/>
 	<glyph id="1" left="-28" right="28">
 		<layer name="Layer" visible="true">
 			<path data="S -28,0 L -28,8 L 20,8 Q 20,0 20,0 L -28,0" />
 			<path data="S 2,38 L 2,26 L -10,26 L -10,38 L 2,38" />
 		</layer>
 	</glyph>
+	<glyph id="2" left="-27" right="39.2">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" data="S -24,4 L 24,4 L -24,4 O" />
+			<path stroke="8" cap="round" data="S 12,28 L -12,28 L 12,28 O" />
+		</layer>
+	</glyph>
+	<glyph id="3" left="-28" right="40">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" join="round" data="S -24,4 L 24,4 L -24,4 O" />
+			<path data="S 5.66638,22.34709 D 4.58217,21.26288 1.53331,20 0,20 T D -1.53331,20 -4.58217,21.26288 -5.66638,22.34709 T D -6.7506,23.43131 -8.01347,26.48016 -8.01347,28.01347 T D -8.01347,29.54679 -6.7506,32.59564 -5.66638,33.67986 T D -4.58217,34.76407 -1.53331,36.02695 0,36.02695 T D 1.53331,36.02695 4.58217,34.76407 5.66638,33.67986 T D 6.7506,32.59564 8.01347,29.54679 8.01347,28.01347 T D 8.01347,26.48016 6.7506,23.43131 5.66638,22.34709 T" />
+		</layer>
+	</glyph>
 </collection>
 
 <collection unicode="U+65" svg="false" colr="false" auto_generate="false" meta_name="">
-	<selected id="1"/>
+	<selected id="5"/>
 	<glyph id="1" left="-28" right="28">
 		<layer name="Layer" visible="true">
 			<path data="S 12,8 L 12,56 L 20,56 L 20,0 L -28,0 L -28,8 L 12,8" />
 		</layer>
 	</glyph>
+	<glyph id="2" left="-28" right="28">
+		<layer name="Layer" visible="true">
+			<path stroke="6" cap="round" data="S 8,36 L 8,3 L -25,3 L 8,36 O" />
+		</layer>
+	</glyph>
+	<glyph id="3" left="-28" right="28">
+		<layer name="Layer" visible="true">
+			<path stroke="6" cap="round" join="round" data="S 8,3 L -25,3 L -25,36 L 8,3 O" />
+		</layer>
+	</glyph>
+	<glyph id="4" left="-27" right="39.8">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" join="round" data="S 24,52 L 24,4 L -24,4 L 24,52 O" />
+		</layer>
+	</glyph>
+	<glyph id="5" left="-28" right="40">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" join="round" data="S -24,4 L 24,4 L 24,52 L -24,4 O" />
+		</layer>
+	</glyph>
 </collection>
 
 <collection name="ef.ligature" svg="false" colr="false" auto_generate="false" meta_name="">
-	<selected id="1"/>
+	<selected id="2"/>
 	<glyph id="0" left="-28" right="28">
 		<layer name="Layer" visible="true">
 		</layer>
@@ -349,10 +487,17 @@
 			<path data="S 20,56 L -4,0 L -28,56 L -18,56 L -4,22 L 10,56 L 20,56" />
 		</layer>
 	</glyph>
+	<glyph id="2" left="-28" right="40">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" join="round" data="S -24,4 L 24,4 L 24,52 L -24,4 O" />
+			<path stroke="8" cap="round" join="round" data="S 24,52 D 4,12 0,4 0,4 D 0,4 -4,12 -24,52 L 24,52 O" />
+			<path stroke="8" cap="round" data="S -24,68 L 24,68 L -24,68 O" />
+		</layer>
+	</glyph>
 </collection>
 
 <collection name="ej.ligature" svg="false" colr="false" auto_generate="false" meta_name="">
-	<selected id="1"/>
+	<selected id="2"/>
 	<glyph id="0" left="-28" right="28">
 		<layer name="Layer" visible="true">
 		</layer>
@@ -369,10 +514,17 @@
 			<path data="S -28,26 L -28,34 L 20,34 Q 20,26 20,26 L -28,26" />
 		</layer>
 	</glyph>
+	<glyph id="2" left="-28" right="40">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" data="S -24,68 L 24,68 L -24,68 O" />
+			<path stroke="8" cap="round" join="round" data="S 24,52 L 24,4 L -24,4 L 24,52 O" />
+			<path stroke="8" cap="round" data="S 24,28 L -24,28 L 24,28 O" />
+		</layer>
+	</glyph>
 </collection>
 
 <collection name="ek.ligature" svg="false" colr="false" auto_generate="false" meta_name="">
-	<selected id="5"/>
+	<selected id="9"/>
 	<glyph id="0" left="-28" right="28">
 		<layer name="Layer" visible="true">
 		</layer>
@@ -419,10 +571,36 @@
 			<path data="S 20,46 L -10,30 L 20,10 L 20,0 L -28,30 L 20,56 L 20,46" />
 		</layer>
 	</glyph>
+	<glyph id="6" left="-28" right="28">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" data="S -24,68 L 24,68 L -24,68 O" />
+			<path stroke="8" cap="round" join="round" data="S 24,52 L 24,4 L 24,4 D 16,8 -24,28 -24,28 D -24,28 16,48 24,52" />
+			<path stroke="8" cap="round" data="S -24,4 L 24,4 L -24,4 O" />
+		</layer>
+	</glyph>
+	<glyph id="7" left="-28" right="28">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" data="S -24,68 L 24,68 L -24,68 O" />
+			<path stroke="8" cap="round" join="round" data="S -24,4 L 24,4 D 16,8 -24,28 -24,28 D -24,28 16,48 24,52 D 3.8,52 24,52 24,52 L 24,4 D 12,4 -12,4 -24,4 O" />
+		</layer>
+	</glyph>
+	<glyph id="8" left="-28" right="28">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" join="round" data="S -24,52 L -24,4 L 24,4 L -24,52 O" />
+			<path stroke="8" cap="round" join="round" data="S 24,52 D 4,12 0,4 0,4 D 0,4 -4,12 -24,52 L 24,52 O" />
+			<path stroke="8" cap="round" data="S -24,68 L 24,68 L -24,68 O" />
+		</layer>
+	</glyph>
+	<glyph id="9" left="-28" right="40">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" data="S -24,68 L 24,68 L -24,68 O" />
+			<path stroke="8" cap="round" join="round" data="S -24,4 L 24,4 L 24,52 D 16,48 -24,28 -24,28 D -24,28 16,8 24,4 L -24,4 O" />
+		</layer>
+	</glyph>
 </collection>
 
 <collection name="es.ligature" svg="false" colr="false" auto_generate="false" meta_name="">
-	<selected id="2"/>
+	<selected id="4"/>
 	<glyph id="0" left="-28" right="28">
 		<layer name="Layer" visible="true">
 		</layer>
@@ -446,10 +624,24 @@
 			<path data="S -28,0 L -28,10 L 2,30 L -28,46 L -28,56 L 20,30 L -28,0" />
 		</layer>
 	</glyph>
+	<glyph id="3" left="-28" right="28">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" data="S -24,68 L 24,68 L -24,68 O" />
+			<path stroke="8" cap="round" data="S 20,4 D 9,4 -24.001,4 -24,4 D -24,15 -24.001,48 -24,48 L -17.63168,45.87723 L 24,32 D 12,25 -24.001,4 -24,4 D -21,9 -12.001,24 -12,24 D -11,24 -8.001,24 -8,24 D -12,19 -24.001,4 -24,4 L -24,4 D -24,4 -24.001,4 -24,4 D -21,13 -12,44 -12,40 D -12,36 -24.001,48 -24,48 D -24,48 -8,12 -24,48 D -40,84 9,15 20,4 O" />
+			<path stroke="8" cap="round" data="S 0,20 L 0,20 L 0,20 O" />
+		</layer>
+	</glyph>
+	<glyph id="4" left="-28" right="40">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" data="S -24,68 L 24,68 L -24,68 O" />
+			<path stroke="8" cap="round" join="round" data="S -24,4 L 24,4 L 24,52 D 14.5242,47.2621 -12,16 -24,4 O" />
+			<path stroke="8" cap="round" data="S -24,52 L 24,28 L -24,4 D -24,16 -24,40 -24,52 O" />
+		</layer>
+	</glyph>
 </collection>
 
 <collection name="et.ligature" svg="false" colr="false" auto_generate="false" meta_name="">
-	<selected id="2"/>
+	<selected id="3"/>
 	<glyph id="0" left="-28" right="28">
 		<layer name="Layer" visible="true">
 		</layer>
@@ -472,19 +664,35 @@
 			<path data="S 10,0 L -4,34 D -16.20525,4.35867 -14.5,8.5 -18,0 L -28,0 L -4,56 L 20,0 L 10,0" />
 		</layer>
 	</glyph>
+	<glyph id="3" left="-28" right="40">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" data="S -24,68 L 24,68 L -24,68 O" />
+			<path stroke="8" cap="round" join="round" data="S 24,4 D 4,44 0,52 0,52 D 0,52 -4,44 -24,4 D -12,4 12,4 24,4 D 24,8 24,44 24,52 D 24,11.75 24,16 24,4 O" />
+		</layer>
+	</glyph>
 </collection>
 
 <collection unicode="U+66" svg="false" colr="false" auto_generate="false" meta_name="">
-	<selected id="1"/>
+	<selected id="3"/>
 	<glyph id="1" left="-28" right="28">
 		<layer name="Layer" visible="true">
 			<path data="S -18,56 L -4,22 L 10,56 L 20,56 L -4,0 L -28,56 L -18,56" />
 		</layer>
 	</glyph>
+	<glyph id="2" left="-26.68667" right="40">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" join="round" data="S -22.68667,52 D -2.68667,12 1.31333,4 1.31333,4 D 1.31333,4 5.31333,12 25.31333,52 L -22.68667,52 O" />
+		</layer>
+	</glyph>
+	<glyph id="3" left="-28" right="40">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" join="round" data="S 24,52 D 20,44 0,4 0,4 L -24,52 L 24,52 O" />
+		</layer>
+	</glyph>
 </collection>
 
 <collection name="fa.ligature" svg="false" colr="false" auto_generate="false" meta_name="">
-	<selected id="1"/>
+	<selected id="2"/>
 	<glyph id="0" left="-28" right="28">
 		<layer name="Layer" visible="true">
 		</layer>
@@ -500,10 +708,16 @@
 			<path data="S -18,56 L -4,22 L 10,56 L 20,56 L -4,0 L -28,56 L -18,56" />
 		</layer>
 	</glyph>
+	<glyph id="2" left="-28" right="40">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" join="round" data="S -24,52 L -24,4 L 24,4 L -24,52 O" />
+			<path stroke="8" cap="round" join="round" data="S 24,52 D 4,12 0,4 0,4 D 0,4 -4,12 -24,52 L 24,52 O" />
+		</layer>
+	</glyph>
 </collection>
 
 <collection name="fe.ligature" svg="false" colr="false" auto_generate="false" meta_name="">
-	<selected id="1"/>
+	<selected id="2"/>
 	<glyph id="0" left="-28" right="28">
 		<layer name="Layer" visible="true">
 		</layer>
@@ -519,10 +733,16 @@
 			<path data="S 20,56 L -4,0 L -28,56 L -18,56 L -4,22 L 10,56 L 20,56" />
 		</layer>
 	</glyph>
+	<glyph id="2" left="-28" right="40">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" join="round" data="S -24,4 L 24,4 L 24,52 L -24,4 O" />
+			<path stroke="8" cap="round" join="round" data="S 24,52 D 4,12 0,4 0,4 D 0,4 -4,12 -24,52 L 24,52 O" />
+		</layer>
+	</glyph>
 </collection>
 
 <collection name="fi.ligature" svg="false" colr="false" auto_generate="false" meta_name="">
-	<selected id="1"/>
+	<selected id="4"/>
 	<glyph id="0" left="-28" right="28">
 		<layer name="Layer" visible="true">
 		</layer>
@@ -537,10 +757,26 @@
 			<path data="S 20,56 L -4,0 L -28,56 L -18,56 D -14.5,47.5 -16.20525,51.64133 -4,22 L 10,56 L 20,56" />
 		</layer>
 	</glyph>
+	<glyph id="2" left="-28" right="40">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" join="round" data="S -24,4 L 24,4 L 24,52 D 12.30193,41.0628 -12,16 -24,4 O" />
+			<path stroke="8" cap="round" join="round" data="S -24,4 D -4,44 0,52 0,52 D 0,52 4,44 24,4 L -24,4 O" />
+		</layer>
+	</glyph>
+	<glyph id="3" left="-28" right="40">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" data="S 24,52 L -24,52 D -4,12 0,4 0,4 D 0,4 4,12 24,52 L 24,4 D 7.7,4 24,40 24,52 O" />
+		</layer>
+	</glyph>
+	<glyph id="4" left="-28" right="40">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" join="round" data="S 24,4 D 24,12 24,44 24,52 D 16,52 -12,52 -24,52 D -4,12 0,4 0,4 D 0,4 4,12 24,52 L 24,4 O" />
+		</layer>
+	</glyph>
 </collection>
 
 <collection name="fo.ligature" svg="false" colr="false" auto_generate="false" meta_name="">
-	<selected id="1"/>
+	<selected id="3"/>
 	<glyph id="0" left="-28" right="28">
 		<layer name="Layer" visible="true">
 		</layer>
@@ -555,10 +791,21 @@
 			<path data="S -18,56 L -4,22 D 8.20525,51.64133 6.5,47.5 10,56 L 20,56 L -4,0 L -28,56 L -18,56" />
 		</layer>
 	</glyph>
+	<glyph id="2" left="-28" right="40">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" join="round" data="S 24,52 L -24,52 L -24,4 L 24,52 O" />
+			<path stroke="8" cap="round" join="round" data="S -24,4 D -4,44 0,52 0,52 D 0,52 4,44 24,4 L -24,4 O" />
+		</layer>
+	</glyph>
+	<glyph id="3" left="-28" right="40">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" join="round" data="S -24,52 D -4,12 0,4 0,4 D 0,4 4,12 24,52 D 12,52 -16,52 -24,52 D -24,44 -24,12 -24,4 L -24,52 O" />
+		</layer>
+	</glyph>
 </collection>
 
 <collection name="fu.ligature" svg="false" colr="false" auto_generate="false" meta_name="">
-	<selected id="1"/>
+	<selected id="2"/>
 	<glyph id="0" left="-28" right="28">
 		<layer name="Layer" visible="true">
 		</layer>
@@ -573,19 +820,35 @@
 			<path data="S -18,56 L -4,22 L 10,56 L 20,56 L -4,0 L -28,56 L -18,56" />
 		</layer>
 	</glyph>
+	<glyph id="2" left="-28" right="40">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" join="round" data="S -24,52 L -24,4 D -7.7,4 -24,40 -24,52 O" />
+			<path stroke="8" cap="round" join="round" data="S 24,52 D 4,12 0,4 0,4 D 0,4 -4,12 -24,52 L 24,52 O" />
+		</layer>
+	</glyph>
 </collection>
 
 <collection unicode="U+69" svg="false" colr="false" auto_generate="false" meta_name="">
-	<selected id="1"/>
+	<selected id="3"/>
 	<glyph id="1" left="-28" right="28">
 		<layer name="Layer" visible="true">
 			<path data="S -28,56 L 20,56 L 20,0 L 12,0 L 12,48 L -28,48 L -28,56" />
 		</layer>
 	</glyph>
+	<glyph id="2" left="-27" right="39.8">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" join="round" data="S -24,52 L 24,52 L 24,4 L -24,52 O" />
+		</layer>
+	</glyph>
+	<glyph id="3" left="-28" right="40">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" join="round" data="S -24,52 L 24,52 L 24,4 L -24,52 O" />
+		</layer>
+	</glyph>
 </collection>
 
 <collection name="if.ligature" svg="false" colr="false" auto_generate="false" meta_name="">
-	<selected id="1"/>
+	<selected id="2"/>
 	<glyph id="0" left="-28" right="28">
 		<layer name="Layer" visible="true">
 		</layer>
@@ -601,10 +864,16 @@
 			<path data="S 20,56 L -4,0 L -28,56 L -18,56 D -14.5,47.5 -16.20525,51.64133 -4,22 L 10,56 L 20,56" />
 		</layer>
 	</glyph>
+	<glyph id="2" left="-28" right="40">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" data="S -24,68 L 24,68 L -24,68 O" />
+			<path stroke="8" cap="round" join="round" data="S 24,4 D 24,12 24,44 24,52 D 16,52 -12,52 -24,52 D -4,12 0,4 0,4 D 0,4 4,12 24,52 L 24,4 O" />
+		</layer>
+	</glyph>
 </collection>
 
 <collection name="ij.ligature" svg="false" colr="false" auto_generate="false" meta_name="">
-	<selected id="1"/>
+	<selected id="2"/>
 	<glyph id="0" left="-28" right="28">
 		<layer name="Layer" visible="true">
 		</layer>
@@ -621,10 +890,17 @@
 			<path data="S 20,30 Q 20,30 20,22 L -28,22 L -28,30 L 20,30" />
 		</layer>
 	</glyph>
+	<glyph id="2" left="-28" right="40">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" data="S -24,68 L 24,68 L -24,68 O" />
+			<path stroke="8" cap="round" join="round" data="S -24,52 L 24,52 L 24,4 L -24,52 O" />
+			<path stroke="8" cap="round" data="S 24,28 L -24,28 L 24,28 O" />
+		</layer>
+	</glyph>
 </collection>
 
 <collection name="ik.ligature" svg="false" colr="false" auto_generate="false" meta_name="">
-	<selected id="3"/>
+	<selected id="4"/>
 	<glyph id="0" left="-28" right="28">
 		<layer name="Layer" visible="true">
 		</layer>
@@ -656,10 +932,16 @@
 			<path data="S 20,0 L -28,26 L 20,56 L 20,46 L -10,26 L 20,10 L 20,0" />
 		</layer>
 	</glyph>
+	<glyph id="4" left="-28" right="40">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" data="S -24,68 L 24,68 L -24,68 O" />
+			<path stroke="8" cap="round" join="round" data="S 24,52 D 16,48 -24,28 -24,28 D -24,28 16,8 24,4 L 24,52 L -24,52 L 24,52 O" />
+		</layer>
+	</glyph>
 </collection>
 
 <collection name="is.ligature" svg="false" colr="false" auto_generate="false" meta_name="">
-	<selected id="3"/>
+	<selected id="4"/>
 	<glyph id="0" left="-28" right="28">
 		<layer name="Layer" visible="true">
 		</layer>
@@ -691,10 +973,16 @@
 			<path data="S -28,0 L -28,10 L 2,30 L -28,46 L -28,56 L 20,30 L -28,0" />
 		</layer>
 	</glyph>
+	<glyph id="4" left="-28" right="40">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" data="S -24,68 L 24,68 L -24,68 O" />
+			<path stroke="8" cap="round" join="round" data="S 24,4 L 24,52 D 12,52 -16,52 -24,52 L 24,28 L -24,4 L 24,4 O" />
+		</layer>
+	</glyph>
 </collection>
 
 <collection name="it.ligature" svg="false" colr="false" auto_generate="false" meta_name="">
-	<selected id="3"/>
+	<selected id="4"/>
 	<glyph id="0" left="-28" right="28">
 		<layer name="Layer" visible="true">
 		</layer>
@@ -726,19 +1014,36 @@
 			<path data="S 10,0 L -4,34 L -18,0 L -28,0 L -4,56 L 20,0 L 10,0" />
 		</layer>
 	</glyph>
+	<glyph id="4" left="-28" right="40">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" join="round" data="S 24,4 L 24,52 L -24,52 L 24,4 O" />
+			<path stroke="8" cap="round" join="round" data="S -24,4 D -4,44 0,52 0,52 D 0,52 4,44 24,4 L -24,4 O" />
+			<path stroke="8" cap="round" data="S -24,68 L 24,68 L -24,68 O" />
+		</layer>
+	</glyph>
 </collection>
 
 <collection unicode="U+6a" svg="false" colr="false" auto_generate="false" meta_name="">
-	<selected id="1"/>
+	<selected id="3"/>
 	<glyph id="1" left="-28" right="28">
 		<layer name="Layer" visible="true">
 			<path data="S -28,26 L -28,34 L 20,34 Q 20,26 20,26 L -28,26" />
 		</layer>
 	</glyph>
+	<glyph id="2" left="-27" right="39.2">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" data="S -23,28 L 25,28 L -23,28 O" />
+		</layer>
+	</glyph>
+	<glyph id="3" left="-28" right="40">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" join="round" data="S 24,28 L -24,28 L 24,28 O" />
+		</layer>
+	</glyph>
 </collection>
 
 <collection name="ja.ligature" svg="false" colr="false" auto_generate="false" meta_name="">
-	<selected id="1"/>
+	<selected id="3"/>
 	<glyph id="0" left="-28" right="28">
 		<layer name="Layer" visible="true">
 		</layer>
@@ -754,10 +1059,22 @@
 			<path data="S -28,26 L -28,34 L 20,34 Q 20,26 20,26 L -28,26" />
 		</layer>
 	</glyph>
+	<glyph id="2" left="-28" right="28">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" join="round" data="S -24,52 L -24,4 L 24,4 L -24,52 O" />
+			<path stroke="8" cap="round" data="S -24,28 L 24,28 L -24,28 O" />
+		</layer>
+	</glyph>
+	<glyph id="3" left="-28" right="40">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" join="round" data="S -24,52 L -24,4 L 24,4 L -24,52 O" />
+			<path stroke="8" cap="round" data="S 24,28 L -24,28 L 24,28 O" />
+		</layer>
+	</glyph>
 </collection>
 
 <collection name="je.ligature" svg="false" colr="false" auto_generate="false" meta_name="">
-	<selected id="1"/>
+	<selected id="3"/>
 	<glyph id="0" left="-28" right="28">
 		<layer name="Layer" visible="true">
 		</layer>
@@ -773,10 +1090,22 @@
 			<path data="S -28,26 L -28,34 L 20,34 Q 20,26 20,26 L -28,26" />
 		</layer>
 	</glyph>
+	<glyph id="2" left="-28" right="28">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" join="round" data="S 24,52 L 24,4 L -24,4 L 24,52 O" />
+			<path stroke="8" cap="round" data="S -24,28 L 24,28 L -24,28 O" />
+		</layer>
+	</glyph>
+	<glyph id="3" left="-28" right="40">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" join="round" data="S -24,4 L 24,4 L 24,52 L -24,4 O" />
+			<path stroke="8" cap="round" data="S 24,28 L -24,28 L 24,28 O" />
+		</layer>
+	</glyph>
 </collection>
 
 <collection name="ji.ligature" svg="false" colr="false" auto_generate="false" meta_name="">
-	<selected id="1"/>
+	<selected id="2"/>
 	<glyph id="0" left="-28" right="28">
 		<layer name="Layer" visible="true">
 		</layer>
@@ -792,10 +1121,16 @@
 			<path data="S 20,30 Q 20,30 20,22 L -28,22 L -28,30 L 20,30" />
 		</layer>
 	</glyph>
+	<glyph id="2" left="-28" right="40">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" join="round" data="S -24,52 L 24,52 L 24,4 L -24,52 O" />
+			<path stroke="8" cap="round" data="S 24,28 L -24,28 L 24,28 O" />
+		</layer>
+	</glyph>
 </collection>
 
 <collection name="jo.ligature" svg="false" colr="false" auto_generate="false" meta_name="">
-	<selected id="1"/>
+	<selected id="2"/>
 	<glyph id="0" left="-28" right="28">
 		<layer name="Layer" visible="true">
 		</layer>
@@ -811,10 +1146,16 @@
 			<path data="S 20,30 Q 20,30 20,22 L -28,22 L -28,30 L 20,30" />
 		</layer>
 	</glyph>
+	<glyph id="2" left="-28" right="40">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" join="round" data="S -24,4 L -24,52 L 24,52 L -24,4 O" />
+			<path stroke="8" cap="round" data="S 24,28 L -24,28 L 24,28 O" />
+		</layer>
+	</glyph>
 </collection>
 
 <collection name="ju.ligature" svg="false" colr="false" auto_generate="false" meta_name="">
-	<selected id="1"/>
+	<selected id="2"/>
 	<glyph id="0" left="-28" right="28">
 		<layer name="Layer" visible="true">
 		</layer>
@@ -829,19 +1170,36 @@
 			<path data="S -28,26 L -28,34 L 20,34 Q 20,26 20,26 L -28,26" />
 		</layer>
 	</glyph>
+	<glyph id="2" left="-28" right="40">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" join="round" data="S -24.07343,4 L -24.07343,52 D -7.77343,52 -24.07343,16 -24.07343,4 O" />
+			<path stroke="8" cap="round" data="S 24,28 L -24,28 L 24,28 O" />
+		</layer>
+	</glyph>
 </collection>
 
 <collection unicode="U+6b" svg="false" colr="false" auto_generate="false" meta_name="">
-	<selected id="1"/>
+	<selected id="3"/>
 	<glyph id="1" left="-28" right="28">
 		<layer name="Layer" visible="true">
 			<path data="S -28,30 L 20,56 L 20,46 L -10,30 L 20,10 L 20,0 L -28,30" />
 		</layer>
 	</glyph>
+	<glyph id="2" left="-27" right="40">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" join="round" data="S 24,52 D 12,46 -24,28 -24,28 D -16,24 12,10 24,4 L 24,52 O" />
+			<path stroke="8" cap="round" data="S 41,80 L 41,80 O" />
+		</layer>
+	</glyph>
+	<glyph id="3" left="-28" right="40">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" join="round" data="S 24,52 D 16,48 -24,28 -24,28 L 24,4 D 24,16 24,40 24,52 O" />
+		</layer>
+	</glyph>
 </collection>
 
 <collection name="ka.ligature" svg="false" colr="false" auto_generate="false" meta_name="">
-	<selected id="2"/>
+	<selected id="3"/>
 	<glyph id="0" left="-28" right="28">
 		<layer name="Layer" visible="true">
 		</layer>
@@ -863,10 +1221,15 @@
 			<path data="S -28,30 L 20,56 L 20,46 L -10,30 L 20,10 L 20,0 L -28,30" />
 		</layer>
 	</glyph>
+	<glyph id="3" left="-28" right="40">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" join="round" data="S -24,52 D -24,48 -24,10 -24,4 L 24,4 D 16,8 -24,28 -24,28 D -24,28 16,48 24,52 L -24,52 O" />
+		</layer>
+	</glyph>
 </collection>
 
 <collection name="ke.ligature" svg="false" colr="false" auto_generate="false" meta_name="">
-	<selected id="2"/>
+	<selected id="3"/>
 	<glyph id="0" left="-28" right="28">
 		<layer name="Layer" visible="true">
 		</layer>
@@ -888,10 +1251,15 @@
 			<path data="S 20,46 L -10,30 L 20,10 L 20,0 L -28,30 L 20,56 L 20,46" />
 		</layer>
 	</glyph>
+	<glyph id="3" left="-28" right="40">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" join="round" data="S -24,4 L 24,4 L 24,52 D 16,48 -24,28 -24,28 D -24,28 16,8 24,4 L -24,4 O" />
+		</layer>
+	</glyph>
 </collection>
 
 <collection name="ki.ligature" svg="false" colr="false" auto_generate="false" meta_name="">
-	<selected id="2"/>
+	<selected id="3"/>
 	<glyph id="0" left="-28" right="28">
 		<layer name="Layer" visible="true">
 		</layer>
@@ -913,10 +1281,15 @@
 			<path data="S 20,0 L -28,26 L 20,56 L 20,46 L -10,26 L 20,10 L 20,0" />
 		</layer>
 	</glyph>
+	<glyph id="3" left="-28" right="40">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" join="round" data="S 24,52 D 16,48 -24,28 -24,28 D -24,28 16,8 24,4 L 24,52 L -24,52 L 24,52 O" />
+		</layer>
+	</glyph>
 </collection>
 
 <collection name="ko.ligature" svg="false" colr="false" auto_generate="false" meta_name="">
-	<selected id="2"/>
+	<selected id="3"/>
 	<glyph id="0" left="-28" right="28">
 		<layer name="Layer" visible="true">
 		</layer>
@@ -938,10 +1311,15 @@
 			<path data="S 20,56 L 20,46 L -10,26 L 20,10 L 20,0 L -28,26 L 20,56" />
 		</layer>
 	</glyph>
+	<glyph id="3" left="-28" right="40">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" join="round" data="S 24,4 D 16,8 -24,28 -24,28 D -24,28 16,48 24,52 D 12,52 -16,52 -24,52 L -24,4 L 24,4 O" />
+		</layer>
+	</glyph>
 </collection>
 
 <collection name="ku.ligature" svg="false" colr="false" auto_generate="false" meta_name="">
-	<selected id="2"/>
+	<selected id="4"/>
 	<glyph id="0" left="-28" right="28">
 		<layer name="Layer" visible="true">
 		</layer>
@@ -963,10 +1341,21 @@
 			<path data="S -28,30 L 20,56 L 20,46 L -10,30 L 20,10 L 20,0 L -28,30" />
 		</layer>
 	</glyph>
+	<glyph id="3" left="-28" right="28">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" join="round" data="S 24,4 D 16,8 -24,28 -24,28 D -24,28 16,48 24,52 L -24,52 L -24,4 L 24,4 O" />
+		</layer>
+	</glyph>
+	<glyph id="4" left="-28" right="40">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" join="round" data="S 24,52 D 24,52 23.99808,51.99904 24,52 D 11.99874,45.99937 -24,28 -24,28 D -16,24 12,10 24,4 L 24,52 O" />
+			<path stroke="8" cap="round" data="S -24,4 L -24,52 L -24,4 O" />
+		</layer>
+	</glyph>
 </collection>
 
 <collection unicode="U+6d" svg="false" colr="false" auto_generate="false" meta_name="">
-	<selected id="8"/>
+	<selected id="10"/>
 	<glyph id="1" left="-28" right="28">
 		<layer name="Layer" visible="true">
 			<path data="S -19.96264,56.02665 Q -19.96264,56.02665 -19.99465,32.02667 Q 28.00531,31.96266 28.00531,31.96266 L 27.99464,23.96266 Q -20.00532,24.02667 -20.00532,24.02667 L -20.03732,0.0267 L -28.03732,0.03736 L -27.96264,56.03732 Q -19.96264,56.02665 -19.96264,56.02665" />
@@ -1007,10 +1396,22 @@
 			<path data="S -8,56 L 0,56 L 0,32 L 20,32 L 20,24 L 0,24 L 0,0 L -8,0 L -8,24 L -28,24 L -28,32 L -8,32 L -8,56" />
 		</layer>
 	</glyph>
+	<glyph id="9" left="-27" right="39.8">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" join="round" data="S 0,52 L 0,4 D -6.93915,17.8783 0,40 0,52 O" />
+			<path stroke="8" cap="round" data="S -24,28 L 24,28 L -24,28 O" />
+		</layer>
+	</glyph>
+	<glyph id="10" left="-28" right="40">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" data="S 0,4 L 0,52 L 0,4 O" />
+			<path stroke="8" cap="round" data="S -24,28 L -24,28 L 24,28 L -24,28 O" />
+		</layer>
+	</glyph>
 </collection>
 
 <collection unicode="U+6f" svg="false" colr="false" auto_generate="false" meta_name="">
-	<selected id="2"/>
+	<selected id="4"/>
 	<glyph id="1" left="-28" right="28">
 		<layer name="Layer" visible="true">
 			<path data="S -51.95012,0 L -51.95012,56 D -37.95012,56 4.04888,56 4.04988,56 L 4.04988,48 L -43.95012,48 L -43.95012,0 L -51.95012,0" />
@@ -1021,10 +1422,20 @@
 			<path data="S -27.99218,-0.057 L -28,55.943 L 20.05572,56 L 20.05684,48 L -19.99888,47.94411 Q -19.99318,-0.05588 -19.99218,-0.05588 L -27.99218,-0.057" />
 		</layer>
 	</glyph>
+	<glyph id="3" left="-28" right="39.2">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" join="round" data="S -24,4 L -24,52 L 24,52 L -24,4 O" />
+		</layer>
+	</glyph>
+	<glyph id="4" left="-28" right="40">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" join="round" data="S 24,52 L -24,52 L -24,4 L 24,52 O" />
+		</layer>
+	</glyph>
 </collection>
 
 <collection name="of.ligature" svg="false" colr="false" auto_generate="false" meta_name="">
-	<selected id="1"/>
+	<selected id="3"/>
 	<glyph id="0" left="-28" right="28">
 		<layer name="Layer" visible="true">
 		</layer>
@@ -1040,10 +1451,23 @@
 			<path data="S -18,56 L -4,22 D 8.20525,51.64133 6.5,47.5 10,56 L 20,56 L -4,0 L -28,56 L -18,56" />
 		</layer>
 	</glyph>
+	<glyph id="2" left="-28" right="40">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" join="round" data="S 24,52 L -24,52 L -24,4 L 24,52 O" />
+			<path stroke="8" cap="round" join="round" data="S -24,4 D -4,44 0,52 0,52 D 0,52 4,44 24,4 L -24,4 O" />
+			<path stroke="8" cap="round" data="S -24,68 L 24,68 L -24,68 O" />
+		</layer>
+	</glyph>
+	<glyph id="3" left="-28" right="40">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" join="round" data="S -24,52 D -4,12 0,4 0,4 D 0,4 4,12 24,52 D 12,52 -16,52 -24,52 D -24,44 -24,12 -24,4 L -24,52 O" />
+			<path stroke="8" cap="round" data="S -24,68 L 24,68 L -24,68 O" />
+		</layer>
+	</glyph>
 </collection>
 
 <collection name="oj.ligature" svg="false" colr="false" auto_generate="false" meta_name="">
-	<selected id="1"/>
+	<selected id="2"/>
 	<glyph id="0" left="-28" right="28">
 		<layer name="Layer" visible="true">
 		</layer>
@@ -1060,10 +1484,17 @@
 			<path data="S 20,30 Q 20,30 20,22 L -28,22 L -28,30 L 20,30" />
 		</layer>
 	</glyph>
+	<glyph id="2" left="-28" right="40">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" join="round" data="S -24,4 L -24,52 L 24,52 L -24,4 O" />
+			<path stroke="8" cap="round" data="S 24,28 L -24,28 L 24,28 O" />
+			<path stroke="8" cap="round" data="S -24,68 L 24,68 L -24,68 O" />
+		</layer>
+	</glyph>
 </collection>
 
 <collection name="ok.ligature" svg="false" colr="false" auto_generate="false" meta_name="">
-	<selected id="2"/>
+	<selected id="3"/>
 	<glyph id="0" left="-28" right="28">
 		<layer name="Layer" visible="true">
 		</layer>
@@ -1087,10 +1518,16 @@
 			<path data="S 20,56 L 20,46 L -10,26 L 20,10 L 20,0 L -28,26 L 20,56" />
 		</layer>
 	</glyph>
+	<glyph id="3" left="-28" right="40">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" data="S -24,68 L 24,68 L -24,68 O" />
+			<path stroke="8" cap="round" join="round" data="S 24,4 D 16,8 -24,28 -24,28 D -24,28 16,48 24,52 L -24,52 L -24,4 L 24,4 O" />
+		</layer>
+	</glyph>
 </collection>
 
 <collection name="os.ligature" svg="false" colr="false" auto_generate="false" meta_name="">
-	<selected id="2"/>
+	<selected id="3"/>
 	<glyph id="0" left="-28" right="28">
 		<layer name="Layer" visible="true">
 		</layer>
@@ -1115,10 +1552,16 @@
 			<path data="S -28,10 L 2,26 L -28,46 L -28,56 L 20,26 L -28,0 L -28,10" />
 		</layer>
 	</glyph>
+	<glyph id="3" left="-28" right="40">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" data="S -24,68 L 24,68 L -24,68 O" />
+			<path stroke="8" cap="round" join="round" data="S 24,52 L -24,52 L -24,4 D -16,8 24,28 24,28 D 24,28 -16,48 -24,52 L 24,52 O" />
+		</layer>
+	</glyph>
 </collection>
 
 <collection name="ot.igature" svg="false" colr="false" auto_generate="false" meta_name="">
-	<selected id="2"/>
+	<selected id="3"/>
 	<glyph id="0" left="-28" right="28">
 		<layer name="Layer" visible="true">
 		</layer>
@@ -1142,20 +1585,33 @@
 			<path data="S -28,0 L -4,56 L 20,0 L 10,0 L -4,34 L -18,0 L -28,0" />
 		</layer>
 	</glyph>
+	<glyph id="3" left="-28" right="40">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" join="round" data="S 24,52 L -24,52 L -24,4 L 24,52 O" />
+			<path stroke="8" cap="round" join="round" data="S -24,4 D -4,44 0,52 0,52 D 0,52 4,44 24,4 L -24,4 O" />
+			<path stroke="8" cap="round" data="S -24,68 L 24,68 L -24,68 O" />
+		</layer>
+	</glyph>
 </collection>
 
 <collection unicode="U+72" svg="false" colr="false" auto_generate="false" meta_name="">
-	<selected id="1"/>
+	<selected id="2"/>
 	<glyph id="1" left="-28" right="28">
 		<layer name="Layer" visible="true">
 			<path data="S -28,50 Q -22,56 -22,56 L 20,6 L 14,0 L -28,50" />
 			<path data="S 14,56 L 20,50 L -22,0 L -28,6 L 14,56" />
 		</layer>
 	</glyph>
+	<glyph id="2" left="-28" right="40">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" join="round" data="S -24,52 D -18,46 18,10 24,4 L -24,52 O" />
+			<path stroke="8" cap="round" data="S 24,52 D 18,46 -18,10 -24,4 L 24,52 O" />
+		</layer>
+	</glyph>
 </collection>
 
 <collection unicode="U+73" svg="false" colr="false" auto_generate="false" meta_name="">
-	<selected id="5"/>
+	<selected id="7"/>
 	<glyph id="0" left="-28" right="28">
 		<layer name="Layer" visible="true">
 			<path data="S -20,56 L -20,34 L 28,34 L 28,26 Q 27.999,26 -20,26 L -20,0 L -28,0 L -28,56 L -20,56" />
@@ -1186,10 +1642,20 @@
 			<path data="S -28,56 L 20,30 L -28,0 L -28,10 L 2,30 L -28,46 L -28,56" />
 		</layer>
 	</glyph>
+	<glyph id="6" left="-27" right="39.8">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" join="round" data="S -24,4 D -12,10 16,24 24,28 D 24,28 -12,46 -24,52 L -24,4 O" />
+		</layer>
+	</glyph>
+	<glyph id="7" left="-28" right="40">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" join="round" data="S -24,52 D -16,48 24,28 24,28 L -24,4 L -24,52 O" />
+		</layer>
+	</glyph>
 </collection>
 
 <collection name="sa.ligature" svg="false" colr="false" auto_generate="false" meta_name="">
-	<selected id="2"/>
+	<selected id="3"/>
 	<glyph id="0" left="-28" right="28">
 		<layer name="Layer" visible="true">
 		</layer>
@@ -1211,10 +1677,15 @@
 			<path data="S -28,56 L 20,30 L -28,0 L -28,10 L 2,30 L -28,46 L -28,56" />
 		</layer>
 	</glyph>
+	<glyph id="3" left="-28" right="40">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" join="round" data="S -24,4 D -16,8 24,28 24,28 D 24,28 -16,48 -24,52 L -24,4 L 24,4 L -24,4 O" />
+		</layer>
+	</glyph>
 </collection>
 
 <collection name="se.ligature" svg="false" colr="false" auto_generate="false" meta_name="">
-	<selected id="2"/>
+	<selected id="3"/>
 	<glyph id="0" left="-28" right="28">
 		<layer name="Layer" visible="true">
 		</layer>
@@ -1236,10 +1707,16 @@
 			<path data="S -28,0 L -28,10 L 2,30 L -28,46 L -28,56 L 20,30 L -28,0" />
 		</layer>
 	</glyph>
+	<glyph id="3" left="-28" right="40">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" join="round" data="S -24,4 L 24,4 L 24,52 L -24,4 O" />
+			<path stroke="8" cap="round" data="S -24,52 L 24,28 L -24,4 L -24,52 O" />
+		</layer>
+	</glyph>
 </collection>
 
 <collection name="si.ligature" svg="false" colr="false" auto_generate="false" meta_name="">
-	<selected id="2"/>
+	<selected id="3"/>
 	<glyph id="0" left="-28" right="28">
 		<layer name="Layer" visible="true">
 		</layer>
@@ -1261,10 +1738,15 @@
 			<path data="S -28,0 L -28,10 L 2,30 L -28,46 L -28,56 L 20,30 L -28,0" />
 		</layer>
 	</glyph>
+	<glyph id="3" left="-28" right="40">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" join="round" data="S 24,4 L 24,52 D 12,52 -16,52 -24,52 L 24,28 L -24,4 L 24,4 O" />
+		</layer>
+	</glyph>
 </collection>
 
 <collection name="so.ligature" svg="false" colr="false" auto_generate="false" meta_name="">
-	<selected id="2"/>
+	<selected id="3"/>
 	<glyph id="0" left="-28" right="28">
 		<layer name="Layer" visible="true">
 		</layer>
@@ -1287,10 +1769,15 @@
 			<path data="S -28,10 L 2,26 L -28,46 L -28,56 L 20,26 L -28,0 L -28,10" />
 		</layer>
 	</glyph>
+	<glyph id="3" left="-28" right="40">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" join="round" data="S 24,52 L -24,52 L -24,4 D -16,8 24,28 24,28 D 24,28 -16,48 -24,52 L 24,52 O" />
+		</layer>
+	</glyph>
 </collection>
 
 <collection name="su.ligature" svg="false" colr="false" auto_generate="false" meta_name="">
-	<selected id="2"/>
+	<selected id="3"/>
 	<glyph id="0" left="-28" right="28">
 		<layer name="Layer" visible="true">
 		</layer>
@@ -1311,10 +1798,15 @@
 			<path data="S -28,56 L 20,30 L -28,0 L -28,10 L 2,30 L -28,46 L -28,56" />
 		</layer>
 	</glyph>
+	<glyph id="3" left="-28" right="40">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" join="round" data="S -24,52 D -24,52 -24,16 -24,4 D -24,12 -24,36 -24,52 D -24,52 24,28 24,28 D 24,28 -16,8 -24,4 D -12,4 -24,40 -24,52 O" />
+		</layer>
+	</glyph>
 </collection>
 
 <collection unicode="U+74" svg="false" colr="false" auto_generate="false" meta_name="">
-	<selected id="6"/>
+	<selected id="8"/>
 	<glyph id="1" left="-28" right="28">
 		<layer name="Layer" visible="true">
 			<path data="S 28,56 L 28,48 Q 27.999,48 4,48 L 4,0 L -4,0 L -4,48 L -28,48 Q -28,56 -28,56 Q -28.001,56 28,56" />
@@ -1345,10 +1837,20 @@
 			<path data="S -28,0 L -4,56 L 20,0 L 10,0 L -4,34 L -18,0 L -28,0" />
 		</layer>
 	</glyph>
+	<glyph id="7" left="-28" right="38.68667">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" join="round" data="S -24,4 D -4,44 0,52 0,52 D 0,52 4,44 24,4 L -24,4 O" />
+		</layer>
+	</glyph>
+	<glyph id="8" left="-28" right="40">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" join="round" data="S -24,4 L 0,52 D 0,52 20,12 24,4 L -24,4 O" />
+		</layer>
+	</glyph>
 </collection>
 
 <collection name="ta.ligature" svg="false" colr="false" auto_generate="false" meta_name="">
-	<selected id="2"/>
+	<selected id="4"/>
 	<glyph id="0" left="-28" right="28">
 		<layer name="Layer" visible="true">
 		</layer>
@@ -1369,10 +1871,21 @@
 			<path data="S -28,0 L -4,56 L 20,0 L 10,0 D 6.5,8.5 8.20525,4.35867 -4,34 L -18,0 L -28,0" />
 		</layer>
 	</glyph>
+	<glyph id="3" left="-28" right="28">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" join="round" data="S -24,52 L -24,4 L 24,4 L -24,52 O" />
+			<path stroke="8" cap="round" join="round" data="S -24,4 D -4,44 0,52 0,52 D 0,52 4,44 24,4 L -24,4 O" />
+		</layer>
+	</glyph>
+	<glyph id="4" left="-28" right="40">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" join="round" data="S -24,4 L 0,52 L 24,4 L -24,4 D -24,8 -24,48 -24,52 L -24,4 O" />
+		</layer>
+	</glyph>
 </collection>
 
 <collection name="te.ligature" svg="false" colr="false" auto_generate="false" meta_name="">
-	<selected id="2"/>
+	<selected id="3"/>
 	<glyph id="0" left="-28" right="28">
 		<layer name="Layer" visible="true">
 		</layer>
@@ -1393,10 +1906,15 @@
 			<path data="S 10,0 L -4,34 D -16.20525,4.35867 -14.5,8.5 -18,0 L -28,0 L -4,56 L 20,0 L 10,0" />
 		</layer>
 	</glyph>
+	<glyph id="3" left="-28" right="40">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" join="round" data="S 24,4 D 4,44 0,52 0,52 D 0,52 -4,44 -24,4 D -12,4 12,4 24,4 D 24,8 24,44 24,52 L 24,4 O" />
+		</layer>
+	</glyph>
 </collection>
 
 <collection name="ti.ligature" svg="false" colr="false" auto_generate="false" meta_name="">
-	<selected id="2"/>
+	<selected id="3"/>
 	<glyph id="0" left="-28" right="28">
 		<layer name="Layer" visible="true">
 		</layer>
@@ -1418,10 +1936,16 @@
 			<path data="S 10,0 L -4,34 L -18,0 L -28,0 L -4,56 L 20,0 L 10,0" />
 		</layer>
 	</glyph>
+	<glyph id="3" left="-28" right="40">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" join="round" data="S 24,4 L 24,52 L -24,52 L 24,4 O" />
+			<path stroke="8" cap="round" join="round" data="S -24,4 D -4,44 0,52 0,52 D 0,52 4,44 24,4 L -24,4 O" />
+		</layer>
+	</glyph>
 </collection>
 
 <collection name="to.ligature" svg="false" colr="false" auto_generate="false" meta_name="">
-	<selected id="2"/>
+	<selected id="3"/>
 	<glyph id="0" left="-28" right="28">
 		<layer name="Layer" visible="true">
 		</layer>
@@ -1443,10 +1967,16 @@
 			<path data="S -28,0 L -4,56 L 20,0 L 10,0 L -4,34 L -18,0 L -28,0" />
 		</layer>
 	</glyph>
+	<glyph id="3" left="-28" right="40">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" join="round" data="S 24,52 L -24,52 L -24,4 L 24,52 O" />
+			<path stroke="8" cap="round" join="round" data="S -24,4 D -4,44 0,52 0,52 D 0,52 4,44 24,4 L -24,4 O" />
+		</layer>
+	</glyph>
 </collection>
 
 <collection name="tu.ligature" svg="false" colr="false" auto_generate="false" meta_name="">
-	<selected id="2"/>
+	<selected id="4"/>
 	<glyph id="0" left="-28" right="28">
 		<layer name="Layer" visible="true">
 		</layer>
@@ -1467,19 +1997,42 @@
 			<path data="S -28,0 L -4,56 L 20,0 L 10,0 D 6.5,8.5 8.20525,4.35867 -4,34 L -18,0 D -20,0 -25.5,0 -28,0" />
 		</layer>
 	</glyph>
+	<glyph id="3" left="-28" right="28">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" join="round" data="S -24,52 L -24,4 L -24,52 O" />
+			<path stroke="8" cap="round" join="round" data="S -24,4 D -4,44 0,52 0,52 D 0,52 4,44 24,4 L -24,4 O" />
+		</layer>
+	</glyph>
+	<glyph id="4" left="-28" right="40">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" join="round" data="S -24,52 L -24,4 D -6.76741,21.23259 -24,40 -24,52 O" />
+			<path stroke="8" cap="round" join="round" data="S -24,4 D -4,44 0,52 0,52 D 0,52 4,44 24,4 L -24,4 O" />
+		</layer>
+	</glyph>
 </collection>
 
 <collection unicode="U+75" svg="false" colr="false" auto_generate="false" meta_name="">
-	<selected id="1"/>
+	<selected id="3"/>
 	<glyph id="1" left="-28" right="28">
 		<layer name="Layer" visible="true">
 			<path data="S -20,0 L -28,0 Q -28.001,0 -28,56 Q -20,56 -20,56 Q -20.001,56 -20,0" />
 		</layer>
 	</glyph>
+	<glyph id="2" left="-27" right="39.8">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" data="S -24,4 L -24,52 L -24,4 O" />
+		</layer>
+	</glyph>
+	<glyph id="3" left="-28" right="52.01347">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" join="round" data="S -24,4 L -24,52 L -24,4 O" />
+			<path stroke="8" cap="round" data="S 24,68 L -24,68 L 24,68 O" />
+		</layer>
+	</glyph>
 </collection>
 
 <collection name="uf.ligature" svg="false" colr="false" auto_generate="false" meta_name="">
-	<selected id="1"/>
+	<selected id="2"/>
 	<glyph id="0" left="-28" right="28">
 		<layer name="Layer" visible="true">
 		</layer>
@@ -1495,6 +2048,13 @@
 			<path data="S -18,56 L -4,22 L 10,56 L 20,56 L -4,0 L -28,56 L -18,56" />
 		</layer>
 	</glyph>
+	<glyph id="2" left="-28" right="40">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" join="round" data="S -24,52 L -24,4 L -24,52 O" />
+			<path stroke="8" cap="round" join="round" data="S 24,52 D 4,12 0,4 0,4 D 0,4 -4,12 -24,52 L 24,52 O" />
+			<path stroke="8" cap="round" data="S -24,68 L 24,68 L -24,68 O" />
+		</layer>
+	</glyph>
 </collection>
 
 <collection name="uj.ligature" svg="false" colr="false" auto_generate="false" meta_name="">
@@ -1507,17 +2067,17 @@
 		<layer name="Layer" visible="true">
 		</layer>
 	</glyph>
-	<glyph id="1" left="-28" right="28">
+	<glyph id="1" left="-28" right="40.07343">
 		<layer name="Layer" visible="true">
-			<path data="S -28,72 L 20,72 L 20,64 L -28,64 L -28,72" />
-			<path data="S -20,56 Q -20.001,48 -20,0 D -20,0 -20,0 -28,0 L -28,56 L -20,56" />
-			<path data="S -28,26 L -28,34 L 20,34 Q 20,26 20,26 L -28,26" />
+			<path stroke="8" cap="round" join="round" data="S -24,52 L -24,4 L -24,52 O" />
+			<path stroke="8" cap="round" data="S 24.07343,28 L -23.92657,28 L 24.07343,28 O" />
+			<path stroke="8" cap="round" data="S -24,68 L 24,68 L -24,68 O" />
 		</layer>
 	</glyph>
 </collection>
 
 <collection name="uk.ligature" svg="false" colr="false" auto_generate="false" meta_name="">
-	<selected id="2"/>
+	<selected id="3"/>
 	<glyph id="0" left="-28" right="28">
 		<layer name="Layer" visible="true">
 		</layer>
@@ -1541,10 +2101,17 @@
 			<path data="S -28,30 L 20,56 L 20,46 L -10,30 L 20,10 L 20,0 L -28,30" />
 		</layer>
 	</glyph>
+	<glyph id="3" left="-28" right="40">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" join="round" data="S 24,52 D 24,52 23.99808,51.99904 24,52 D 11.99874,45.99937 -24,28 -24,28 D -16,24 12,10 24,4 L 24,52 O" />
+			<path stroke="8" cap="round" data="S -24,4 L -24,52 L -24,4 O" />
+			<path stroke="8" cap="round" data="S 24,68 L -24,68 L 24,68 O" />
+		</layer>
+	</glyph>
 </collection>
 
 <collection name="us.ligature" svg="false" colr="false" auto_generate="false" meta_name="">
-	<selected id="2"/>
+	<selected id="3"/>
 	<glyph id="0" left="-28" right="28">
 		<layer name="Layer" visible="true">
 		</layer>
@@ -1567,10 +2134,16 @@
 			<path data="S -28,56 L 20,30 L -28,0 L -28,10 L 2,30 L -28,46 L -28,56" />
 		</layer>
 	</glyph>
+	<glyph id="3" left="-28" right="40">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" join="round" data="S -24,52 D -24,52 -24,16 -24,4 D -24,12 -24,36 -24,52 D -24,52 24,28 24,28 D 24,28 -16,8 -24,4 L -24,52 O" />
+			<path stroke="8" cap="round" data="S 24,68 L -24,68 L 24,68 O" />
+		</layer>
+	</glyph>
 </collection>
 
 <collection name="ut.ligature" svg="false" colr="false" auto_generate="false" meta_name="">
-	<selected id="2"/>
+	<selected id="3"/>
 	<glyph id="0" left="-28" right="28">
 		<layer name="Layer" visible="true">
 		</layer>
@@ -1593,8 +2166,16 @@
 			<path data="S -28,0 L -4,56 L 20,0 L 10,0 D 6.5,8.5 8.20525,4.35867 -4,34 L -18,0 D -20,0 -25.5,0 -28,0" />
 		</layer>
 	</glyph>
+	<glyph id="3" left="-28" right="40">
+		<layer name="Layer" visible="true">
+			<path stroke="8" cap="round" join="round" data="S -24,52 L -24,4 L -24,52 O" />
+			<path stroke="8" cap="round" join="round" data="S -24,4 D -4,44 0,52 0,52 D 0,52 4,44 24,4 L -24,4 O" />
+			<path stroke="8" cap="round" data="S 24,68 L -24,68 L 24,68 O" />
+		</layer>
+	</glyph>
 </collection>
 
+<ligature sequence="a f" replacement="af.ligature" priority="1"/>
 <ligature sequence="a j" replacement="aj.ligature" priority="1"/>
 <ligature sequence="a k" replacement="ak.ligature" priority="1"/>
 <ligature sequence="a s" replacement="as.ligature" priority="1"/>
@@ -1645,18 +2226,5 @@
 <ligature sequence="u k" replacement="uk.ligature" priority="1"/>
 <ligature sequence="u s" replacement="us.ligature" priority="1"/>
 <ligature sequence="u t" replacement="ut.ligature" priority="1"/>
-<ligature sequence="af" replacement="af.ligature" priority="1"/>
-
-<spacingclasses>
-	<spacing first="U+61" next="U+65" type="absolute" />
-	<spacing first="U+61" next="U+69" type="absolute" />
-	<spacing first="U+61" next="U+6b" type="absolute" />
-	<spacing first="U+61" next="U+6d" type="absolute" />
-	<spacing first="U+61" next="U+6f" type="absolute" />
-	<spacing first="U+61" next="U+73" type="absolute" />
-	<spacing first="U+61" next="U+74" type="absolute" />
-	<spacing first="U+61" next="U+75" type="absolute" />
-	<spacing first="U+61" next="U+79" type="absolute" />
-</spacingclasses>
 
 </font>

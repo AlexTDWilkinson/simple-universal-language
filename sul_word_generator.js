@@ -1,7 +1,7 @@
 const fs = require("fs");
 
 const vowels = ["a", "e", "i", "o", "u"];
-const consonants = ["t", "m", "s", "k", "y"];
+const consonants = ["t", "f", "s", "k", "j"];
 
 // for every combination of vowels and cosenants, assign it to a popular word.
 // the word can start with either a vowel or consenant, but the next letter must always be the opposite.
@@ -46,19 +46,11 @@ function lastLetterIsVowelOrConsenant(word) {
 const generateSulWords = () => {
   const newWords = new Set();
 
-  while (newWords.size < 1000000) {
-    let newWord = "";
+  while (newWords.size < 1000100) {
+    let newWord = Math.random() > 0.5 ? randomVowel() : randomConsonant();
 
-    if (Math.random() > 0.5) {
-      newWord += randomConsonant();
-    } else {
-      newWord += randomVowel();
-      if (!newWords.has(newWord)) {
-        newWords.add(newWord);
-      }
-    }
-
-    if (newWords.has(newWord)) {
+    if (!newWords.has(newWord)) {
+      newWords.add(newWord);
       continue;
     }
 
@@ -82,6 +74,14 @@ let words = generateSulWords();
 
 words = [...words];
 
+// delete any single consonant words
+words = words.map((word) =>
+  // if the word is a single letter and it is a consonant, delete it
+  word.length === 1 && !vowels.includes(word) ? "" : word
+);
+
+words = words.filter((w) => w);
+
 words = words.sort((a, b) => {
   if (a < b) {
     return -1;
@@ -93,6 +93,8 @@ words = words.sort((a, b) => {
 });
 
 words = words.sort((a, b) => a.length - b.length);
+
+words = words.slice(0, 1000000);
 
 console.log(words);
 
