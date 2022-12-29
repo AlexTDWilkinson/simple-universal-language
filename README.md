@@ -72,14 +72,14 @@ Here is a picture of all SUL characters.
 
 ## IPA pronunciation
 
-| **CONSONANTS** | Bilabial | Labio­dental-dental | Alveolar | Palatal | Velar |
-| -------------- | -------- | ------------------- | -------- | ------- | ----- | --- | --- | --- | --- | --- |
-| **Pulmonic**   |          |                     |          |         |       |     |     |     |     |     |
-| Plosive        |          | b                   |          |         | t     |     |     |     | k   | g   |
-| Nasal          |          | m                   |          |         |       |     |     |     |     |     |
-| Fricative      |          |                     | f        |         | s     |     |     |     |     |     |
-| Approximant    |          |                     |          |         |       |     |     | j   |     |     |
-| **VOWELS**     | Front    | Back                |          |         |       |     |     |     |
-| Close          | i        |                     |          | u       |       |     |     |     |     |     |
-| Close-mid      | e        |                     |          | o       |       |     |     |     |     |     |
-| Open           | a        |                     |          |         |       |     |     |     |     |     |
+| CONSONANTS  | Bilabial |     | Labio­dental-dental |     | Alveolar |     | Palatal |     | Velar |     |
+| ----------- | :------: | :-: | :-----------------: | :-: | :------: | :-: | :-----: | :-: | :---: | :-: |
+| Pulmonic    |          |     |                     |     |          |     |         |     |       |     |
+| Plosive     |          |  b  |                     |     |    t     |     |         |     |   k   |  g  |
+| Nasal       |          |  m  |                     |     |          |     |         |     |       |     |
+| Fricative   |          |     |          f          |     |    s     |     |         |     |       |     |
+| Approximant |          |     |                     |     |          |     |         |  j  |       |     |
+| VOWELS      |  Front   |     |        Back         |     |          |     |         |     |       |     |
+| Close       |    i     |     |                     |  u  |          |     |         |     |       |     |
+| Close-mid   |    e     |     |                     |  o  |          |     |         |     |       |     |
+| Open        |    a     |     |                     |     |          |     |         |     |       |     |
