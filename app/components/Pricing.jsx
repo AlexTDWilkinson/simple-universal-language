@@ -131,7 +131,7 @@ export function Pricing() {
             features={[
               "The 240-page ebook",
               "Figma icon templates",
-              "Over an hour of screencasts",
+              "Over an hour of videos",
               "Weekly icon teardowns",
               "Community access",
             ]}

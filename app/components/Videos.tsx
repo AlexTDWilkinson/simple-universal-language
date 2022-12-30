@@ -6,28 +6,28 @@ const videos = [
     title: "Getting started with Figma",
     description:
       "Get familiar with the Figma UI, the different tools it offers, and the most important features.",
-    image: "/images/screencasts/setup.svg",
+    image: "/images/videos/setup.svg",
     runtime: { minutes: 16, seconds: 54 },
   },
   {
     title: "Setting up your artboard",
     description:
       "Learn how to create a new artboard and configure your grid and rulers for designing icons.",
-    image: "/images/screencasts/grids.svg",
+    image: "/images/videos/grids.svg",
     runtime: { minutes: 9, seconds: 12 },
   },
   {
     title: "Designing your first icon",
     description:
       "Using basic shapes and boolean operations, learn how to design your own notification icon from scratch.",
-    image: "/images/screencasts/strokes.svg",
+    image: "/images/videos/strokes.svg",
     runtime: { minutes: 23, seconds: 25 },
   },
   {
     title: "Advanced design techniques",
     description:
       "Learn the techniques you need to know to adapt your original icon to a modern duotone style.",
-    image: "/images/screencasts/duotone.svg",
+    image: "/images/videos/duotone.svg",
     runtime: { minutes: 28, seconds: 44 },
   },
 ];
@@ -48,25 +48,25 @@ function PlayIcon(props) {
   );
 }
 
-export function Screencasts() {
+export function Videos() {
   return (
     <section
-      id="screencasts"
-      aria-labelledby="screencasts-title"
+      id="videos"
+      aria-labelledby="videos-title"
       className="scroll-mt-14 py-16 sm:scroll-mt-32 sm:py-20 lg:py-32"
     >
       <Container>
-        <SectionHeading number="2" id="screencasts-title">
-          Screencasts
+        <SectionHeading number="2" id="videos-title">
+          Videos
         </SectionHeading>
         <p className="mt-8 font-display text-4xl font-bold tracking-tight text-slate-900">
           Over an hour of high quality, step-by-step video content to sharpen
           your icon design workflow.
         </p>
         <p className="mt-4 text-lg tracking-tight text-slate-700">
-          Learn how to design your very first icons in a series of screencasts
-          that will teach you everything you need to know to go from beginner to
-          pro in just over an hour.
+          Learn how to design your very first icons in a series of videos that
+          will teach you everything you need to know to go from beginner to pro
+          in just over an hour.
         </p>
       </Container>
       <Container size="lg" className="mt-16">

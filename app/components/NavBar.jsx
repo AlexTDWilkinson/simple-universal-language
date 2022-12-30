@@ -8,14 +8,14 @@ const sections = [
     id: "table-of-contents",
     title: (
       <>
-        <span className="hidden lg:inline">Table of contents</span>
+        <span className="hidden lg:inline">Lessons</span>
         <span className="lg:hidden">Contents</span>
       </>
     ),
   },
-  { id: "screencasts", title: "Screencasts" },
+  { id: "videos", title: "Videos" },
   { id: "resources", title: "Resources" },
-  { id: "pricing", title: "Pricing" },
+
   { id: "author", title: "Author" },
 ];
 

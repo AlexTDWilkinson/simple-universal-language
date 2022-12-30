@@ -1,7 +1,7 @@
 import { Container } from "~/components/Container";
 import { SectionHeading } from "~/components/SectionHeading";
 
-const tableOfContents = {
+const LessonsList = {
   "Getting started": {
     "Getting started": 1,
     "Intro to Figma": 15,
@@ -27,7 +27,7 @@ const tableOfContents = {
   },
 };
 
-export function TableOfContents() {
+export function Lessons() {
   return (
     <section
       id="table-of-contents"
@@ -36,7 +36,7 @@ export function TableOfContents() {
     >
       <Container>
         <SectionHeading number="1" id="table-of-contents-title">
-          Table of contents
+          Lessons
         </SectionHeading>
         <p className="mt-8 font-display text-4xl font-bold tracking-tight text-slate-900">
           Get a look at all of the content covered in the book. Everything you
@@ -49,7 +49,7 @@ export function TableOfContents() {
         </p>
 
         <ol role="list" className="mt-16 space-y-10 sm:space-y-16">
-          {Object.entries(tableOfContents).map(([title, pages]) => (
+          {Object.entries(LessonsList).map(([title, pages]) => (
             <li key={title}>
               <h3 className="font-display text-3xl font-bold tracking-tight text-slate-900">
                 {title}

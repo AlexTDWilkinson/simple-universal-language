@@ -3,13 +3,12 @@ import { Footer } from "~/components/Footer";
 import { FreeChapters } from "~/components/FreeChapters";
 import { Hero } from "~/components/Hero";
 import { Introduction } from "~/components/Introduction";
+import { Lessons } from "~/components/Lessons";
 import { NavBar } from "~/components/NavBar";
-import { Pricing } from "~/components/Pricing";
 import { Resources } from "~/components/Resources";
-import { Screencasts } from "~/components/Screencasts";
-import { TableOfContents } from "~/components/TableOfContents";
 import { Testimonial } from "~/components/Testimonial";
 import { Testimonials } from "~/components/Testimonials";
+import { Videos } from "~/components/Videos";
 
 export default function Home() {
   return (
@@ -26,7 +25,7 @@ export default function Home() {
       <Hero />
       <Introduction />
       <NavBar />
-      <TableOfContents />
+      <Lessons />
       <Testimonial
         id="testimonial-from-tommy-stroman"
         author={{
@@ -36,11 +35,12 @@ export default function Home() {
         }}
       >
         <p>
-          “I didn&apos;t know a thing about icon design until I read this book.
-          Now I can create any icon I need in no time. Great resource!”
+          “It's been incredible talking to people from so many different
+          countries and cultures. I've learned so much about the world, because
+          of SUL.”
         </p>
       </Testimonial>
-      <Screencasts />
+      <Videos />
       <Testimonial
         id="testimonial-from-gerardo-stark"
         author={{
@@ -50,13 +50,13 @@ export default function Home() {
         }}
       >
         <p>
-          “I&apos;ve tried to create my own icons in the past but quickly got
-          frustrated and gave up. Now I sell my own custom icon sets online.”
+          “I only spoke my native language before learning SUL. Now I&apos;m
+          fluent in 3 different languages, but SUL is still my favourite.”
         </p>
       </Testimonial>
       <Resources />
       <FreeChapters />
-      <Pricing />
+
       <Testimonials />
       <Author />
       <Footer />

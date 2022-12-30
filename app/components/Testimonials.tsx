@@ -117,7 +117,7 @@ export function Testimonials() {
     <section className="py-8 sm:py-10 lg:py-16">
       <Container className="text-center">
         <h2 className="font-display text-4xl font-bold tracking-tight text-slate-900">
-          Some kind words from early customers...
+          Some kind words from SUL speakers
         </h2>
         <p className="mt-4 text-lg tracking-tight text-slate-600">
           I worked with a small group of early access customers to make sure all

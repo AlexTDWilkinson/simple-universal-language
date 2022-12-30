@@ -34,19 +34,36 @@ export function Author() {
               Author
             </SectionHeading>
             <p className="mt-8 font-display text-5xl font-extrabold tracking-tight text-slate-900 sm:text-6xl">
-              <span className="block text-blue-600">Mira Lindehoff –</span> Hey
-              there, I'm the author behind ‘Everything Starts as a Square'.
+              <span className="block text-blue-600">Alex Wilkinson -</span> Hey
+              there, I'm the creator of 'Simple Universal Language'.
             </p>
+
             <p className="mt-4 text-lg tracking-tight text-slate-700">
-              I've been designing icons professionally for over a decade and
-              have worked with dozens of the biggest brands to create custom
-              sets for their products. I'm an accomplished conference speaker,
-              and have been teaching icon design workshops every month for the
-              last three years. I've worked with designers of all skill levels
-              and honed my way of teaching to really click for anyone who has
-              the itch to start designing their own icons.
+              I created Simple Universal Language because I believe that
+              everyone should have the opportunity to communicate and connect
+              with others, regardless of their native language or ability to see
+              or hear.{" "}
             </p>
-            <p className="mt-8">
+
+            <p className="mt-4 text-lg tracking-tight text-slate-700">
+              With Simple Universal Language, I wanted to create a language that
+              was accessible and inclusive for everyone, with braille and sign
+              language versions available.
+            </p>
+
+            <p className="mt-4 text-lg tracking-tight text-slate-700">
+              I also wanted to create a language that was easy to learn and
+              could be used to break down language barriers and promote
+              understanding and unity among different cultures.{" "}
+            </p>
+
+            <p className="mt-4 text-lg tracking-tight text-slate-700">
+              I believe that Simple Universal Language has the power to bring
+              people together and create a more connected and understanding
+              world.
+            </p>
+
+            {/* <p className="mt-8">
               <a
                 href="#"
                 className="inline-flex items-center text-base font-medium tracking-tight text-blue-600"
@@ -54,7 +71,7 @@ export function Author() {
                 <TwitterIcon className="h-10 w-10 fill-current" />
                 <span className="ml-4">Follow on Twitter</span>
               </a>
-            </p>
+            </p> */}
           </div>
         </div>
       </div>
