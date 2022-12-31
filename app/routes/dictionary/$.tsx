@@ -121,18 +121,25 @@ export default function Dictionary() {
   return (
     <div className="p-4 ">
       {data.editValues?.word_sul && (
-        <Form method="post" className=" ">
+        <Form method="post" className=" " action="">
           <div className="flex flex-col gap-4 max-w-[1200px]">
             <h1 className="text-xl font-bold">Edit</h1>
 
             {!data?.add_sul_conjoined_word && (
-              <input
-                defaultValue={data?.editValues?.word_sul}
-                type="hidden"
-                name="word_sul"
-                id="word_sul"
-                className="border border-black p-2"
-              />
+              <>
+                <div className="font-bold">Editing word: </div>
+                <div className="flex items-center gap-4">
+                  <span className="text-3xl sul-condensed">
+                    {data?.editValues?.word_sul}
+                  </span>{" "}
+                  -<span className="text-lg">{data?.editValues?.word_sul}</span>
+                </div>
+                <input
+                  type="hidden"
+                  value={data?.editValues?.word_sul}
+                  name="word_sul"
+                />
+              </>
             )}
             {data?.add_sul_conjoined_word && (
               <div className="flex flex-col">
@@ -281,10 +288,6 @@ export default function Dictionary() {
                   disabled={loading}
                   className="inline-flex justify-center rounded-md py-2 px-4 text-base font-semibold  shadow-sm focus:outline-none bg-blue-600 text-white hover:bg-blue-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 active:bg-blue-700 active:text-white/80 disabled:opacity-30 disabled:hover:bg-blue-600"
                   onClick={() => {
-                    // console.log(
-                    //   "speaking",
-                    //   word.word_sul.replace(/\+/gim, "b")
-                    // );
                     speakInSul({
                       sentence: word.word_sul.replace(/\+/gim, "b"),
                     });

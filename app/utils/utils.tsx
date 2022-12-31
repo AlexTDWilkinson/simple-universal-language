@@ -195,13 +195,13 @@ const speakInSul = ({
 };
 
 const getChainLetter = ({ word }: { word: string }) => {
-  if (word.indexOf("r") > -1) {
+  if (word?.indexOf("r") > -1) {
     return "r";
   }
-  if (word.indexOf("m") > -1) {
+  if (word?.indexOf("m") > -1) {
     return "m";
   }
-  if (word.indexOf("b") > -1) {
+  if (word?.indexOf("b") > -1) {
     return "b";
   }
 };
