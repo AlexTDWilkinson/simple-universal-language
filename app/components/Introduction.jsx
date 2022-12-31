@@ -8,8 +8,8 @@ export function Introduction() {
       aria-label="Introduction"
       className="pt-20 pb-16 sm:pb-20 md:pt-36 lg:py-32"
     >
-      <Container className="text-lg tracking-tight text-slate-700">
-        <p className="font-display text-4xl font-bold tracking-tight text-slate-900">
+      <Container className="text-lg  text-slate-700">
+        <p className="font-display text-4xl font-bold  text-slate-900">
           Why learn Simple Universal Language?
         </p>
         <p className="mt-4">
@@ -36,7 +36,7 @@ export function Introduction() {
             </li>
           ))}
         </ul>
-        <p className="mt-8">
+        {/* <p className="mt-8">
           By the end of the book, you'll have all the confidence you need to dig
           in and start creating beautiful icons that can hold their own against
           any of the sets you can find online.
@@ -49,7 +49,7 @@ export function Introduction() {
             Get two free chapters straight to your inbox{" "}
             <span aria-hidden="true">&rarr;</span>
           </a>
-        </p>
+        </p> */}
       </Container>
     </section>
   );

@@ -22,7 +22,7 @@ function Plan({ name, description, price, features, href, featured }) {
       <div className="relative flex flex-col">
         <h3
           className={clsx(
-            "mt-7 text-lg font-semibold tracking-tight",
+            "mt-7 text-lg font-semibold ",
             featured ? "text-white" : "text-slate-900"
           )}
         >
@@ -30,7 +30,7 @@ function Plan({ name, description, price, features, href, featured }) {
         </h3>
         <p
           className={clsx(
-            "mt-2 text-lg tracking-tight",
+            "mt-2 text-lg ",
             featured ? "text-white" : "text-slate-600"
           )}
         >
@@ -47,7 +47,7 @@ function Plan({ name, description, price, features, href, featured }) {
           </span>
           <span
             className={clsx(
-              "ml-1 mt-1 text-7xl tracking-tight",
+              "ml-1 mt-1 text-7xl ",
               featured ? "text-white" : "text-slate-900"
             )}
           >
@@ -58,7 +58,7 @@ function Plan({ name, description, price, features, href, featured }) {
           <ul
             role="list"
             className={clsx(
-              "-my-2 divide-y text-base tracking-tight",
+              "-my-2 divide-y text-base ",
               featured
                 ? "divide-white/10 text-white"
                 : "divide-slate-200 text-slate-900"
@@ -101,10 +101,10 @@ export function Pricing() {
         <SectionHeading number="4" id="pricing-title">
           Pricing
         </SectionHeading>
-        <p className="mt-8 font-display text-5xl font-extrabold tracking-tight text-slate-900 sm:text-6xl">
+        <p className="mt-8 font-display text-5xl font-extrabold  text-slate-900 sm:text-6xl">
           Pick your package
         </p>
-        <p className="mt-4 max-w-xl text-lg tracking-tight text-slate-600">
+        <p className="mt-4 max-w-xl text-lg  text-slate-600">
           “Everything Starts as a Square” is available in two different packages
           so you can pick the one that's right for you.
         </p>

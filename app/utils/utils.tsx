@@ -1,5 +1,11 @@
 import { Howl, Howler } from "howler";
 
+const vowels = ["a", "e", "i", "o", "u"];
+
+const consonants = ["t", "f", "s", "k", "j", "b", "r", "m"];
+
+const brackets = ["(", ")", ">", "<"];
+
 const speakInSul = ({
   sentence,
   rate = 1,
@@ -22,172 +28,122 @@ const speakInSul = ({
     rate: rate,
     volume: volume,
     sprite: {
-      // a	335	378
-      // am	922	413
-      // ay	1524	377
-      // ak	2078	352
-      // at	2589	273
-      // as	3017	376
-      // ab	3555	347
-      // ar	4065	281
-      // e	6381	296
-      // em	6867	416
-      // ey	7509	328
-      // ek	8059	323
-      // et	8626	314
-      // es	9164	403
-      // eb	9795	334
-      // er	10362	285
-      // i	12933	411
-      // im	13647	449
-      // iy	14419	403
-      // ik	15113	320
-      // it	15722	310
-      // is	16293	470
-      // ib	16974	387
-      // ir	17616	352
-      // o	20317	415
-      // om	20982	432
-      // oy	21600	385
-      // ok	22196	308
-      // ot	22720	292
-      // os	23209	321
-      // ob	23721	329
-      // or	24262	255
-      // u	26749	335
-      // um	27381	418
-      // uy	28024	333
-      // uk	28620	294
-      // ut	29164	256
-      // us	29604	311
-      // ub	30113	308
-      // ur	30706	250
-      // y	33476	255
-      // ya	34087	370
-      // ye	34709	365
-      // yi	35356	409
-      // yo	36003	343
-      // yu	36772	254
-      // k	39524	103
-      // ka	39860	326
-      // ke	40440	366
-      // ki	41040	393
-      // ko	41650	313
-      // ku	42190	273
-      // t	43683	32
-      // ta	43923	336
-      // te	44544	302
-      // ti	45122	327
-      // to	45722	342
-      // tu	46297	346
-      // s	48010	211
-      // sa	48423	431
-      // se	49157	379
-      // si	49814	425
-      // so	50522	412
-      // su	51213	345
-      // b	52667	209
-      // ba	53139	348
-      // be	53703	267
-      // bi	54172	333
-      // bo	54698	276
-      // bu	55186	269
-      // r	56809	304
-      // ra	57348	327
-      // re	57905	324
-      // ri	58472	390
-      // ro	59079	304
-      // ru	59630	301
-      // m	60356	402
-      // ma	61046	398
-      // me	61679	384
-      // mi	62282	433
-      // mo	62943	353
-      // mu	63518	347
-
-      a: [335, 378],
-      am: [922, 413],
-      ay: [1524, 377],
-      ak: [2078, 352],
-      at: [2589, 273],
-      as: [3017, 376],
-      ab: [3555, 347],
-      ar: [4065, 281],
-      e: [6381, 296],
-      em: [6867, 416],
-      ey: [7509, 328],
-      ek: [8059, 323],
-      et: [8626, 314],
-      es: [9164, 403],
-      eb: [9795, 334],
-      er: [10362, 285],
-      i: [12933, 411],
-      im: [13647, 449],
-      iy: [14419, 403],
-      ik: [15113, 320],
-      it: [15722, 310],
-      is: [16293, 470],
-      ib: [16974, 387],
-      ir: [17616, 352],
-      o: [20317, 415],
-      om: [20982, 432],
-      oy: [21600, 385],
-      ok: [22196, 308],
-      ot: [22720, 292],
-      os: [23209, 321],
-      ob: [23721, 329],
-      or: [24262, 255],
-      u: [26749, 335],
-      um: [27381, 418],
-      uy: [28024, 333],
-      uk: [28620, 294],
-      ut: [29164, 256],
-      us: [29604, 311],
-      ub: [30113, 308],
-      ur: [30706, 250],
-      y: [33476, 255],
-      ya: [34087, 370],
-      ye: [34709, 365],
-      yi: [35356, 409],
-      yo: [36003, 343],
-      yu: [36772, 254],
-      k: [39524, 103],
-      ka: [39860, 326],
-      ke: [40440, 366],
-      ki: [41040, 393],
-      ko: [41650, 313],
-      ku: [42190, 273],
-      t: [43683, 32],
-      ta: [43923, 336],
-      te: [44544, 302],
-      ti: [45122, 327],
-      to: [45722, 342],
-      tu: [46297, 346],
-      s: [48010, 211],
-      sa: [48423, 431],
-      se: [49157, 379],
-      si: [49814, 425],
-      so: [50522, 412],
-      su: [51213, 345],
-      b: [52667, 209],
-      ba: [53139, 348],
-      be: [53703, 267],
-      bi: [54172, 333],
-      bo: [54698, 276],
-      bu: [55186, 269],
-      r: [56809, 304],
-      ra: [57348, 327],
-      re: [57905, 324],
-      ri: [58472, 390],
-      ro: [59079, 304],
-      ru: [59630, 301],
-      m: [60356, 402],
-      ma: [61046, 398],
-      me: [61679, 384],
-      mi: [62282, 433],
-      mo: [62943, 353],
-      mu: [63518, 347],
-      space: [24625, 300],
+      a: [0 * 1000, 0.374 * 1000],
+      at: [0.53 * 1000, 0.328 * 1000],
+      af: [1 * 1000, 0.411 * 1000],
+      as: [1.605 * 1000, 0.411 * 1000],
+      ak: [2.206 * 1000, 0.232 * 1000],
+      aj: [2.569 * 1000, 0.349 * 1000],
+      ab: [3.069 * 1000, 0.33 * 1000],
+      ar: [3.485 * 1000, 0.293 * 1000],
+      am: [3.935 * 1000, 0.279 * 1000],
+      e: [4.562 * 1000, 0.239 * 1000],
+      et: [4.927 * 1000, 0.18 * 1000],
+      ef: [5.203 * 1000, 0.196 * 1000],
+      es: [5.506 * 1000, 0.289 * 1000],
+      ek: [5.83 * 1000, 0.317 * 1000],
+      ej: [6.187 * 1000, 0.296 * 1000],
+      eb: [6.604 * 1000, 0.227 * 1000],
+      er: [6.885 * 1000, 0.262 * 1000],
+      em: [7.217 * 1000, 0.333 * 1000],
+      i: [8.139 * 1000, 0.217 * 1000],
+      it: [8.508 * 1000, 0.256 * 1000],
+      if: [8.844 * 1000, 0.328 * 1000],
+      is: [9.226 * 1000, 0.331 * 1000],
+      ik: [9.687 * 1000, 0.25 * 1000],
+      ij: [10.041 * 1000, 0.303 * 1000],
+      ib: [10.413 * 1000, 0.247 * 1000],
+      im: [10.844 * 1000, 0.223 * 1000],
+      o: [11.589 * 1000, 0.257 * 1000],
+      ot: [11.987 * 1000, 0.277 * 1000],
+      of: [12.424 * 1000, 0.294 * 1000],
+      os: [12.881 * 1000, 0.332 * 1000],
+      ok: [13.382 * 1000, 0.228 * 1000],
+      oj: [13.738 * 1000, 0.253 * 1000],
+      ob: [14.147 * 1000, 0.317 * 1000],
+      or: [14.58 * 1000, 0.263 * 1000],
+      om: [14.971 * 1000, 0.275 * 1000],
+      u: [15.605 * 1000, 0.217 * 1000],
+      ut: [15.965 * 1000, 0.19 * 1000],
+      uf: [16.261 * 1000, 0.31 * 1000],
+      us: [16.662 * 1000, 0.285 * 1000],
+      uk: [17.082 * 1000, 0.267 * 1000],
+      uj: [17.46 * 1000, 0.347 * 1000],
+      ub: [17.92 * 1000, 0.312 * 1000],
+      ur: [18.326 * 1000, 0.247 * 1000],
+      um: [18.691 * 1000, 0.324 * 1000],
+      t: [19.499 * 1000, 0.056 * 1000],
+      ta: [19.622 * 1000, 0.262 * 1000],
+      te: [19.912 * 1000, 0.24 * 1000],
+      ti: [20.175 * 1000, 0.207 * 1000],
+      to: [20.423 * 1000, 0.251 * 1000],
+      tu: [20.708 * 1000, 0.232 * 1000],
+      tr: [20.993 * 1000, 0.226 * 1000],
+      tm: [21.255 * 1000, 0.232 * 1000],
+      tb: [21.512 * 1000, 0.201 * 1000],
+      f: [22.737 * 1000, 0.218 * 1000],
+      fa: [23.031 * 1000, 0.326 * 1000],
+      fe: [23.41 * 1000, 0.26 * 1000],
+      fi: [23.706 * 1000, 0.273 * 1000],
+      fo: [24.047 * 1000, 0.326 * 1000],
+      fu: [24.402 * 1000, 0.34 * 1000],
+      fr: [24.777 * 1000, 0.313 * 1000],
+      fm: [25.122 * 1000, 0.355 * 1000],
+      fb: [25.512 * 1000, 0.323 * 1000],
+      s: [27.02 * 1000, 0.199 * 1000],
+      sa: [27.316 * 1000, 0.271 * 1000],
+      se: [27.659 * 1000, 0.274 * 1000],
+      si: [28 * 1000, 0.284 * 1000],
+      so: [28.324 * 1000, 0.301 * 1000],
+      su: [28.69 * 1000, 0.314 * 1000],
+      sr: [29.061 * 1000, 0.274 * 1000],
+      sm: [29.382 * 1000, 0.296 * 1000],
+      sb: [29.736 * 1000, 0.284 * 1000],
+      k: [31.037 * 1000, 0.107 * 1000],
+      ka: [31.201 * 1000, 0.274 * 1000],
+      ke: [31.55 * 1000, 0.258 * 1000],
+      ki: [31.897 * 1000, 0.211 * 1000],
+      ko: [32.147 * 1000, 0.24 * 1000],
+      ku: [32.418 * 1000, 0.268 * 1000],
+      kr: [32.726 * 1000, 0.214 * 1000],
+      km: [32.965 * 1000, 0.224 * 1000],
+      kb: [33.216 * 1000, 0.279 * 1000],
+      j: [34.305 * 1000, 0.21 * 1000],
+      ja: [34.654 * 1000, 0.294 * 1000],
+      je: [35.155 * 1000, 0.333 * 1000],
+      ji: [35.596 * 1000, 0.368 * 1000],
+      jo: [36.209 * 1000, 0.314 * 1000],
+      ju: [36.679 * 1000, 0.307 * 1000],
+      jr: [37.161 * 1000, 0.298 * 1000],
+      jm: [37.589 * 1000, 0.322 * 1000],
+      jb: [38.015 * 1000, 0.277 * 1000],
+      b: [38.777 * 1000, 0.246 * 1000],
+      ba: [39.041 * 1000, 0.318 * 1000],
+      be: [39.379 * 1000, 0.264 * 1000],
+      bi: [39.672 * 1000, 0.278 * 1000],
+      bo: [39.97 * 1000, 0.244 * 1000],
+      bu: [40.234 * 1000, 0.253 * 1000],
+      br: [40.537 * 1000, 0.22 * 1000],
+      bm: [40.801 * 1000, 0.258 * 1000],
+      r: [42.159 * 1000, 0.297 * 1000],
+      ra: [42.566 * 1000, 0.34 * 1000],
+      re: [43.046 * 1000, 0.304 * 1000],
+      ri: [43.404 * 1000, 0.312 * 1000],
+      ro: [43.859 * 1000, 0.323 * 1000],
+      ru: [44.305 * 1000, 0.379 * 1000],
+      rm: [44.789 * 1000, 0.32 * 1000],
+      rb: [45.203 * 1000, 0.203 * 1000],
+      m: [46.164 * 1000, 0.253 * 1000],
+      ma: [46.544 * 1000, 0.309 * 1000],
+      me: [46.921 * 1000, 0.363 * 1000],
+      mi: [47.392 * 1000, 0.302 * 1000],
+      mo: [47.824 * 1000, 0.34 * 1000],
+      mu: [48.248 * 1000, 0.363 * 1000],
+      mr: [48.758 * 1000, 0.295 * 1000],
+      mb: [49.225 * 1000, 0.3 * 1000],
+      click: [49.776 * 1000, 0.301 * 1000],
+      space: [25.835 * 1000, 0.3 * 1000],
+      period: [25.835 * 1000, 0.9 * 1000],
     },
     onend: () =>
       speakInSul({
@@ -197,234 +153,48 @@ const speakInSul = ({
       }),
   });
 
-  let syllable = sentence?.[1] ? sentence[0] + sentence[1] : sentence[0];
+  let syllable = sentence?.[1] ? sentence?.[0] + sentence?.[1] : sentence?.[0];
 
-  remainingSentence = sentence?.slice(syllable?.length) || "";
-
-  if (syllable[0] === " ") {
-    sound.play("space");
-    remainingSentence = sentence?.slice(1) || "";
-  } else if (
-    syllable[0] === "-" &&
-    syllable !== "-a" &&
-    syllable !== "-e" &&
-    syllable !== "-i" &&
-    syllable !== "-o" &&
-    syllable !== "-u"
+  if (
+    ![...consonants, ...vowels, ...brackets, " ", "."].includes(
+      syllable?.[0]
+    ) &&
+    ![...consonants, ...vowels, ...brackets, " ", "."].includes(syllable?.[1])
   ) {
-    sound.play("r");
-    remainingSentence = sentence?.slice(1) || "";
-  } else if (syllable === "a ") {
-    sound.play("a");
-    remainingSentence = sentence?.slice(1) || "";
-  } else if (syllable === "a") {
-    sound.play("a");
-  } else if (syllable === "am") {
-    sound.play("am");
-  } else if (syllable === "ay") {
-    sound.play("ay");
-  } else if (syllable === "ak") {
-    sound.play("ak");
-  } else if (syllable === "at") {
-    sound.play("at");
-  } else if (syllable === "as") {
-    sound.play("as");
-  } else if (syllable === "ab") {
-    sound.play("ab");
-  } else if (syllable === "a-") {
-    sound.play("ar");
-  } else if (syllable === "e ") {
-    sound.play("e");
-    remainingSentence = sentence?.slice(1) || "";
-  } else if (syllable === "e") {
-    sound.play("e");
-  } else if (syllable === "em") {
-    sound.play("em");
-  } else if (syllable === "ey") {
-    sound.play("ey");
-  } else if (syllable === "ek") {
-    sound.play("ek");
-  } else if (syllable === "et") {
-    sound.play("et");
-  } else if (syllable === "es") {
-    sound.play("es");
-  } else if (syllable === "eb") {
-    sound.play("eb");
-  } else if (syllable === "e-") {
-    sound.play("er");
-  } else if (syllable === "i ") {
-    sound.play("i");
-    remainingSentence = sentence?.slice(1) || "";
-  } else if (syllable === "i") {
-    sound.play("i");
-  } else if (syllable === "im") {
-    sound.play("im");
-  } else if (syllable === "iy") {
-    sound.play("iy");
-  } else if (syllable === "ik") {
-    sound.play("ik");
-  } else if (syllable === "it") {
-    sound.play("it");
-  } else if (syllable === "is") {
-    sound.play("is");
-  } else if (syllable === "ib") {
-    sound.play("ib");
-  } else if (syllable === "i-") {
-    sound.play("ir");
-  } else if (syllable === "o ") {
-    sound.play("o");
-    remainingSentence = sentence?.slice(1) || "";
-  } else if (syllable === "o") {
-    sound.play("o");
-  } else if (syllable === "om") {
-    sound.play("om");
-  } else if (syllable === "oy") {
-    sound.play("oy");
-  } else if (syllable === "ok") {
-    sound.play("ok");
-  } else if (syllable === "ot") {
-    sound.play("ot");
-  } else if (syllable === "os") {
-    sound.play("os");
-  } else if (syllable === "ob") {
-    sound.play("ob");
-  } else if (syllable === "o-") {
-    sound.play("or");
-  } else if (syllable === "u ") {
-    sound.play("u");
-    remainingSentence = sentence?.slice(1) || "";
-  } else if (syllable === "u") {
-    sound.play("u");
-  } else if (syllable === "um") {
-    sound.play("um");
-  } else if (syllable === "uy") {
-    sound.play("uy");
-  } else if (syllable === "uk") {
-    sound.play("uk");
-  } else if (syllable === "ut") {
-    sound.play("ut");
-  } else if (syllable === "us") {
-    sound.play("us");
-  } else if (syllable === "ub") {
-    sound.play("ub");
-  } else if (syllable === "u-") {
-    sound.play("ur");
-  } else if (syllable === "y ") {
-    sound.play("y");
-    remainingSentence = sentence?.slice(1) || "";
-  } else if (syllable === "y") {
-    sound.play("y");
-  } else if (syllable === "ya") {
-    sound.play("ya");
-  } else if (syllable === "ye") {
-    sound.play("ye");
-  } else if (syllable === "yi") {
-    sound.play("yi");
-  } else if (syllable === "yo") {
-    sound.play("yo");
-  } else if (syllable === "yu") {
-    sound.play("yu");
-  } else if (syllable === "k ") {
-    sound.play("k");
-    remainingSentence = sentence?.slice(1) || "";
-  } else if (syllable === "k") {
-    sound.play("k");
-  } else if (syllable === "ka") {
-    sound.play("ka");
-  } else if (syllable === "ke") {
-    sound.play("ke");
-  } else if (syllable === "ki") {
-    sound.play("ki");
-  } else if (syllable === "ko") {
-    sound.play("ko");
-  } else if (syllable === "ku") {
-    sound.play("ku");
-  } else if (syllable === "t ") {
-    sound.play("t");
-    remainingSentence = sentence?.slice(1) || "";
-  } else if (syllable === "t") {
-    sound.play("t");
-  } else if (syllable === "ta") {
-    sound.play("ta");
-  } else if (syllable === "te") {
-    sound.play("te");
-  } else if (syllable === "ti") {
-    sound.play("ti");
-  } else if (syllable === "to") {
-    sound.play("to");
-  } else if (syllable === "tu") {
-    sound.play("tu");
-  } else if (syllable === "s ") {
-    sound.play("s");
-    remainingSentence = sentence?.slice(1) || "";
-  } else if (syllable === "s") {
-    sound.play("s");
-  } else if (syllable === "sa") {
-    sound.play("sa");
-  } else if (syllable === "se") {
-    sound.play("se");
-  } else if (syllable === "si") {
-    sound.play("si");
-  } else if (syllable === "so") {
-    sound.play("so");
-  } else if (syllable === "su") {
-    sound.play("su");
-  } else if (syllable === "m ") {
-    sound.play("m");
-    remainingSentence = sentence?.slice(1) || "";
-  } else if (syllable === "m") {
-    sound.play("m");
-  } else if (syllable === "ma") {
-    sound.play("ma");
-  } else if (syllable === "me") {
-    sound.play("me");
-  } else if (syllable === "mi") {
-    sound.play("mi");
-  } else if (syllable === "mo") {
-    sound.play("mo");
-  } else if (syllable === "mu") {
-    sound.play("mu");
-  } else if (syllable === "b ") {
-    sound.play("b");
-    remainingSentence = sentence?.slice(1) || "";
-  } else if (syllable === "b") {
-    sound.play("b");
-  } else if (syllable === "ba") {
-    sound.play("ba");
-  } else if (syllable === "be") {
-    sound.play("be");
-  } else if (syllable === "bi") {
-    sound.play("bi");
-  } else if (syllable === "bo") {
-    sound.play("bo");
-  } else if (syllable === "bu") {
-    sound.play("bu");
-  } else if (syllable === "bk") {
-    sound.play("b");
-    remainingSentence = sentence?.slice(1) || "";
-  } else if (syllable === "bt") {
-    sound.play("b");
-    remainingSentence = sentence?.slice(1) || "";
-  } else if (syllable === "bs") {
-    sound.play("b");
-    remainingSentence = sentence?.slice(1) || "";
-  } else if (syllable === "bm") {
-    sound.play("b");
-    remainingSentence = sentence?.slice(1) || "";
-  } else if (syllable === "-a") {
-    sound.play("ra");
-  } else if (syllable === "-e") {
-    sound.play("re");
-  } else if (syllable === "-i") {
-    sound.play("ri");
-  } else if (syllable === "-o") {
-    sound.play("ro");
-  } else if (syllable === "-u") {
-    sound.play("ru");
+    throw new Error("Invalid character");
   }
 
-  console.log("Syllable", syllable);
-  console.log("remainingSentence", remainingSentence);
+  console.log("syllable", syllable);
+
+  if (syllable?.[0] === ".") {
+    sound.play("period");
+    remainingSentence = sentence?.slice(1) || "";
+  } else if (syllable?.[0] === " ") {
+    sound.play("space");
+    remainingSentence = sentence?.slice(1) || "";
+  } else if (syllable?.[1] === " ") {
+    sound.play(syllable?.[0]);
+    remainingSentence = sentence?.slice(1) || "";
+  } else if (brackets.includes(syllable?.[0])) {
+    sound.play("click");
+    remainingSentence = sentence?.slice(1) || "";
+  } else if (brackets.includes(syllable?.[1])) {
+    sound.play(syllable?.[0]);
+    remainingSentence = sentence?.slice(1) || "";
+  } else if (
+    (vowels.includes(syllable?.[0]) && consonants.includes(syllable?.[1])) ||
+    (consonants.includes(syllable?.[0]) && vowels.includes(syllable?.[1]))
+  ) {
+    sound.play(syllable?.[0] + syllable?.[1]);
+    remainingSentence = sentence?.slice(2) || "";
+  } else {
+    console.log("SINGLE MATCH");
+    sound.play(syllable?.[0]);
+    remainingSentence = sentence?.slice(1) || "";
+  }
+
+  // console.log("Syllable", `"${syllable}"`);
+  // console.log("remainingSentence", remainingSentence);
 };
 
 const getChainLetter = ({ word }: { word: string }) => {
@@ -440,103 +210,3 @@ const getChainLetter = ({ word }: { word: string }) => {
 };
 
 export { speakInSul, getChainLetter };
-
-// all phonetics
-
-/*
-
-a
-am
-ay
-ak
-at
-as
-ab
-ar
-
-e
-em
-ey
-ek
-et
-es
-eb
-er
-
-i
-im
-iy
-ik
-it
-is
-ib
-ir
-
-o
-om
-oy
-ok
-ot
-os
-ob
-or
-
-u
-um
-uy
-uk
-ut
-us
-ub
-ur
-
-m
-ma
-me
-mi
-mo
-mu
-
-y
-ya
-ye
-yi
-yo
-yu
-
-k
-ka
-ke
-ki
-ko
-ku
-
-t
-ta
-te
-ti
-to
-tu
-
-s
-sa
-se
-si
-so
-su
-
-b // never pronounced by self anyway?
-ba
-be
-bi
-bo
-bu
-
-r // never pronounced by self anyway?
-ra
-re
-ri
-ro
-ru
-
-*/

@@ -87,7 +87,7 @@ function Testimonial({ author, children }) {
   return (
     <figure className="rounded-4xl p-8 shadow-md ring-1 ring-slate-900/5">
       <blockquote>
-        <p className="text-lg tracking-tight text-slate-900 before:content-['“'] after:content-['”']">
+        <p className="text-lg  text-slate-900 before:content-['“'] after:content-['”']">
           {children}
         </p>
       </blockquote>
@@ -102,7 +102,7 @@ function Testimonial({ author, children }) {
           />
         </div>
         <div className="ml-4">
-          <div className="text-base font-medium leading-6 tracking-tight text-slate-900">
+          <div className="text-base font-medium leading-6  text-slate-900">
             {author.name}
           </div>
           <div className="mt-1 text-sm text-slate-600">{author.role}</div>
@@ -116,10 +116,10 @@ export function Testimonials() {
   return (
     <section className="py-8 sm:py-10 lg:py-16">
       <Container className="text-center">
-        <h2 className="font-display text-4xl font-bold tracking-tight text-slate-900">
+        <h2 className="font-display text-4xl font-bold  text-slate-900">
           Some kind words from SUL speakers
         </h2>
-        <p className="mt-4 text-lg tracking-tight text-slate-600">
+        <p className="mt-4 text-lg  text-slate-600">
           I worked with a small group of early access customers to make sure all
           of the content in the book was exactly what they needed. Hears what
           they had to say about the finished product.

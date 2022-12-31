@@ -33,31 +33,31 @@ export function Author() {
             <SectionHeading number="5" id="author-title">
               Author
             </SectionHeading>
-            <p className="mt-8 font-display text-5xl font-extrabold tracking-tight text-slate-900 sm:text-6xl">
+            <p className="mt-8 font-display text-5xl font-extrabold  text-slate-900 sm:text-6xl">
               <span className="block text-blue-600">Alex Wilkinson -</span> Hey
               there, I'm the creator of 'Simple Universal Language'.
             </p>
 
-            <p className="mt-4 text-lg tracking-tight text-slate-700">
+            <p className="mt-12 text-lg  text-slate-700">
               I created Simple Universal Language because I believe that
               everyone should have the opportunity to communicate and connect
               with others, regardless of their native language or ability to see
               or hear.{" "}
             </p>
 
-            <p className="mt-4 text-lg tracking-tight text-slate-700">
+            <p className="mt-4 text-lg  text-slate-700">
               With Simple Universal Language, I wanted to create a language that
               was accessible and inclusive for everyone, with braille and sign
               language versions available.
             </p>
 
-            <p className="mt-4 text-lg tracking-tight text-slate-700">
+            <p className="mt-4 text-lg  text-slate-700">
               I also wanted to create a language that was easy to learn and
               could be used to break down language barriers and promote
               understanding and unity among different cultures.{" "}
             </p>
 
-            <p className="mt-4 text-lg tracking-tight text-slate-700">
+            <p className="mt-4 text-lg  text-slate-700">
               I believe that Simple Universal Language has the power to bring
               people together and create a more connected and understanding
               world.
@@ -66,7 +66,7 @@ export function Author() {
             {/* <p className="mt-8">
               <a
                 href="#"
-                className="inline-flex items-center text-base font-medium tracking-tight text-blue-600"
+                className="inline-flex items-center text-base font-medium  text-blue-600"
               >
                 <TwitterIcon className="h-10 w-10 fill-current" />
                 <span className="ml-4">Follow on Twitter</span>

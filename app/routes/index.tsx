@@ -36,8 +36,8 @@ export default function Home() {
       >
         <p>
           “It's been incredible talking to people from so many different
-          countries and cultures. I've learned so much about the world, because
-          of SUL.”
+          countries and cultures. I've learned so much about the world thanks to
+          SUL.”
         </p>
       </Testimonial>
       <Videos />

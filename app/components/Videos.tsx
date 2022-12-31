@@ -59,11 +59,11 @@ export function Videos() {
         <SectionHeading number="2" id="videos-title">
           Videos
         </SectionHeading>
-        <p className="mt-8 font-display text-4xl font-bold tracking-tight text-slate-900">
+        <p className="mt-8 font-display text-4xl font-bold  text-slate-900">
           Over an hour of high quality, step-by-step video content to sharpen
           your icon design workflow.
         </p>
-        <p className="mt-4 text-lg tracking-tight text-slate-700">
+        <p className="mt-4 text-lg  text-slate-700">
           Learn how to design your very first icons in a series of videos that
           will teach you everything you need to know to go from beginner to pro
           in just over an hour.
@@ -98,7 +98,7 @@ export function Videos() {
                   </time>
                 </div>
               </div>
-              <h3 className="mt-8 text-base font-medium tracking-tight text-slate-900 before:mb-2 before:block before:font-mono before:text-sm before:text-slate-500 before:content-[counter(video,decimal-leading-zero)]">
+              <h3 className="mt-8 text-base font-medium  text-slate-900 before:mb-2 before:block before:font-mono before:text-sm before:text-slate-500 before:content-[counter(video,decimal-leading-zero)]">
                 {video.title}
               </h3>
               <p className="mt-2 text-sm text-slate-600">{video.description}</p>

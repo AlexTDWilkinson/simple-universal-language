@@ -54,8 +54,11 @@ export function Hero() {
               talk to anyone in the world.
             </p>
             <div className="mt-8 flex gap-4">
+              <Button href="/lessons/intro" color="blue">
+                Learn by reading
+              </Button>
               <Button href="/learn" color="blue">
-                Start learning now
+                Learn by doing
               </Button>
               <Button href="/chat" variant="outline" color="blue">
                 Live SUL chat

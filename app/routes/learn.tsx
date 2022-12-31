@@ -155,12 +155,12 @@ export default function Learn() {
                 t
               </button>
               <button
-                onClick={() => clickLetter("m")}
+                onClick={() => clickLetter("f")}
                 className={`sul  border-2 border-black rounded-md max-w-fit  py-4 px-8 text-black font-bold text-[1.7em] ${
-                  letterMistake === "m" ? "bg-red-400" : ""
-                } ${letterSuccess === "m" ? "bg-green-400" : ""}`}
+                  letterMistake === "f" ? "bg-red-400" : ""
+                } ${letterSuccess === "f" ? "bg-green-400" : ""}`}
               >
-                m
+                f
               </button>
 
               <button
@@ -184,11 +184,39 @@ export default function Learn() {
               <button
                 onClick={() => clickLetter("y")}
                 className={`sul  border-2 border-black rounded-md max-w-fit  py-4 px-8 text-black font-bold text-[1.7em] ${
-                  letterMistake === "y" ? "bg-red-400" : ""
-                } ${letterSuccess === "y" ? "bg-green-400" : ""}`}
+                  letterMistake === "j" ? "bg-red-400" : ""
+                } ${letterSuccess === "j" ? "bg-green-400" : ""}`}
               >
-                y
+                j
               </button>
+            </div>
+
+            <div className="flex gap-4">
+              <button
+                onClick={() => clickLetter("t")}
+                className={`sul  border-2 border-black rounded-md max-w-fit  py-4 px-8 text-black font-bold text-[1.7em] ${
+                  letterMistake === "r" ? "bg-red-400" : ""
+                } ${letterSuccess === "r" ? "bg-green-400" : ""}`}
+              >
+                r
+              </button>
+              <button
+                onClick={() => clickLetter("m")}
+                className={`sul  border-2 border-black rounded-md max-w-fit  py-4 px-8 text-black font-bold text-[1.7em] ${
+                  letterMistake === "m" ? "bg-red-400" : ""
+                } ${letterSuccess === "m" ? "bg-green-400" : ""}`}
+              >
+                m
+              </button>
+
+              {/* <button
+                onClick={() => clickLetter("s")}
+                className={`sul  border-2 border-black rounded-md max-w-fit  py-4 px-8 text-black font-bold text-[1.7em] ${
+                  letterMistake === "b" ? "bg-red-400" : ""
+                } ${letterSuccess === "b" ? "bg-green-400" : ""}`}
+              >
+                b
+              </button> */}
             </div>
           </div>
 
@@ -222,41 +250,51 @@ const lessons = [
   {
     sentence_english: "Hello",
     sentence_literal_english: "",
-    sentence_sul: "usa",
+    sentence_sul: "esa",
   },
   {
     sentence_english: "Goodbye",
     sentence_literal_english: "",
-    sentence_sul: "imi",
+    sentence_sul: "eto",
+  },
+  {
+    sentence_english: "I go",
+    sentence_literal_english: "me go",
+    sentence_sul: "af of",
   },
   {
     sentence_english: "I'm going",
-    sentence_literal_english: "me go",
-    sentence_sul: "te im",
+    sentence_literal_english: "me-past-present move",
+    sentence_sul: "afrari of",
   },
   {
-    sentence_english: "I'm going to class",
-    sentence_literal_english: "me go class",
-    sentence_sul: "te im atey",
+    sentence_english: "I'm going to school",
+    sentence_literal_english: "me-past-present school move",
+    sentence_sul: "afrari aset of",
   },
   {
-    sentence_english: "I went to class",
-    sentence_literal_english: "past-me go class",
-    sentence_sul: "a-te im atey",
+    sentence_english: "I was at school",
+    sentence_literal_english: "me-past locationXschool",
+    sentence_sul: "afra uraset",
   },
   {
     sentence_english: "Let's go get a drink",
-    sentence_literal_english: "we go drink",
-    sentence_sul: "oka im ase",
+    sentence_literal_english: "we drink go",
+    sentence_sul: "oya oko of",
   },
   {
     sentence_english: "Let's go get a drink later",
-    sentence_literal_english: "future-we go drink",
-    sentence_sul: "so-oka im ase",
+    sentence_literal_english: "we-future drink go",
+    sentence_sul: "oyare oko of",
   },
   {
-    sentence_english: "Let's go get a drink later?",
-    sentence_literal_english: "future-we go drink?",
-    sentence_sul: "i-so-oka im ase",
+    sentence_english: "Let's go get a drink tomorrow",
+    sentence_literal_english: "we-tomorrow drink go",
+    sentence_sul: "oyareta oko of",
+  },
+  {
+    sentence_english: "Should we to get a drink tomorrow?",
+    sentence_literal_english: "we-tomorrow drink go-question",
+    sentence_sul: "oyareta oko ofro",
   },
 ];
