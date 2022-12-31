@@ -164,8 +164,6 @@ const speakInSul = ({
     throw new Error("Invalid character");
   }
 
-  console.log("syllable", syllable);
-
   if (syllable?.[0] === ".") {
     sound.play("period");
     remainingSentence = sentence?.slice(1) || "";
@@ -188,7 +186,6 @@ const speakInSul = ({
     sound.play(syllable?.[0] + syllable?.[1]);
     remainingSentence = sentence?.slice(2) || "";
   } else {
-    console.log("SINGLE MATCH");
     sound.play(syllable?.[0]);
     remainingSentence = sentence?.slice(1) || "";
   }

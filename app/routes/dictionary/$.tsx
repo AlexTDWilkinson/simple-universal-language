@@ -1,7 +1,12 @@
-import type { ActionFunction, LoaderFunction } from "@remix-run/node";
-import { json } from "@remix-run/node";
+import {
+  ActionFunction,
+  json,
+  LoaderFunction,
+  redirect,
+} from "@remix-run/node";
 import { Form, useLoaderData, useTransition } from "@remix-run/react";
 import { useState } from "react";
+import { getSession } from "~/sessions";
 
 import {
   getDictionaryRows,
@@ -11,14 +16,18 @@ import {
   moveWordUp,
   updateSulConjoinedRow,
   updateSulDictionaryRow,
+  validateUserId,
 } from "~/utils/db.server";
 import { getChainLetter, speakInSul } from "~/utils/utils";
 
 export const loader: LoaderFunction = async ({ request, params }) => {
   const url = request.url;
   const urlParams = new URLSearchParams(url.split("?")[1]);
+  const session = await getSession(request.headers.get("Cookie"));
 
   const data: any = {};
+
+  data.loggedIn = session.has("userId");
 
   data.editValues = {};
 
@@ -49,24 +58,43 @@ export const loader: LoaderFunction = async ({ request, params }) => {
 };
 
 export const action: ActionFunction = async ({ request, params }) => {
-  const body = new URLSearchParams(await request.text());
+  const session = await getSession(request.headers.get("Cookie"));
+  const form = await request.formData();
 
-  const bodyObject = Object.fromEntries(body.entries());
+  const action = form.get("action");
 
-  if (bodyObject?.action === "update") {
-    if (getChainLetter({ word: bodyObject?.word_sul })) {
-      await updateSulConjoinedRow(bodyObject);
+  if (!session.has("userId")) {
+    return redirect("/login");
+  }
+
+  const validUserId = await validateUserId({
+    id: session.get("userId"),
+  });
+
+  if (!validUserId) {
+    return redirect("/login");
+  }
+
+  const formObject: any = {};
+
+  for (const entry of form.entries()) {
+    formObject[entry[0]] = entry[1];
+  }
+
+  if (action === "update") {
+    if (getChainLetter({ word: formObject?.word_sul })) {
+      await updateSulConjoinedRow(formObject);
     } else {
-      await updateSulDictionaryRow(bodyObject);
+      await updateSulDictionaryRow(formObject);
     }
   }
 
-  if (bodyObject?.action === "move_word_up") {
-    await moveWordUp(bodyObject);
+  if (action === "move_word_up") {
+    await moveWordUp(formObject);
   }
 
-  if (bodyObject?.action === "move_word_down") {
-    await moveWordDown(bodyObject);
+  if (action === "move_word_down") {
+    await moveWordDown(formObject);
   }
 
   return json({}, { status: 200 });
@@ -93,7 +121,7 @@ export default function Dictionary() {
   return (
     <div className="p-4 ">
       {data.editValues?.word_sul && (
-        <Form method="post" className=" " action="">
+        <Form method="post" className=" ">
           <div className="flex flex-col gap-4 max-w-[1200px]">
             <h1 className="text-xl font-bold">Edit</h1>
 
@@ -186,7 +214,7 @@ export default function Dictionary() {
         </Form>
       )}
 
-      {data?.showAddConjoinedButton && (
+      {data.loggedIn && data?.showAddConjoinedButton && (
         <Form>
           <input type="hidden" name="add_sul_conjoined_word" value="true" />
 
@@ -222,8 +250,12 @@ export default function Dictionary() {
               SUL (romanized)
             </th>
 
-            <th className="border border-black p-2 text-left ">Edit</th>
-            <th className="border border-black p-2 text-left">Move</th>
+            {data?.loggedIn && (
+              <>
+                <th className="border border-black p-2 text-left ">Edit</th>
+                <th className="border border-black p-2 text-left">Move</th>
+              </>
+            )}
             <th className="border border-black p-2 text-left">English</th>
             <th className="border border-black p-2 text-left">
               English definition
@@ -272,51 +304,58 @@ export default function Dictionary() {
                 {word.word_sul.replace(/j/gim, "y")}
               </td>
 
-              <td className="border border-black p-2">
-                <a href={`/dictionary/${word.word_sul}`} className="underline ">
-                  Edit
-                </a>
-              </td>
-              <td className="border border-black p-2 font-bold ">
-                {!getChainLetter({ word: word?.word_sul }) && (
-                  <div className="flex gap-6">
-                    <Form method="post">
-                      <input
-                        type="hidden"
-                        name="word_sul"
-                        id="word_sul"
-                        value={word.word_sul}
-                      />
-                      <button
-                        disabled={loading}
-                        type="submit"
-                        name="action"
-                        value="move_word_up"
-                        className=" hover:text-green-500 "
-                      >
-                        ↑
-                      </button>
-                    </Form>
-                    <Form method="post">
-                      <input
-                        type="hidden"
-                        name="word_sul"
-                        id="word_sul"
-                        value={word.word_sul}
-                      />
-                      <button
-                        disabled={loading}
-                        type="submit"
-                        name="action"
-                        value="move_word_down"
-                        className="hover:text-red-500"
-                      >
-                        ↓
-                      </button>
-                    </Form>
-                  </div>
-                )}
-              </td>
+              {data?.loggedIn && (
+                <>
+                  <td className="border border-black p-2">
+                    <a
+                      href={`/dictionary/${word.word_sul}`}
+                      className="underline "
+                    >
+                      Edit
+                    </a>
+                  </td>
+                  <td className="border border-black p-2 font-bold ">
+                    {!getChainLetter({ word: word?.word_sul }) && (
+                      <div className="flex gap-6">
+                        <Form method="post">
+                          <input
+                            type="hidden"
+                            name="word_sul"
+                            id="word_sul"
+                            value={word.word_sul}
+                          />
+                          <button
+                            disabled={loading}
+                            type="submit"
+                            name="action"
+                            value="move_word_up"
+                            className=" hover:text-green-500 "
+                          >
+                            ↑
+                          </button>
+                        </Form>
+                        <Form method="post">
+                          <input
+                            type="hidden"
+                            name="word_sul"
+                            id="word_sul"
+                            value={word.word_sul}
+                          />
+                          <button
+                            disabled={loading}
+                            type="submit"
+                            name="action"
+                            value="move_word_down"
+                            className="hover:text-red-500"
+                          >
+                            ↓
+                          </button>
+                        </Form>
+                      </div>
+                    )}
+                  </td>
+                </>
+              )}
 
               <td className="border border-black p-2">{word.word_english}</td>
               <td className="border border-black p-2">

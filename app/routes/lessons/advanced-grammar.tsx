@@ -10,7 +10,7 @@ const IntroductionToSul: React.FC = () => (
   >
     <Container className="text-lg  text-slate-700">
       <p className="font-display text-4xl font-bold  text-slate-900">
-        Basic Sul Vocabulary and Grammar
+        Advanced SUL Grammar
       </p>
       <p className="mt-4">
         In this lesson, we will introduce you to some basic vocabulary and

@@ -46,15 +46,9 @@ export function Author() {
             </p>
 
             <p className="mt-4 text-lg  text-slate-700">
-              With Simple Universal Language, I wanted to create a language that
-              was accessible and inclusive for everyone, with braille and sign
-              language versions available.
-            </p>
-
-            <p className="mt-4 text-lg  text-slate-700">
-              I also wanted to create a language that was easy to learn and
-              could be used to break down language barriers and promote
-              understanding and unity among different cultures.{" "}
+              To achieve this, I created a language that puts accessiblility and
+              inclusivity first, by including braille and sign language
+              variations.
             </p>
 
             <p className="mt-4 text-lg  text-slate-700">

@@ -140,9 +140,9 @@ const updateSulDictionaryRow = async ({
   });
 
   try {
-    await db.query(
-      `UPDATE "SUL" SET ${updateString} WHERE WORD_SUL = '${word_sul}';`
-    );
+    await db.query(`UPDATE "SUL" SET ${updateString} WHERE WORD_SUL = $1;`, [
+      word_sul,
+    ]);
   } catch (error) {
     console.log(error);
   }
@@ -196,7 +196,8 @@ const updateSulConjoinedRow = async ({
   // check if this word is already in the conjoined table
 
   result = await db.query(
-    `SELECT * FROM "SUL_CONJOINED" WHERE WORD_SUL = '${word_sul}';`
+    `SELECT * FROM "SUL_CONJOINED" WHERE WORD_SUL = $1;`,
+    [word_sul]
   );
 
   const wordSulConjoinedFromDb = result?.rows?.[0];
@@ -208,9 +209,9 @@ const updateSulConjoinedRow = async ({
     !definition_japanese
   ) {
     // delete the row
-    return await db.query(
-      `DELETE FROM "SUL_CONJOINED" WHERE WORD_SUL = '${word_sul}';`
-    );
+    return await db.query(`DELETE FROM "SUL_CONJOINED" WHERE WORD_SUL = $1;`, [
+      word_sul,
+    ]);
   } else if (wordSulConjoinedFromDb?.id) {
     // update the row
 
@@ -224,7 +225,8 @@ const updateSulConjoinedRow = async ({
     });
 
     return await db.query(
-      `UPDATE "SUL_CONJOINED" SET ${updateString} WHERE WORD_SUL = '${word_sul}';`
+      `UPDATE "SUL_CONJOINED" SET ${updateString} WHERE WORD_SUL = $1;`,
+      [word_sul]
     );
   } else {
     const insert = createSqlInsertString({
@@ -248,7 +250,8 @@ const moveWordUp = async ({ word_sul }: { word_sul?: string }) => {
     await db.query("BEGIN");
 
     let word = await db.query(
-      `SELECT * FROM "SUL" WHERE WORD_SUL = '${word_sul}' LIMIT 1;`
+      `SELECT * FROM "SUL" WHERE WORD_SUL = $1 LIMIT 1;`,
+      [word_sul]
     );
 
     word = word?.rows?.[0];
@@ -263,7 +266,8 @@ const moveWordUp = async ({ word_sul }: { word_sul?: string }) => {
     AND DEFINITION_ENGLISH IS NULL
     AND WORD_JAPANESE IS NULL
     AND DEFINITION_JAPANESE IS NULL
-    AND ID < ${word?.id} ORDER BY ID DESC LIMIT 1;`
+    AND ID < $1 ORDER BY ID DESC LIMIT 1;`,
+      [word?.id]
     );
 
     const wordToMoveTo = result?.rows?.[0];
@@ -291,7 +295,8 @@ const moveWordUp = async ({ word_sul }: { word_sul?: string }) => {
     DEFINITION_ENGLISH = NULL,
     WORD_JAPANESE = NULL,
     DEFINITION_JAPANESE = NULL
-    WHERE ID = ${word?.id};`
+    WHERE ID = $1;`,
+      [word?.id]
     );
 
     await db.query("COMMIT");
@@ -306,7 +311,8 @@ const moveWordDown = async ({ word_sul }: { word_sul?: string }) => {
     await db.query("BEGIN");
 
     let word = await db.query(
-      `SELECT * FROM "SUL" WHERE WORD_SUL = '${word_sul}' LIMIT 1;`
+      `SELECT * FROM "SUL" WHERE WORD_SUL = $1 LIMIT 1;`,
+      [word_sul]
     );
 
     word = word?.rows?.[0];
@@ -321,7 +327,8 @@ const moveWordDown = async ({ word_sul }: { word_sul?: string }) => {
     AND DEFINITION_ENGLISH IS NULL
     AND WORD_JAPANESE IS NULL
     AND DEFINITION_JAPANESE IS NULL
-    AND ID > ${word?.id} ORDER BY ID ASC LIMIT 1;`
+    AND ID > $1 ORDER BY ID ASC LIMIT 1;`,
+      [word?.id]
     );
 
     const wordToMoveTo = result?.rows?.[0];
@@ -349,7 +356,8 @@ const moveWordDown = async ({ word_sul }: { word_sul?: string }) => {
     DEFINITION_ENGLISH = NULL,
     WORD_JAPANESE = NULL,
     DEFINITION_JAPANESE = NULL
-    WHERE ID = ${word?.id};`
+    WHERE ID = $1;`,
+      [word?.id]
     );
 
     await db.query("COMMIT");
@@ -361,7 +369,8 @@ const moveWordDown = async ({ word_sul }: { word_sul?: string }) => {
 
 const getSulWord = async ({ word }: { word: string }) => {
   const result = await db.query(
-    `SELECT * FROM "SUL" WHERE WORD_SUL = '${word}' LIMIT 1;`
+    `SELECT * FROM "SUL" WHERE WORD_SUL = $1 LIMIT 1;`,
+    [word]
   );
 
   return result?.rows?.[0];
@@ -369,13 +378,47 @@ const getSulWord = async ({ word }: { word: string }) => {
 
 const getSulConjoinedWord = async ({ word }: { word: string }) => {
   let result = await db.query(
-    `SELECT * FROM "SUL_CONJOINED" WHERE WORD_SUL = '${word}' LIMIT 1;`
+    `SELECT * FROM "SUL_CONJOINED" WHERE WORD_SUL = $1 LIMIT 1;`,
+    [word]
   );
 
   return result?.rows?.[0];
 };
 
+const validateCredentials = async ({
+  username,
+  password,
+}: {
+  username: string;
+  password: string;
+}) => {
+  username = username?.replace(/[^\p{L}\p{N}]/gimu, "");
+  password = password?.replace(/[^\p{L}\p{N}-]/gimu, "");
+  const result = await db.query(
+    `SELECT ID FROM "USER" 
+    WHERE USERNAME = $1
+    AND PASSWORD = $2`,
+    [username, password]
+  );
+
+  if (!result?.rows?.[0]?.id) {
+    return null;
+  }
+
+  return result?.rows?.[0]?.id;
+};
+
+const validateUserId = async ({ id }: { id: string }) => {
+  id = id?.replace(/[^A-Za-z0-9-]/gim, "");
+
+  const result = await db.query(`SELECT ID FROM "USER" WHERE ID = $1`, [id]);
+
+  return result?.rows?.[0]?.id ? true : false;
+};
+
 export {
+  validateUserId,
+  validateCredentials,
   addChatRow,
   getChatRows,
   getSulConjoinedWord,
