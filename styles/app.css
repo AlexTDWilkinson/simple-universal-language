@@ -31,3 +31,8 @@
   font-family: "simple_universal_language";
   font-variant-ligatures: normal;
 }
+
+.sul-braille {
+  font-family: "simple_universal_language_braille";
+  font-variant-ligatures: none;
+}

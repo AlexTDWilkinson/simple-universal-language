@@ -1637,6 +1637,11 @@ video {
   font-variant-ligatures: normal;
 }
 
+.sul-braille {
+  font-family: "simple_universal_language_braille";
+  font-variant-ligatures: none;
+}
+
 .placeholder\:text-white\/70::-moz-placeholder {
   color: rgb(255 255 255 / 0.7);
 }
