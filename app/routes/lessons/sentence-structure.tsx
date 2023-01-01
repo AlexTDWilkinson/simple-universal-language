@@ -13,112 +13,16 @@ const IntroductionToSul: React.FC = () => (
         Sul Sentence Structure
       </p>
       <p className="mt-4">
-        In this lesson, we will introduce you to some basic vocabulary and
-        grammar in Sul. By the end of this lesson, you will be able to construct
-        simple sentences and understand the meaning of common words and phrases
-        in Sul.
-      </p>
-      <h2 className="mt-6 font-bold text-xl text-slate-800">Vocabulary</h2>
-      <p className="mt-2">Here's a small set of commonly used SUL words.</p>
-      <p className="mt-2">
-        They are from the SUL{" "}
-        <Link to="/dictionary" className="underline font-bold">
-          dictionary
-        </Link>
-        .
-      </p>
-      <table className="mt-4 border-collapse">
-        <tbody>
-          <tr className="border border-b">
-            <td className="px-4 py-2 font-bold">Structure</td>
-            <td className="px-4 py-2 font-bold">SUL example romanization</td>
-            <td className="px-4 py-2 font-bold">SUL example</td>
-            <td className="px-4 py-2 font-bold">English example</td>
-          </tr>
-          <tr className="border border-b">
-            <td className="px-4 py-2 ">if[SOV][SOV] + else if, etc</td>
-            <td className="px-4 py-2 ">
-              if me homework do parentXfutureXme me buyXpony
-            </td>
-            <td className="px-4 py-2 ">????</td>
-            <td className="px-4 py-2 ">
-              If I do my homework, my parents will buy me a pony
-            </td>
-          </tr>
-          <tr className="border border-b">
-            <td className="px-4 py-2 ">[SOV]cause[SOV]</td>
-            <td className="px-4 py-2 ">me feelXgood cause me gym go</td>
-            <td className="px-4 py-2 ">????</td>
-            <td className="px-4 py-2 ">I feel good because I go to the gym</td>
-          </tr>
-          <tr className="border border-b">
-            <td className="px-4 py-2 ">[SOV]equal[SOV]</td>
-            <td className="px-4 py-2 ">pizzaXeat equal pastaXeat</td>
-            <td className="px-4 py-2 ">????</td>
-            <td className="px-4 py-2 ">
-              Eating pizza is the same as eating pasta.
-            </td>
-          </tr>
-          <tr className="border border-b">
-            <td className="px-4 py-2 ">[SOV]while[SOV]</td>
-            <td className="px-4 py-2 ">???</td>
-            <td className="px-4 py-2 ">????</td>
-            <td className="px-4 py-2 ">I eat pizza while watching TV.</td>
-          </tr>
-          <tr className="border border-b">
-            <td className="px-4 py-2 ">[SOV]before[SOV]</td>
-            <td className="px-4 py-2 ">???</td>
-            <td className="px-4 py-2 ">????</td>
-            <td className="px-4 py-2 ">I eat pizza while watching TV.</td>
-          </tr>
-          <tr className="border border-b">
-            <td className="px-4 py-2 ">[SOV]or[SOV]</td>
-            <td className="px-4 py-2 ">???</td>
-            <td className="px-4 py-2 ">????</td>
-            <td className="px-4 py-2 ">I eat pizza while watching TV.</td>
-          </tr>
-          <tr className="border border-b">
-            <td className="px-4 py-2 ">[SOV]and[SOV]</td>
-            <td className="px-4 py-2 ">???</td>
-            <td className="px-4 py-2 ">????</td>
-            <td className="px-4 py-2 ">I eat pizza while watching TV.</td>
-          </tr>
-
-          <tr className="border border-b">
-            <td className="px-4 py-2 ">
-              [Mover] [Thing] [Move] [Source Location] [Destination Location]
-            </td>
-            <td className="px-4 py-2 ">Me table move living room bedroom</td>
-            <td className="px-4 py-2 ">????</td>
-            <td className="px-4 py-2 ">
-              I move the table from the living room to the bedroom.
-            </td>
-          </tr>
-          <tr className="border border-b">
-            <td className="px-4 py-2 ">[SOV]FROM[S?O?V?]</td>
-            <td className="px-4 py-2 ">MeXpast carXnew buy from dealership</td>
-            <td className="px-4 py-2 ">????</td>
-            <td className="px-4 py-2 ">
-              I bought a new car from the dealership.
-            </td>
-          </tr>
-          <tr className="border border-b">
-            <td className="px-4 py-2 ">[S?O?V]COMPARE[S?O?V?]</td>
-            <td className="px-4 py-2 ">me big you</td>
-            <td className="px-4 py-2 ">????</td>
-            <td className="px-4 py-2 ">I am bigger than you</td>
-          </tr>
-        </tbody>
-      </table>
-      <p className="mt-8 font-display text-4xl font-bold  text-slate-900">
-        Constructing simple sentences in SUL
-      </p>
-      <p className="mt-4">
         Now that you have learned the basic principles of the SUL language,
         including the sounds of its vowels and consonants, and its
         subject-object-verb (SOV) word order, let's practice constructing simple
         sentences in SUL.
       </p>
+
+      <p className="mt-8 font-display text-4xl font-bold  text-slate-900">
+        Constructing simple sentences in SUL
+      </p>
+
       <h2 className="mt-8 font-display text-3xl font-bold  text-slate-900">
         Simplest sentence structure
       </h2>
@@ -240,12 +144,18 @@ const IntroductionToSul: React.FC = () => (
         - though you'd need to keep the SUL dictionary handy!
       </p>
 
+      <h2 className="mt-8 font-bold text-xl text-slate-800">Next steps</h2>
+
       <p className="mt-4">
-        In the next lesson, we'll teach you a how to take these sentences and{" "}
-        <Link to="/lessons/tenses/" className="underline font-bold">
-          turn them into different tenses
+        In the next lesson, you'll learn about{" "}
+        <Link
+          to="/lessons/advanced-sentence-structure/"
+          className="underline font-bold"
+        >
+          more advanced sentence structures
         </Link>{" "}
-        - for example, how to say "I went to school" or "I will go to school".
+        - for example, how to say "If I get good grades, my parents will buy me
+        a pony".
       </p>
     </Container>
   </section>

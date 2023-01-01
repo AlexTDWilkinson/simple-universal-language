@@ -197,6 +197,8 @@ const IntroductionToSul: React.FC = () => (
         - though you'd need to keep the SUL dictionary handy!
       </p>
 
+      <h2 className="mt-8 font-bold text-xl text-slate-800">Next steps</h2>
+
       <p className="mt-4">
         In the next lesson, we'll teach you a how to take these sentences and{" "}
         <Link to="/lessons/tenses/" className="underline font-bold">

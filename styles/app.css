@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "simple_universal_language";
+
+  src: url("/fonts/Simple_universal_language.ttf") format("truetype");
+
+  font-weight: normal;
+
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "simple_universal_language_braille";
+
+  src: url("/fonts/Simple_universal_language_braille.ttf") format("truetype");
+
+  font-weight: normal;
+
+  font-style: normal;
+}
+
+.sul {
+  font-family: "simple_universal_language";
+  font-variant-ligatures: none;
+}
+
+.sul-condensed {
+  font-family: "simple_universal_language";
+  font-variant-ligatures: normal;
+}

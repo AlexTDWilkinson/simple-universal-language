@@ -61,7 +61,7 @@ export function Hero() {
                 Learn by doing
               </Button>
               <Button href="/chat" variant="outline" color="blue">
-                Live SUL chat
+                SUL chat
               </Button>
             </div>
           </div>

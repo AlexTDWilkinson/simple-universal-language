@@ -151,7 +151,7 @@ const IntroductionToSul: React.FC = () => (
           </tr>
           <tr className="border border-b">
             <td className="px-4 py-2 ">I eat food</td>
-            <td className="px-4 py-2 ">I food eat (lit: me food eat)</td>
+            <td className="px-4 py-2 ">Me food eat</td>
             <td className="px-4 py-2 whitespace-nowrap">ki fit ata</td>
             <td className="px-4 py-2 text-3xl sul-condensed whitespace-nowrap">
               ki fit ata
@@ -160,7 +160,7 @@ const IntroductionToSul: React.FC = () => (
 
           <tr className="border border-b">
             <td className="px-4 py-2 ">I go to school</td>
-            <td className="px-4 py-2 ">I school go (lit: me school move)</td>
+            <td className="px-4 py-2 ">Me school move</td>
             <td className="px-4 py-2 whitespace-nowrap">ki aset of</td>
             <td className="px-4 py-2 text-3xl sul-condensed whitespace-nowrap">
               ki aset of
@@ -175,6 +175,8 @@ const IntroductionToSul: React.FC = () => (
           speaking SUL!
         </b>
       </p>
+
+      <h2 className="mt-8 font-bold text-xl text-slate-800">Next steps</h2>
 
       <p className="mt-4">
         In the next lesson, we'll teach you a how to take these sentences and{" "}

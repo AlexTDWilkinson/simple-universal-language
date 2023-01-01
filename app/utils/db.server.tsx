@@ -416,7 +416,31 @@ const validateUserId = async ({ id }: { id: string }) => {
   return result?.rows?.[0]?.id ? true : false;
 };
 
+const convertEnglishToSul = async ({ sentence }: { sentence: string }) => {
+  const sentenceArray = sentence?.split(/(\s+|x|X|\+)/gim);
+
+  const result = await db.query(
+    `SELECT * FROM "SUL" WHERE WORD_ENGLISH = ANY($1::text[])`,
+    [sentenceArray]
+  );
+
+  const sulArray = sentenceArray?.map((word) => {
+    if (word === " ") return " ";
+    if (word === "X" || word === "x") return "r";
+    if (word === "+") return "m";
+    if (word === "b") return "b";
+
+    const sulWord = result?.rows?.find(
+      (row: any) => row?.word_english === word
+    );
+    return sulWord?.word_sul || "???";
+  });
+
+  return sulArray?.join("");
+};
+
 export {
+  convertEnglishToSul,
   validateUserId,
   validateCredentials,
   addChatRow,

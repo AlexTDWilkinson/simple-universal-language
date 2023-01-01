@@ -15,6 +15,11 @@ const LessonsList = {
       link: "/lessons/basic-vocabulary-and-grammar",
     },
     { title: "Tenses", number: 3, link: "/lessons/tenses" },
+    {
+      title: "Sentence structure",
+      number: 4,
+      link: "/lessons/sentence-structure",
+    },
   ],
 };
 

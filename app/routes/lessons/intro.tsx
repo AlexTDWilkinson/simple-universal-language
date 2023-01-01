@@ -23,6 +23,57 @@ const IntroductionToSul: React.FC = () => {
           adjective and adverb "chaining" to derive complex meanings while
           keeping the language very simple.
         </p>
+        <p className="font-display mt-8 text-3xl font-bold  text-slate-900">
+          Some SUL example sentences
+        </p>
+        <table className="mt-4 border-collapse">
+          <tbody>
+            <tr className="border border-b">
+              <td className="px-4 py-2 font-bold">English</td>
+              <td className="px-4 py-2 font-bold">SUL</td>
+              <td className="px-4 py-2 font-bold">Romanization</td>
+              <td className="px-4 py-2 font-bold">SUL writing</td>
+            </tr>
+            <tr className="border border-b">
+              <td className="px-4 py-2">I go to the store</td>
+              <td className="px-4 py-2">me store go</td>
+              <td className="px-4 py-2">ki fjo tjo</td>
+              <td className="px-4 py-2 sul-condensed text-3xl">ki fjo tjo</td>
+            </tr>
+            <tr className="border border-b">
+              <td className="px-4 py-2">I'm eating the food</td>
+              <td className="px-4 py-2">MeXcontinuous food eat</td>
+              <td className="px-4 py-2">kirari fit ata</td>
+              <td className="px-4 py-2 sul-condensed text-3xl">
+                kirari fit ata
+              </td>
+            </tr>
+            <tr className="border border-b">
+              <td className="px-4 py-2">I will eat food tomorrow</td>
+              <td className="px-4 py-2">MeXtomorrow food eat</td>
+              <td className="px-4 py-2">kireta fit ata</td>
+              <td className="px-4 py-2 sul-condensed text-3xl">
+                kireta fit ata
+              </td>
+            </tr>
+            <tr className="border border-b">
+              <td className="px-4 py-2">I can eat</td>
+              <td className="px-4 py-2">MeXable food eat</td>
+              <td className="px-4 py-2">kirako fit ata</td>
+              <td className="px-4 py-2 sul-condensed text-3xl">
+                kirako fit ata
+              </td>
+            </tr>
+            <tr className="border border-b">
+              <td className="px-4 py-2">I should eat</td>
+              <td className="px-4 py-2">MeXshould food eat</td>
+              <td className="px-4 py-2">kirese fit ata</td>
+              <td className="px-4 py-2 sul-condensed text-3xl">
+                kirese fit ata
+              </td>
+            </tr>
+          </tbody>
+        </table>
         <p className="mt-8 font-display text-3xl font-bold  text-slate-900">
           Vowels and consonants
         </p>
@@ -355,16 +406,6 @@ const IntroductionToSul: React.FC = () => {
           For example, in the sentence "I go to the store", the subject is "I",
           the object is "store", and the verb is "go". In Sul, this sentence
           would be written as "me store go".
-        </p>
-        <h2 className="mt-8 text-4xl ">Determiners</h2>
-        <p className="mt-4">
-          Another important aspect of Sul is that it does not use determiners
-          such as "the" or "a". Instead, the meaning of a noun is determined by
-          its position in the sentence and the context in which it is used. For
-          example, in the sentence "I go to the store", the word "store" is
-          modified by the determiner "the" to specify which store is being
-          referred to. In Sul, we use the word order and "chaining" to convey
-          this meaning without the use of a determiner word.
         </p>
         <h2 className="mt-8 text-4xl ">Next steps</h2>
         <p className="mt-4">
