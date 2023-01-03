@@ -15,12 +15,27 @@ export const loader: LoaderFunction = async ({ request, params }) => {
     {
       sentence_structure: "if[SOV][SOV] + else if, etc",
       sentence_english: " If I do my homework, my parents will buy me a pony",
-      sentence_english_sul: "if me homework do parentXfutureXme me buyXpony",
+      sentence_english_sul: "if me homework do parentXmeXfuture me buyXpony",
     },
     {
       sentence_structure: "[1 does 2 to 3][give]",
-      sentence_english: "My mom gives a pony to me",
+      sentence_english: "My mom will give me a pony",
       sentence_english_sul: "momXfuture pony me give",
+    },
+    {
+      sentence_structure: "[1 does 2 to 3][promiseXtake]",
+      sentence_english: "My mom promises to take my pony",
+      sentence_english_sul: "momXfuture pony me promiseXtake",
+    },
+    {
+      sentence_structure: "[VOS] with markers",
+      sentence_english: "Eat food me",
+      sentence_english_sul: "verbXeat objectXfood subjectXme",
+    },
+    {
+      sentence_structure: "[SVO] with minimal markers",
+      sentence_english: "Me eat food ",
+      sentence_english_sul: "me verbXeat food",
     },
   ];
 
@@ -85,7 +100,7 @@ const IntroductionToSul = () => {
               </td>
               <td className="px-4 py-2 ">
                 <button
-                  className="ml-2 mt-4 inline-flex justify-center rounded-md py-2 px-4 text-base font-semibold  shadow-sm focus:outline-none bg-blue-600 text-white hover:bg-blue-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 active:bg-blue-700 active:text-white/80 disabled:opacity-30 disabled:hover:bg-blue-600"
+                  className="inline-flex justify-center rounded-md py-2 px-4 text-base font-semibold  shadow-sm focus:outline-none bg-blue-600 text-white hover:bg-blue-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 active:bg-blue-700 active:text-white/80 disabled:opacity-30 disabled:hover:bg-blue-600"
                   onClick={() => {
                     speakInSul({
                       sentence: example.sentence_sul,

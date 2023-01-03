@@ -1639,7 +1639,7 @@ video {
 
 .sul-braille {
   font-family: "simple_universal_language_braille";
-  font-variant-ligatures: none;
+  font-variant-ligatures: normal;
 }
 
 .placeholder\:text-white\/70::-moz-placeholder {

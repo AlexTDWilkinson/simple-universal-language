@@ -417,10 +417,11 @@ const validateUserId = async ({ id }: { id: string }) => {
 };
 
 const convertEnglishToSul = async ({ sentence }: { sentence: string }) => {
+  sentence = sentence?.toLowerCase();
   const sentenceArray = sentence?.split(/(\s+|x|X|\+)/gim);
 
   const result = await db.query(
-    `SELECT * FROM "SUL" WHERE WORD_ENGLISH = ANY($1::text[])`,
+    `SELECT * FROM "SUL"   WHERE WORD_ENGLISH = ANY($1::text[]) ORDER BY ID`,
     [sentenceArray]
   );
 
