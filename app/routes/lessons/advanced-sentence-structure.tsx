@@ -15,7 +15,9 @@ export const loader: LoaderFunction = async ({ request, params }) => {
     {
       sentence_structure: "if[SOV][SOV] + else if, etc",
       sentence_english: " If I do my homework, my parents will buy me a pony",
-      sentence_english_sul: "if me homework do parentXmeXfuture me buyXpony",
+      // sentence_english_sul: "if me homework do parentXmeXfuture me buyXpony",
+      sentence_english_sul:
+        "homeworkXmeXif+do parentXpluralXfutureXme buyXponyXfor+me",
     },
     {
       sentence_structure: "[1 does 2 to 3][give]",
@@ -95,7 +97,7 @@ const IntroductionToSul = () => {
               <td className="px-4 py-2 ">
                 {example.sentence_sul.replace(/j/gim, "y")}
               </td>
-              <td className="px-4 py-2 whitespace-nowrap sul-condensed">
+              <td className="px-4 py-2 whitespace-nowrap sul-condensed text-[1.4em]">
                 {example.sentence_sul}
               </td>
               <td className="px-4 py-2 ">

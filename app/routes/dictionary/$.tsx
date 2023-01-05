@@ -279,7 +279,11 @@ export default function Dictionary() {
               <td className="border border-black p-2 font-bold 	">
                 {getWordUsabilityRating(word?.id)}
               </td>
-              <td className="border border-black p-2 sul-condensed text-3xl	">
+              <td
+                className={`${
+                  word.word_sul?.[0].match(/[tsfkg]/gim) && "bg-yellow-200"
+                } border border-black p-2 sul-condensed text-3xl`}
+              >
                 {word.word_sul}
               </td>
               <td className="border border-black p-2 ">
@@ -303,8 +307,12 @@ export default function Dictionary() {
               <td className="border border-black p-2 underline  ">
                 <a href={`/resource/sign?word=${word.word_sul}`}>sign</a>
               </td>
-              <td className="border border-black p-2 font-bold  ">
-                {word.word_sul.replace(/j/gim, "y")}
+              <td
+                className={`${
+                  word.word_sul?.[0].match(/[tsfkg]/gim) && "bg-yellow-200"
+                } border border-black p-2 font-bold`}
+              >
+                {word.word_sul}
               </td>
 
               {data?.loggedIn && (
