@@ -53,7 +53,7 @@ export function Hero() {
               SUL is an open, inclusive and accessible language that lets you
               talk to anyone in the world.
             </p>
-            <div className="mt-8 flex gap-4">
+            <div className="mt-8 flex gap-4 flex-wrap ">
               <Button href="/lessons/intro" color="blue">
                 Learn by reading
               </Button>
@@ -62,6 +62,13 @@ export function Hero() {
               </Button>
               <Button href="/chat" variant="outline" color="blue">
                 SUL chat
+              </Button>
+              <Button
+                href="https://discord.gg/ah94yuRu"
+                color="blue"
+                className="flex items-center"
+              >
+                Join Discord
               </Button>
             </div>
           </div>

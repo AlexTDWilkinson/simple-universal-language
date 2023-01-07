@@ -15,7 +15,7 @@ const IntroductionToSul: React.FC = () => (
       <p className="mt-4">
         Now that you have learned the basic principles of the SUL language,
         including the sounds of its vowels and consonants, and its
-        subject-object-verb (SOV) word order, let's practice constructing simple
+        subject-object-verb (SVO) word order, let's practice constructing simple
         sentences in SUL.
       </p>
 
@@ -36,11 +36,11 @@ const IntroductionToSul: React.FC = () => (
       </p>
       <p className="mt-4">
         This works because "sleep" is an intransitive verb, meaning it's a verb
-        that is used without an object.
+        that can be used without a target subject.
       </p>
       <p className="mt-4">
         For example, you can't really "sleep to school", the way you can with
-        other verbs. "Go" to school, "run" to school, etc.
+        other verbs - "go" to school, "run" to school, etc.
       </p>
       <p className="mt-4">
         Note that SUL does not actually make any sort of determination as to
@@ -58,7 +58,7 @@ const IntroductionToSul: React.FC = () => (
       </h2>
       <p className="mt-4">
         In SUL, most sentences are comprised of the following structure:{" "}
-        <b>[subject][object][verb]</b>.
+        <b>[subject][verb][object]</b>.
       </p>
       <p className="mt-4">
         <b>
@@ -66,32 +66,22 @@ const IntroductionToSul: React.FC = () => (
           communication and understand what people say to you.
         </b>
       </p>
+
       <p className="mt-4">
-        If you are a new speaker to SUL, more advanced speakers will identify
-        that and speak in this simple structure so you can understand them.
-      </p>
-      <p className="mt-4">
-        This is where we diverge from SVO (<b>[subject][verb][object]</b>)
-        languages, like English.
-      </p>
-      <p className="mt-4">
-        SUL uses the SOV (<b>[subject][object][verb]</b>) structure because the
-        majority of languages in the world do.
-      </p>
-      <p className="mt-4">
-        Another benefit of the SOV word order is that you understand who/what
-        the sentence is about right up-front, which is pretty cool.
+        SUL uses the SVO (<b>[subject][verb][object]</b>) structure because the
+        majority of population of the world speaks languages that do - though
+        there are more SOV languages in the world.
       </p>
 
       <p className="mt-8">
-        <b>Lets look at some examples of SOV vs SVO</b>:{" "}
+        <b>Lets look at some examples of SVO vs SVO word order</b>:{" "}
       </p>
 
       <table className="mt-4 border-collapse">
         <tbody>
           <tr className="border border-b">
             <td className="px-4 py-2 font-bold">SVO (Like English)</td>
-            <td className="px-4 py-2 font-bold">SOV</td>
+            <td className="px-4 py-2 font-bold">SVO</td>
           </tr>
           <tr className="border border-b">
             <td className="px-4 py-2 ">I eat food</td>
@@ -118,19 +108,52 @@ const IntroductionToSul: React.FC = () => (
           </tr>
           <tr className="border border-b">
             <td className="px-4 py-2 ">I eat food</td>
-            <td className="px-4 py-2 ">I food eat (lit: me food eat)</td>
-            <td className="px-4 py-2 whitespace-nowrap">ki fit ata</td>
+            <td className="px-4 py-2 ">
+              eatXfood ('me' is assumed by default)
+            </td>
+            <td className="px-4 py-2 whitespace-nowrap">???</td>
             <td className="px-4 py-2 text-3xl sul-condensed whitespace-nowrap">
-              ki fit ata
+              ???
             </td>
           </tr>
 
           <tr className="border border-b">
-            <td className="px-4 py-2 ">I go to school</td>
-            <td className="px-4 py-2 ">I school go (lit: me school move)</td>
-            <td className="px-4 py-2 whitespace-nowrap">ki aset of</td>
+            <td className="px-4 py-2 ">You eat food</td>
+            <td className="px-4 py-2 ">eatXfoodXyou</td>
+            <td className="px-4 py-2 whitespace-nowrap">???</td>
             <td className="px-4 py-2 text-3xl sul-condensed whitespace-nowrap">
-              ki aset of
+              ???
+            </td>
+          </tr>
+
+          <tr className="border border-b">
+            <td className="px-4 py-2 ">You are big and eat food</td>
+            <td className="px-4 py-2 ">eatXfoodXyou+big</td>
+            <td className="px-4 py-2 whitespace-nowrap">???</td>
+            <td className="px-4 py-2 text-3xl sul-condensed whitespace-nowrap">
+              ???
+            </td>
+          </tr>
+
+          <tr className="border border-b">
+            <td className="px-4 py-2 ">You angrily eat small food quickly</td>
+            <td className="px-4 py-2 ">
+              eat+quicklyXfood+smallXyou+angry (this is a pretty long word!)
+            </td>
+            <td className="px-4 py-2 whitespace-nowrap">???</td>
+            <td className="px-4 py-2 text-3xl sul-condensed whitespace-nowrap">
+              ???
+            </td>
+          </tr>
+
+          <tr className="border border-b">
+            <td className="px-4 py-2 ">You angrily eat small food quickly</td>
+            <td className="px-4 py-2 ">
+              youXangry eatXquickly foodXsmall (phew, that's better!)
+            </td>
+            <td className="px-4 py-2 whitespace-nowrap">???</td>
+            <td className="px-4 py-2 text-3xl sul-condensed whitespace-nowrap">
+              ???
             </td>
           </tr>
         </tbody>

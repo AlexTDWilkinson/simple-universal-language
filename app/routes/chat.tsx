@@ -28,7 +28,12 @@ export const loader: LoaderFunction = async ({ request, params }) => {
   data.chat = await getChatRows();
   data.chat = data.chat.reverse();
 
-  return json(data, { status: 200 });
+  return json(data, {
+    status: 200,
+    headers: {
+      "Cache-Control": "public, max-age=30, s-maxage=86400",
+    },
+  });
 };
 
 export const action: ActionFunction = async ({ request, params }) => {

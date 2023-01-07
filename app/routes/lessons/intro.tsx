@@ -240,13 +240,13 @@ const IntroductionToSul: React.FC = () => {
             </tr>
             <tr>
               <td className="p-2 sul-condensed text-3xl ">j</td>
-              <td className="p-2">j</td>
-              <td className="p-2">as in "yawn"</td>
+              <td className="p-2">g</td>
+              <td className="p-2">as in "gap"</td>
               <td className="p-2">
                 <button
                   className="bg-slate-900 text-white font-bold py-2 px-4 rounded"
                   onClick={() => {
-                    speakInSul({ sentence: "j" });
+                    speakInSul({ sentence: "g" });
                   }}
                 >
                   Play
@@ -398,14 +398,20 @@ const IntroductionToSul: React.FC = () => {
         </table>
         <h2 className="mt-8 text-4xl ">Word order</h2>
         <p className="mt-4">
-          Next, let's go over the basic word order in Sul. Sul is a
-          Subject-Object-Verb (SOV) language, which means that the subject of a
-          sentence comes before the object, and the verb comes last.
+          In Sul, the word order of a sentence is flexible and can vary.
+          However, the default word order and the examples provided for Sul tend
+          to follow a Subject-Verb-Object (SOV) structure, where the subject
+          comes before the verb and the object comes last.{" "}
+        </p>{" "}
+        <p className="mt-4">
+          For example, in the sentence "I go to the store" the subject is "I"
+          the verb is "go" and the object is "store." This is a typical SVO
+          sentence.
         </p>
         <p className="mt-4">
-          For example, in the sentence "I go to the store", the subject is "I",
-          the object is "store", and the verb is "go". In Sul, this sentence
-          would be written as "me store go".
+          The reason SUL favours the SVO word order is because although there
+          are more SOV than SVO languages in the world, there are more speakers
+          of SVO languages by population.
         </p>
         <h2 className="mt-8 text-4xl ">Next steps</h2>
         <p className="mt-4">
@@ -422,7 +428,7 @@ const IntroductionToSul: React.FC = () => {
         <p className="mt-4">
           In the next lesson, we'll start by teaching you a few basic words and
           phrases in Sul, and then we'll practice constructing basic sentences
-          using the SOV word order and the X and + symbols.
+          using the X and + symbols.
         </p>
         <p className="mt-4  ">
           We hope you're excited to start learning Sul! In the coming lessons,

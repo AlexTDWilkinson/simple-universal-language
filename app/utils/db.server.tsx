@@ -2,9 +2,16 @@ import { getChainLetter } from "./utils";
 
 const { Pool } = require("pg");
 
-const db = new Pool({
-  connectionString: process.env.DB_CONNECTION_STRING,
-});
+let db: any;
+
+if (process.env.DB_CONNECTION_STRING) {
+  db = new Pool({
+    connectionString: process.env.DB_CONNECTION_STRING,
+  });
+} else {
+  console.log("=== No database connection string ===");
+  db = false;
+}
 
 const createSqlUpdateString = ({ updates }: { updates: any }) => {
   const updateString = Object.entries(updates)
@@ -56,6 +63,9 @@ const createSqlInsertString = ({ inserts }: { inserts: any }) => {
 };
 
 const getDictionaryRows = async () => {
+  if (!db) {
+    return [];
+  }
   const result = await db.query(`SELECT * FROM "SUL" ORDER BY ID LIMIT 500;`);
 
   let resultConjoined = await db.query(`SELECT * FROM "SUL_CONJOINED";`);
@@ -86,6 +96,9 @@ const getDictionaryRows = async () => {
 };
 
 const getChatRows = async () => {
+  if (!db) {
+    return [];
+  }
   let result = await db.query(
     `SELECT * FROM "SUL_CHAT" ORDER BY CREATED_AT DESC LIMIT 10;`
   );
@@ -102,6 +115,9 @@ const addChatRow = async ({
   author: string;
   message: string;
 }) => {
+  if (!db) {
+    return null;
+  }
   author = author.replace(/[^\p{L}\p{N}\s+]/gimu, "");
   message =
     message
@@ -368,6 +384,9 @@ const moveWordDown = async ({ word_sul }: { word_sul?: string }) => {
 };
 
 const getSulWord = async ({ word }: { word: string }) => {
+  if (!db) {
+    return null;
+  }
   const result = await db.query(
     `SELECT * FROM "SUL" WHERE WORD_SUL = $1 LIMIT 1;`,
     [word]
@@ -377,6 +396,9 @@ const getSulWord = async ({ word }: { word: string }) => {
 };
 
 const getSulConjoinedWord = async ({ word }: { word: string }) => {
+  if (!db) {
+    return null;
+  }
   let result = await db.query(
     `SELECT * FROM "SUL_CONJOINED" WHERE WORD_SUL = $1 LIMIT 1;`,
     [word]
@@ -392,6 +414,10 @@ const validateCredentials = async ({
   username: string;
   password: string;
 }) => {
+  if (!db) {
+    return null;
+  }
+
   username = username?.replace(/[^\p{L}\p{N}]/gimu, "");
   password = password?.replace(/[^\p{L}\p{N}-]/gimu, "");
   const result = await db.query(
@@ -409,6 +435,10 @@ const validateCredentials = async ({
 };
 
 const validateUserId = async ({ id }: { id: string }) => {
+  if (!db) {
+    return false;
+  }
+
   id = id?.replace(/[^A-Za-z0-9-]/gim, "");
 
   const result = await db.query(`SELECT ID FROM "USER" WHERE ID = $1`, [id]);
@@ -417,8 +447,11 @@ const validateUserId = async ({ id }: { id: string }) => {
 };
 
 const convertEnglishToSul = async ({ sentence }: { sentence: string }) => {
-  sentence = sentence?.toLowerCase();
-  const sentenceArray = sentence?.split(/(\s+|x|X|\+)/gim);
+  if (!db) {
+    return "databaseXnot+connected";
+  }
+
+  const sentenceArray = sentence?.split(/(\s+|X|\+)/gm);
 
   const result = await db.query(
     `SELECT * FROM "SUL"   WHERE WORD_ENGLISH = ANY($1::text[]) ORDER BY ID`,
@@ -427,9 +460,8 @@ const convertEnglishToSul = async ({ sentence }: { sentence: string }) => {
 
   const sulArray = sentenceArray?.map((word) => {
     if (word === " ") return " ";
-    if (word === "X" || word === "x") return "r";
+    if (word === "X") return "r";
     if (word === "+") return "m";
-    if (word === "b") return "b";
 
     const sulWord = result?.rows?.find(
       (row: any) => row?.word_english === word

@@ -5,7 +5,7 @@ const { getSession, commitSession, destroySession } =
     // a Cookie from `createCookie` or the CookieOptions to create one
     cookie: {
       name: "sul_session",
-      secrets: [process.env.SESSION_SECRET!],
+      secrets: [process.env.SESSION_SECRET! || "D3vS3ssionS3cr3tzzz431"],
     },
   });
 

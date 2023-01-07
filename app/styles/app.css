@@ -517,6 +517,10 @@ video {
   pointer-events: none;
 }
 
+.fixed {
+  position: fixed;
+}
+
 .absolute {
   position: absolute;
 }
@@ -852,6 +856,10 @@ video {
 
 .max-w-7xl {
   max-width: 80rem;
+}
+
+.max-w-\[60ch\] {
+  max-width: 60ch;
 }
 
 .flex-none {
@@ -1432,20 +1440,12 @@ video {
   font-size: 1.6em;
 }
 
-.text-\[4em\] {
-  font-size: 4em;
-}
-
-.text-\[1\.5em\] {
-  font-size: 1.5em;
+.text-\[1\.4em\] {
+  font-size: 1.4em;
 }
 
 .text-\[1\.3em\] {
   font-size: 1.3em;
-}
-
-.text-\[1\.4em\] {
-  font-size: 1.4em;
 }
 
 .font-extrabold {
@@ -1462,6 +1462,11 @@ video {
 
 .font-bold {
   font-weight: 700;
+}
+
+.ordinal {
+  --tw-ordinal: ordinal;
+  font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero) var(--tw-numeric-figure) var(--tw-numeric-spacing) var(--tw-numeric-fraction);
 }
 
 .leading-tight {

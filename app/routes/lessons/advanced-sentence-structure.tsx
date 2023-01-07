@@ -51,7 +51,12 @@ export const loader: LoaderFunction = async ({ request, params }) => {
 
   data.examples = await Promise.all(data.examples);
 
-  return json(data, { status: 200 });
+  return json(data, {
+    status: 200,
+    headers: {
+      "Cache-Control": "public, max-age=30, s-maxage=86400",
+    },
+  });
 };
 
 const IntroductionToSul = () => {
