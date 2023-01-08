@@ -13,6 +13,7 @@ Some features of SUL include:
 - Easy to learn with a consistent, phonetic pronunciation and spelling
 - Supports references to non-binary genders
 - Incorporates a braille style system for the visually impaired and a sign language system that follows the exact grammar and syntax of the written language
+- Incorporates a sign language system that follows the exact grammar and syntax of the written language
 - Virtually no exceptions to its grammar and syntax rules
 - A mono spaced, visually unique writing system that collapses into simple symbols for increased reading speed
 - A versioned and refactored design that continues to improve over time
