@@ -142,7 +142,7 @@ export default function SulChat() {
                   onChange={(e) => {
                     e.target.value = e.target.value
                       .toLowerCase()
-                      .replace(/[^aeioumtfskrjv\s.()<>]/gim, "");
+                      .replace(/[^aeioutmfskrgm\s.()<>]/gim, "");
                   }}
                   name="message"
                   placeholder=""
@@ -279,14 +279,14 @@ export default function SulChat() {
                   </tr>
                   <tr>
                     <td className="text-2xl p-2 border border-black sul-condensed">
-                      j
+                      g
                     </td>
-                    <td className="text-2xl p-2 border border-black">j</td>
+                    <td className="text-2xl p-2 border border-black">g</td>
                     <td className="text-2xl p-2 border border-black">
                       consonant
                     </td>
                     <td className="text-2xl p-2 border border-black">letter</td>
-                    <td className="text-2xl p-2 border border-black">j</td>
+                    <td className="text-2xl p-2 border border-black">g</td>
                   </tr>
                   <tr>
                     <td className="text-2xl p-2 border border-black sul-condensed">

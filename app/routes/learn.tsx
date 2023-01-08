@@ -184,8 +184,8 @@ export default function Learn() {
               <button
                 onClick={() => clickLetter("y")}
                 className={`sul  border-2 border-black rounded-md max-w-fit  py-4 px-8 text-black font-bold text-[1.7em] ${
-                  letterMistake === "j" ? "bg-red-400" : ""
-                } ${letterSuccess === "j" ? "bg-green-400" : ""}`}
+                  letterMistake === "g" ? "bg-red-400" : ""
+                } ${letterSuccess === "g" ? "bg-green-400" : ""}`}
               >
                 j
               </button>

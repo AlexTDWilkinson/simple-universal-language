@@ -1,7 +1,7 @@
 const fs = require("fs");
 
 const vowels = ["a", "e", "i", "o", "u"];
-const consonants = ["t", "f", "s", "k", "j", "m", "n", "b"];
+const consonants = ["t", "f", "s", "k", "g", "m", "n", "b"];
 const extras = ["(", ")", "<", ">", ".", " "];
 
 const paragraph = () => {

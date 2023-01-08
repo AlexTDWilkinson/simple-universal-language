@@ -1,7 +1,7 @@
 const fs = require("fs");
 
 const vowels = ["a", "e", "i", "o", "u"];
-const consonants = ["t", "f", "s", "k", "j"];
+const consonants = ["t", "f", "s", "k", "g"];
 
 // for every combination of vowels and cosenants, assign it to a popular word.
 // the word can start with either a vowel or consenant, but the next letter must always be the opposite.
