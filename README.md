@@ -17,9 +17,6 @@ Some features of SUL include:
 - Virtually no exceptions to its grammar and syntax rules
 - A mono spaced, visually unique writing system that collapses into simple symbols for increased reading speed
 - A versioned and refactored design that continues to improve over time
-- The ability to easily transcribe SUL into other languages without altering meaning
-- A deterministic and straightforward language structure that is excellent for machine learning
-- A large extended dictionary with over 80,000 words for artistic expression
 
 Join us in our mission to make SUL the universal language of the world and contribute to its ongoing development. Visit our website at https://simple-universal-language.vercel.app to learn more and get involved.
 
