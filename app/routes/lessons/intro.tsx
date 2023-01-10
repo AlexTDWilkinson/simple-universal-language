@@ -1,9 +1,56 @@
-import { Link } from "@remix-run/react";
+import { json, LoaderFunction } from "@remix-run/node";
+import { Link, useLoaderData } from "@remix-run/react";
 import React from "react";
 import { Container } from "~/components/Container";
+import { convertEnglishToSul } from "~/utils/db.server";
 import { speakInSul } from "~/utils/utils";
 
+export const loader: LoaderFunction = async ({ request, params }) => {
+  const data: any = {};
+
+  data.examples = [
+    {
+      sentence_english: "I go to the store",
+      sentence_english_sul: "me go store",
+    },
+    {
+      sentence_english: "I'm eating the food",
+      sentence_english_sul: "meXcontinuous food eat",
+    },
+    {
+      sentence_english: "I will eat food tomorrow",
+      sentence_english_sul: "meXtomorrow food eat",
+    },
+    {
+      sentence_english: "I can eat",
+      sentence_english_sul: "meXable food eat",
+    },
+    {
+      sentence_english: "I should eat",
+      sentence_english_sul: "meXshould food eat",
+    },
+  ];
+
+  data.examples = data.examples.map(async (example: any) => {
+    example.sentence_sul = await convertEnglishToSul({
+      sentence: example.sentence_english_sul,
+    });
+
+    return example;
+  });
+
+  data.examples = await Promise.all(data.examples);
+
+  return json(data, {
+    status: 200,
+    headers: {
+      "Cache-Control": "public, max-age=30, s-maxage=86400",
+    },
+  });
+};
+
 const IntroductionToSul: React.FC = () => {
+  const data = useLoaderData();
   return (
     <section
       id="introduction"
@@ -26,54 +73,33 @@ const IntroductionToSul: React.FC = () => {
         <p className="font-display mt-8 text-3xl font-bold  text-slate-900">
           Some SUL example sentences
         </p>
-        <table className="mt-4 border-collapse">
-          <tbody>
-            <tr className="border border-b">
-              <td className="px-4 py-2 font-bold">English</td>
-              <td className="px-4 py-2 font-bold">SUL</td>
-              <td className="px-4 py-2 font-bold">Romanization</td>
-              <td className="px-4 py-2 font-bold">SUL writing</td>
-            </tr>
-            <tr className="border border-b">
-              <td className="px-4 py-2">I go to the store</td>
-              <td className="px-4 py-2">me store go</td>
-              <td className="px-4 py-2">ki fjo tjo</td>
-              <td className="px-4 py-2 sul-condensed text-3xl">ki fjo tjo</td>
-            </tr>
-            <tr className="border border-b">
-              <td className="px-4 py-2">I'm eating the food</td>
-              <td className="px-4 py-2">MeXcontinuous food eat</td>
-              <td className="px-4 py-2">kirari fit ata</td>
-              <td className="px-4 py-2 sul-condensed text-3xl">
-                kirari fit ata
-              </td>
-            </tr>
-            <tr className="border border-b">
-              <td className="px-4 py-2">I will eat food tomorrow</td>
-              <td className="px-4 py-2">MeXtomorrow food eat</td>
-              <td className="px-4 py-2">kireta fit ata</td>
-              <td className="px-4 py-2 sul-condensed text-3xl">
-                kireta fit ata
-              </td>
-            </tr>
-            <tr className="border border-b">
-              <td className="px-4 py-2">I can eat</td>
-              <td className="px-4 py-2">MeXable food eat</td>
-              <td className="px-4 py-2">kirako fit ata</td>
-              <td className="px-4 py-2 sul-condensed text-3xl">
-                kirako fit ata
-              </td>
-            </tr>
-            <tr className="border border-b">
-              <td className="px-4 py-2">I should eat</td>
-              <td className="px-4 py-2">MeXshould food eat</td>
-              <td className="px-4 py-2">kirese fit ata</td>
-              <td className="px-4 py-2 sul-condensed text-3xl">
-                kirese fit ata
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        {data.examples.map((example: any) => (
+          <tr className="border border-b" key={example.sentence_structure}>
+            <td className="px-4 py-2 whitespace-nowrap ">
+              {example.sentence_structure}
+            </td>
+            <td className="px-4 py-2 ">{example.sentence_english}</td>
+            <td className="px-4 py-2 ">{example.sentence_english_sul}</td>
+            <td className="px-4 py-2 ">
+              {example.sentence_sul.replace(/j/gim, "y")}
+            </td>
+            <td className="px-4 py-2 whitespace-nowrap sul-condensed text-[1.4em]">
+              {example.sentence_sul}
+            </td>
+            <td className="px-4 py-2 ">
+              <button
+                className="inline-flex justify-center rounded-md py-2 px-4 text-base font-semibold  shadow-sm focus:outline-none bg-blue-600 text-white hover:bg-blue-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 active:bg-blue-700 active:text-white/80 disabled:opacity-30 disabled:hover:bg-blue-600"
+                onClick={() => {
+                  speakInSul({
+                    sentence: example.sentence_sul,
+                  });
+                }}
+              >
+                Hear
+              </button>
+            </td>
+          </tr>
+        ))}
         <p className="mt-8 font-display text-3xl font-bold  text-slate-900">
           Vowels and consonants
         </p>
