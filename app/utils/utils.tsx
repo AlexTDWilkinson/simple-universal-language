@@ -4,6 +4,26 @@ const vowels = ["a", "e", "i", "o", "u"];
 
 const consonants = ["t", "f", "s", "k", "g", "b", "r", "m"];
 
+// numbers:
+
+// 1 at
+
+// 2 ef
+
+// 3 is
+
+// 4 ok
+
+// 5 ug
+
+// 6 af
+
+// 7 es
+
+// 8 ik
+
+// 9 og
+
 const brackets = ["(", ")", ">", "<"];
 
 const speakInSul = ({
