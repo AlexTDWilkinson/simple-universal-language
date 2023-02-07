@@ -20,4 +20,4 @@ Some features of SUL include:
 
 Join us in our mission to make SUL the universal language of the world and contribute to its ongoing development. Visit our website at https://simple-universal-language.vercel.app to learn more and get involved.
 
-You can also join our Discord at https://discord.gg/ah94yuRu
+You can also join our Discord at https://discord.gg/PUqDuwZM
