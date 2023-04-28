@@ -155,7 +155,7 @@ words = words.sort((a, b) => {
 
 words = words.sort((a, b) => a.length - b.length);
 
-words = words.slice(0, 1000000);
+words = words.slice(0, 10000);
 
 console.log(words);
 

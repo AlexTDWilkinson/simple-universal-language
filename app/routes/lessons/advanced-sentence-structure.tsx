@@ -1,6 +1,10 @@
 import { json, LoaderFunction } from "@remix-run/node";
 import { Link, useLoaderData } from "@remix-run/react";
-import { convertEnglishToSul } from "~/utils/db.server";
+import {
+  convertLanguageToSul,
+  getDictionary,
+  Language,
+} from "~/utils/utils.server";
 import { speakInSul } from "~/utils/utils";
 
 export const loader: LoaderFunction = async ({ request, params }) => {
@@ -41,9 +45,13 @@ export const loader: LoaderFunction = async ({ request, params }) => {
     },
   ];
 
+  const dictionary = await getDictionary();
+
   data.examples = data.examples.map(async (example: any) => {
-    example.sentence_sul = await convertEnglishToSul({
+    example.sentence_sul = await convertLanguageToSul({
+      dictionary,
       sentence: example.sentence_english_sul,
+      language: Language.English,
     });
 
     return example;

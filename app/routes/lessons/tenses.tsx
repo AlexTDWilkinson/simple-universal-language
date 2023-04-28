@@ -2,7 +2,11 @@ import { json, LoaderFunction } from "@remix-run/node";
 import { Link, useLoaderData } from "@remix-run/react";
 
 import { Container } from "~/components/Container";
-import { convertEnglishToSul } from "~/utils/db.server";
+import {
+  convertLanguageToSul,
+  getDictionary,
+  Language,
+} from "~/utils/utils.server";
 import { speakInSul } from "~/utils/utils";
 
 export const loader: LoaderFunction = async ({ request, params }) => {
@@ -111,25 +115,33 @@ export const loader: LoaderFunction = async ({ request, params }) => {
     },
   ];
 
+  const dictionary = await getDictionary();
+
   data.example_tense = data.example_tense.map(async (example: any) => {
-    example.sentence_sul = await convertEnglishToSul({
+    example.sentence_sul = await convertLanguageToSul({
+      dictionary,
       sentence: example.sentence_english_sul,
+      language: Language.English,
     });
 
     return example;
   });
 
   data.example_modal = data.example_modal.map(async (example: any) => {
-    example.sentence_sul = await convertEnglishToSul({
+    example.sentence_sul = await convertLanguageToSul({
+      dictionary,
       sentence: example.sentence_english_sul,
+      language: Language.English,
     });
 
     return example;
   });
 
   data.example_order = data.example_order.map(async (example: any) => {
-    example.sentence_sul = await convertEnglishToSul({
+    example.sentence_sul = await convertLanguageToSul({
+      dictionary,
       sentence: example.sentence_english_sul,
+      language: Language.English,
     });
 
     return example;

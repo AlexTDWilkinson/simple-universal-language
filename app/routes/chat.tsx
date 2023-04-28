@@ -2,7 +2,7 @@ import { ActionFunction, json, LoaderFunction } from "@remix-run/node";
 import { Form, Link, useLoaderData, useTransition } from "@remix-run/react";
 import { useEffect, useRef } from "react";
 
-import { addChatRow, getChatRows } from "~/utils/db.server";
+import { addChatRow, getChatRows } from "~/utils/utils.server";
 
 export const loader: LoaderFunction = async ({ request, params }) => {
   const url = request.url;
